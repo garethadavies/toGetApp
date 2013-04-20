@@ -1,5 +1,17 @@
-@import "compass/typography"
+//@import "compass/typography"
+@import "_variables";
 
-html {
-	font-family: Helvetica
+html { 
+	font-size: 62.5%; 
+} 
+
+body {
+	font-size: 1.4rem; /* =14px */
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;
+  color: $grayDarker;
+}
+
+h1 { 
+	font-size: 2.4rem; /* =24px */
 }

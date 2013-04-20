@@ -2,27 +2,37 @@
 'use strict';
 
 require.config({
-    shim: {
-        underscore: {
-            exports: '_'
-        },
-        backbone: {
-            deps: [
-                'underscore',
-                'jquery'
-            ],
-            exports: 'Backbone'
-        },
+  shim: {
+    jquery: {
+      exports: '$'
     },
-    paths: {
-        jquery: '../components/jquery/jquery',
-        backbone: '../components/backbone-amd/backbone',
-        underscore: '../components/underscore-amd/underscore',
-    }
+    underscore: {
+      exports: '_'
+    },
+    backbone: {
+      deps: [
+        'underscore',
+        'jquery'
+      ],
+      exports: 'Backbone'
+    },
+    marionette : {
+      deps : [
+        'jquery',
+        'underscore',
+        'backbone'
+      ],
+      exports : 'Marionette'
+    },
+  },
+  paths: {
+    jquery: '../components/zepto/zepto',
+    backbone: '../components/backbone-amd/backbone',
+    underscore: '../components/underscore-amd/underscore',
+    marionette: '../components/marionette/lib/core/amd/backbone.marionette'
+  }
 });
 
-require([
-    'backbone'
-], function (Backbone) {
-    Backbone.history.start();
+require(['backbone', 'marionette'], function (Backbone) {
+  Backbone.history.start();
 });
