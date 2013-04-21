@@ -3,6 +3,7 @@ _variables.scss
 */
 
 /* Colours */
+$white: #fff;
 $grayDarker: #222; 
 $grayLighter: #ddd;
 
@@ -14,10 +15,10 @@ $borderColour: $grayLighter;
 $defaultBorder: $borderWidth $borderStyle $borderColour;
 
 /* Padding */
-$defaultPadding: 10px;
+$defaultPadding: 1.2rem;
 
 /* Margins */
-$defaultMargin: 10px;
+$defaultMargin: 1.2rem;
 
 /* Dimensions */
 $defaultButtonHeight: 44px;

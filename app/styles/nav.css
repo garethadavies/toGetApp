@@ -18,7 +18,6 @@ _variables.scss
   display: inline-block;
   text-align: center;
   margin: 0;
-  padding-top: 1.3rem;
   border-left: 1px solid #dddddd;
   float: right;
 }
@@ -28,4 +27,9 @@ _variables.scss
   border-left: none;
   border-right: 1px solid #dddddd;
   float: left;
+}
+
+/* line 26, ../sass/nav.scss */
+.top-bar i {
+  line-height: 4.4rem;
 }

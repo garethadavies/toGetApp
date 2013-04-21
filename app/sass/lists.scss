@@ -14,9 +14,13 @@ lists.scss
 
 .item-list li {
 	margin: 0;
-	padding: 0;
+	padding: 0 0 0 $defaultPadding;
+	width: 100%;
+	height: $defaultButtonHeight;
 	list-style: none;
 	display: block;
+	line-height: 4.2rem;
+	border-bottom: $defaultBorder;
 	@include clearfix();
 }
 
@@ -28,8 +32,11 @@ lists.scss
 	display: inline-block;
 	text-align: center;
 	margin: 0;
-	padding-top: 1.3rem; // 44px - 18px = 26px / 2 = 13px;
+	// padding-top: 1.3rem; // 44px - 18px = 26px / 2 = 13px;
 	border-left: $defaultBorder;
-	border-bottom: $defaultBorder;
 	float: right;
+}
+
+.item-list i {
+	line-height: 4.4rem;
 }

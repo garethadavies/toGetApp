@@ -12,7 +12,7 @@ nav.scss
 	display: inline-block;
 	text-align: center;
 	margin: 0;
-	padding-top: 1.3rem; // 44px - 18px = 26px / 2 = 13px;
+	// padding-top: 1.3rem; // 44px - 18px = 26px / 2 = 13px;
 	border-left: $defaultBorder;
 	float: right;
 }
@@ -21,4 +21,8 @@ nav.scss
 	border-left: none;
 	border-right: $defaultBorder;
 	float: left;
+}
+
+.top-bar i {
+	line-height: 4.4rem;
 }
