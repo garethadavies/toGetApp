@@ -1,2 +1,24 @@
+/*
+_variables.scss
+*/
+
+/* Colours */
 $grayDarker: #222; 
-$grayLight: #ddd;
+$grayLighter: #ddd;
+
+/* Borders */
+$borderWidth: 1px;
+$borderStyle: solid;
+$borderColour: $grayLighter;
+
+$defaultBorder: $borderWidth $borderStyle $borderColour;
+
+/* Padding */
+$defaultPadding: 10px;
+
+/* Margins */
+$defaultMargin: 10px;
+
+/* Dimensions */
+$defaultButtonHeight: 44px;
+$defaultButtonWidth: 44px;

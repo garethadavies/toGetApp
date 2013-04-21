@@ -1,0 +1,49 @@
+/* 
+lists.scss
+*/
+/* Imports */
+/*
+_variables.scss
+*/
+/* Colours */
+/* Borders */
+/* Padding */
+/* Margins */
+/* Dimensions */
+/* 
+_mixins.scss
+*/
+/* Imports */
+/* Unstyled links */
+/* Clearfix */
+/* Lists */
+/* line 10, ../sass/lists.scss */
+.item-list ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 15, ../sass/lists.scss */
+.item-list li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: block;
+  overflow: hidden;
+  *zoom: 1;
+}
+
+/* line 23, ../sass/lists.scss */
+.item-list a {
+  width: 100%;
+  color: #222222;
+  width: 44px;
+  height: 44px;
+  display: inline-block;
+  text-align: center;
+  margin: 0;
+  padding-top: 1.3rem;
+  border-left: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
+  float: right;
+}

@@ -1,0 +1,35 @@
+/* 
+lists.scss
+*/
+
+/* Imports */
+@import "_variables";
+@import "_mixins";
+
+/* Lists */
+.item-list ul {
+	margin: 0;
+	padding: 0;
+}
+
+.item-list li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: block;
+	@include clearfix();
+}
+
+.item-list a {
+	width: 100%;
+	color: $grayDarker;
+	width: $defaultButtonWidth;
+	height: $defaultButtonHeight;
+	display: inline-block;
+	text-align: center;
+	margin: 0;
+	padding-top: 1.3rem; // 44px - 18px = 26px / 2 = 13px;
+	border-left: $defaultBorder;
+	border-bottom: $defaultBorder;
+	float: right;
+}

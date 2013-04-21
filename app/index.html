@@ -14,15 +14,35 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- build:js scripts/vendor/modernizr.js -->
-    <script src="components/modernizr/modernizr.js"></script>
+    <script src="scripts/vendor/modernizr/modernizr.js"></script>
     <!-- endbuild -->
   </head>
   <body>
       
-    <div class="top-bar"></div>
+    <div class="top-bar">
+      
+      <a href="#"><i class="icon-menu"></i></a>
+      <a href="#"><i class="icon-plus"></i></a>
+      <a href="#"><i class="icon-edit"></i></a>
+
+    </div>
+
+    <div class="item-list">
+
+      <ul>
+        <li>Toilet Roll <a href="#"><i class="icon-ok"></i></a></li>
+        <li>Toothpaste <a href="#"><i class="icon-ok"></i></a></li>
+        <li>Bananas <a href="#"><i class="icon-ok"></i></a></li>
+        <li>Ready Brek <a href="#"><i class="icon-ok"></i></a></li>
+        <li>Brown Bread <a href="#"><i class="icon-ok"></i></a></li>
+        <li>White Bread <a href="#"><i class="icon-ok"></i></a></li>
+      </ul>
+
+
+    </div>
 
     <!-- build:js scripts/main.js -->
-    <script data-main="scripts/main" src="components/requirejs/require.js"></script>
+    <script data-main="scripts/main" src="scripts/vendor/requirejs/require.js"></script>
     <!-- endbuild -->
 
 </body>

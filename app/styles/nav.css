@@ -1,0 +1,31 @@
+/* 
+nav.scss
+*/
+/* Imports */
+/*
+_variables.scss
+*/
+/* Colours */
+/* Borders */
+/* Padding */
+/* Margins */
+/* Dimensions */
+/* line 8, ../sass/nav.scss */
+.top-bar a {
+  color: #222222;
+  width: 44px;
+  height: 44px;
+  display: inline-block;
+  text-align: center;
+  margin: 0;
+  padding-top: 1.3rem;
+  border-left: 1px solid #dddddd;
+  float: right;
+}
+
+/* line 20, ../sass/nav.scss */
+.top-bar a:first-child {
+  border-left: none;
+  border-right: 1px solid #dddddd;
+  float: left;
+}

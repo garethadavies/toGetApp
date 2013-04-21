@@ -1,0 +1,22 @@
+/*
+utilities
+*/
+
+/* Imports */
+@import "compass/utilities/general/float";
+@import "compass/utilities/general/clearfix";
+
+.right {
+	@include float(right);
+}
+
+.left {
+	@include float(left);
+}
+
+/* Clearfix */
+
+.clearfix {
+  overflow: hidden;
+  @include has-layout;
+}

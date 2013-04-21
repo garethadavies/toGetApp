@@ -1,0 +1,24 @@
+/* 
+nav.scss
+*/
+
+/* Imports */
+@import "_variables";
+
+.top-bar a {
+	color: $grayDarker;
+	width: $defaultButtonWidth;
+	height: $defaultButtonHeight;
+	display: inline-block;
+	text-align: center;
+	margin: 0;
+	padding-top: 1.3rem; // 44px - 18px = 26px / 2 = 13px;
+	border-left: $defaultBorder;
+	float: right;
+}
+
+.top-bar a:first-child {
+	border-left: none;
+	border-right: $defaultBorder;
+	float: left;
+}

@@ -1,0 +1,23 @@
+/* 
+_mixins.scss
+*/
+
+/* Imports */
+@import "compass/typography/links";
+@import "compass/utilities/general/clearfix";
+
+/* Unstyled links */
+@mixin unstyled-link {
+  color: inherit;
+  text-decoration: inherit;
+  cursor: inherit;
+  a:active, a:focus {
+    outline: none;
+	}
+}
+
+/* Clearfix */
+@mixin clearfix {
+  overflow: hidden;
+  @include has-layout; 
+}

@@ -1,6 +1,12 @@
-//@import "compass/typography"
+/* 
+typography.scss
+*/
+
+/* Imports */
+@import "compass/typography/links";
 @import "_variables";
 
+/* Font setup */
 html { 
 	font-size: 62.5%; 
 } 
@@ -12,6 +18,14 @@ body {
   color: $grayDarker;
 }
 
+/* Headers */
 h1 { 
 	font-size: 2.4rem; /* =24px */
 }
+
+/* Icons */
+i {
+	font-size: 1.8rem;
+}
+
+/* Links */

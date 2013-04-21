@@ -1,6 +1,27 @@
-/* line 1, ../sass/layout.scss */
+/* 
+layout.scss
+*/
+/* Imports */
+/*
+_variables.scss
+*/
+/* Colours */
+/* Borders */
+/* Padding */
+/* Margins */
+/* Dimensions */
+/* Box sizing */
+/* line 10, ../sass/layout.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Top bar */
+/* line 15, ../sass/layout.scss */
 .top-bar {
   width: 100%;
   height: 44px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #dddddd;
 }

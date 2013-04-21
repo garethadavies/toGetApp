@@ -1,9 +1,22 @@
-/* line 4, ../sass/typography.scss */
+/* 
+typography.scss
+*/
+/* Imports */
+/*
+_variables.scss
+*/
+/* Colours */
+/* Borders */
+/* Padding */
+/* Margins */
+/* Dimensions */
+/* Font setup */
+/* line 10, ../sass/typography.scss */
 html {
   font-size: 62.5%;
 }
 
-/* line 8, ../sass/typography.scss */
+/* line 14, ../sass/typography.scss */
 body {
   font-size: 1.4rem;
   /* =14px */
@@ -12,8 +25,17 @@ body {
   color: #222222;
 }
 
-/* line 15, ../sass/typography.scss */
+/* Headers */
+/* line 22, ../sass/typography.scss */
 h1 {
   font-size: 2.4rem;
   /* =24px */
 }
+
+/* Icons */
+/* line 27, ../sass/typography.scss */
+i {
+  font-size: 1.8rem;
+}
+
+/* Links */
