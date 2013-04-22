@@ -23,11 +23,44 @@ Sidr
   -moz-box-shadow: inset 0 0 5px 5px #222;
   box-shadow: inset 0 0 5px 5px #222;*/
 }
+
 .sidr.right {
   left: auto;
   right: -260px;
 }
+
 .sidr.left {
   left: -260px;
   right: auto;
+}
+
+.sidr .unstyled-list li {
+	border-bottom: $borderWidth $borderStyle $grayDark;
+}
+
+.sidr .unstyled-list a {
+	border-left: $borderWidth $borderStyle $grayDark;
+}
+
+.sidr .top-bar a.left {
+	border-right: $borderWidth $borderStyle $grayDark;
+}
+
+.sidr .top-bar a.right {
+	border-left: $borderWidth $borderStyle $grayDark;
+}
+
+.sidr .top-bar {
+	border-bottom: $borderWidth $borderStyle $grayDark;
+}
+
+.sidr a {
+	color: white;
+}
+
+.sidr h1 {
+	font-size: $baseFontSize;
+	line-height: 4.2rem;
+	padding: 0 0 0 $defaultPadding;
+	font-weight: bold;
 }

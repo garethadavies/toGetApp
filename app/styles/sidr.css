@@ -5,6 +5,7 @@ Sidr
 /*
 _variables.scss
 */
+/* Fonts */
 /* Colours */
 /* Borders */
 /* Padding */
@@ -30,14 +31,52 @@ _variables.scss
   box-shadow: inset 0 0 5px 5px #222;*/
 }
 
-/* line 26, ../sass/sidr.scss */
+/* line 27, ../sass/sidr.scss */
 .sidr.right {
   left: auto;
   right: -260px;
 }
 
-/* line 30, ../sass/sidr.scss */
+/* line 32, ../sass/sidr.scss */
 .sidr.left {
   left: -260px;
   right: auto;
+}
+
+/* line 37, ../sass/sidr.scss */
+.sidr .unstyled-list li {
+  border-bottom: 1px solid #666666;
+}
+
+/* line 41, ../sass/sidr.scss */
+.sidr .unstyled-list a {
+  border-left: 1px solid #666666;
+}
+
+/* line 45, ../sass/sidr.scss */
+.sidr .top-bar a.left {
+  border-right: 1px solid #666666;
+}
+
+/* line 49, ../sass/sidr.scss */
+.sidr .top-bar a.right {
+  border-left: 1px solid #666666;
+}
+
+/* line 53, ../sass/sidr.scss */
+.sidr .top-bar {
+  border-bottom: 1px solid #666666;
+}
+
+/* line 57, ../sass/sidr.scss */
+.sidr a {
+  color: white;
+}
+
+/* line 61, ../sass/sidr.scss */
+.sidr h1 {
+  font-size: 1.4rem;
+  line-height: 4.2rem;
+  padding: 0 0 0 1.2rem;
+  font-weight: bold;
 }

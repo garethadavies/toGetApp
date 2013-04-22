@@ -12,8 +12,8 @@ html {
 } 
 
 body {
-	font-size: 1.4rem; /* =14px */
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-size: $baseFontSize; /* =14px */
+  font-family: Helvetica, Arial, "Lucida Grande", sans-serif; 
   font-weight: 300;
   color: $grayDarker;
 }

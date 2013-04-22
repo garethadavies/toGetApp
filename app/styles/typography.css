@@ -5,6 +5,7 @@ typography.scss
 /*
 _variables.scss
 */
+/* Fonts */
 /* Colours */
 /* Borders */
 /* Padding */
@@ -20,7 +21,7 @@ html {
 body {
   font-size: 1.4rem;
   /* =14px */
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
   color: #222222;
 }

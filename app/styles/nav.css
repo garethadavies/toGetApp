@@ -5,6 +5,7 @@ nav.scss
 /*
 _variables.scss
 */
+/* Fonts */
 /* Colours */
 /* Borders */
 /* Padding */
@@ -18,15 +19,16 @@ _variables.scss
   display: inline-block;
   text-align: center;
   margin: 0;
-  border-left: 1px solid #dddddd;
-  float: right;
 }
 
-/* line 20, ../sass/nav.scss */
-.top-bar a:first-child {
-  border-left: none;
+/* line 18, ../sass/nav.scss */
+.top-bar a.left {
   border-right: 1px solid #dddddd;
-  float: left;
+}
+
+/* line 22, ../sass/nav.scss */
+.top-bar a.right {
+  border-left: 1px solid #dddddd;
 }
 
 /* line 26, ../sass/nav.scss */

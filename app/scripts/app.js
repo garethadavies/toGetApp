@@ -28,6 +28,18 @@ define(['marionette', 'backbone', 'jquery.sidr'], function (Marionette, Backbone
 
     });
 
+    $('.close-sidr2').on('click', function() {
+
+      $.sidr('close', 'sidr2');
+
+    });
+
+    $('.close-sidr').on('click', function() {
+
+      $.sidr('close', 'sidr');
+
+    });
+
   });
 
   // export the app from this module

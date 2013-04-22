@@ -13,14 +13,14 @@ nav.scss
 	text-align: center;
 	margin: 0;
 	// padding-top: 1.3rem; // 44px - 18px = 26px / 2 = 13px;
-	border-left: $defaultBorder;
-	float: right;
 }
 
-.top-bar a:first-child {
-	border-left: none;
+.top-bar a.left {
 	border-right: $defaultBorder;
-	float: left;
+}
+
+.top-bar a.right {
+	border-left: $defaultBorder;
 }
 
 .top-bar i {

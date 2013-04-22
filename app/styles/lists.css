@@ -5,6 +5,7 @@ lists.scss
 /*
 _variables.scss
 */
+/* Fonts */
 /* Colours */
 /* Borders */
 /* Padding */
@@ -32,11 +33,12 @@ _mixins.scss
   list-style: none;
   display: block;
   line-height: 4.2rem;
+  border-bottom: 1px solid #dddddd;
   overflow: hidden;
   *zoom: 1;
 }
 
-/* line 26, ../sass/lists.scss */
+/* line 27, ../sass/lists.scss */
 .unstyled-list a {
   width: 100%;
   color: #222222;
@@ -45,20 +47,11 @@ _mixins.scss
   display: inline-block;
   text-align: center;
   margin: 0;
+  border-left: 1px solid #dddddd;
   float: right;
 }
 
-/* line 38, ../sass/lists.scss */
+/* line 40, ../sass/lists.scss */
 .unstyled-list i {
   line-height: 4.4rem;
-}
-
-/* line 42, ../sass/lists.scss */
-.item-list li {
-  border-bottom: 1px solid #dddddd;
-}
-
-/* line 46, ../sass/lists.scss */
-.item-list a {
-  border-left: 1px solid #dddddd;
 }
