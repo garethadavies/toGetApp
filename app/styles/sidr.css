@@ -1,0 +1,43 @@
+/*
+Sidr
+*/
+/* Imports */
+/*
+_variables.scss
+*/
+/* Colours */
+/* Borders */
+/* Padding */
+/* Margins */
+/* Dimensions */
+/* line 8, ../sass/sidr.scss */
+.sidr {
+  display: none;
+  position: absolute;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  z-index: 999999;
+  width: 80%;
+  overflow-x: none;
+  overflow-y: auto;
+  /*    font-family: "lucida grande",tahoma,verdana,arial,sans-serif;;
+  font-size: 15px;*/
+  background: #222222;
+  color: white;
+  /*-webkit-box-shadow: inset 0 0 5px 5px #222;
+  -moz-box-shadow: inset 0 0 5px 5px #222;
+  box-shadow: inset 0 0 5px 5px #222;*/
+}
+
+/* line 26, ../sass/sidr.scss */
+.sidr.right {
+  left: auto;
+  right: -260px;
+}
+
+/* line 30, ../sass/sidr.scss */
+.sidr.left {
+  left: -260px;
+  right: auto;
+}

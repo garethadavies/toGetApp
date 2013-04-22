@@ -5,4 +5,4 @@
 @import 'nav.css';
 @import 'utilities.css';
 @import 'lists.css';
-@import '../scripts/vendor/sidr/stylesheets/jquery.sidr.dark.css';
+@import 'sidr.css';

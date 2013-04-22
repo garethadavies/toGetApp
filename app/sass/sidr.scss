@@ -1,0 +1,33 @@
+/*
+Sidr
+*/
+
+/* Imports */
+@import "_variables";
+
+.sidr {
+  display: none;
+  position: absolute;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  z-index: 999999;
+  width: 80%;
+  overflow-x: none;
+  overflow-y: auto;
+  /*    font-family: "lucida grande",tahoma,verdana,arial,sans-serif;;
+  font-size: 15px;*/
+  background: $grayDarker;
+  color: $white;
+  /*-webkit-box-shadow: inset 0 0 5px 5px #222;
+  -moz-box-shadow: inset 0 0 5px 5px #222;
+  box-shadow: inset 0 0 5px 5px #222;*/
+}
+.sidr.right {
+  left: auto;
+  right: -260px;
+}
+.sidr.left {
+  left: -260px;
+  right: auto;
+}

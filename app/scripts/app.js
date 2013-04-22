@@ -11,9 +11,6 @@ define(['marionette', 'backbone', 'jquery.sidr'], function (Marionette, Backbone
 
   });
 
-  console.log(Backbone);
-  console.log(jQuery.fn.sidr);
-
   App.addInitializer(function(options) {
 
   // new MyAppRouter();
@@ -21,6 +18,15 @@ define(['marionette', 'backbone', 'jquery.sidr'], function (Marionette, Backbone
     Backbone.history.start();
 
     console.log('hello');
+
+    $('.left-menu').sidr();
+
+    $('.right-menu').sidr({
+
+      name: 'sidr2',
+      side: 'right'
+
+    });
 
   });
 

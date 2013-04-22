@@ -7,12 +7,12 @@ lists.scss
 @import "_mixins";
 
 /* Lists */
-.item-list ul {
+.unstyled-list ul {
 	margin: 0;
 	padding: 0;
 }
 
-.item-list li {
+.unstyled-list li {
 	margin: 0;
 	padding: 0 0 0 $defaultPadding;
 	width: 100%;
@@ -20,11 +20,10 @@ lists.scss
 	list-style: none;
 	display: block;
 	line-height: 4.2rem;
-	border-bottom: $defaultBorder;
 	@include clearfix();
 }
 
-.item-list a {
+.unstyled-list a {
 	width: 100%;
 	color: $grayDarker;
 	width: $defaultButtonWidth;
@@ -33,10 +32,17 @@ lists.scss
 	text-align: center;
 	margin: 0;
 	// padding-top: 1.3rem; // 44px - 18px = 26px / 2 = 13px;
-	border-left: $defaultBorder;
 	float: right;
 }
 
-.item-list i {
+.unstyled-list i {
 	line-height: 4.4rem;
+}
+
+.item-list li {
+	border-bottom: $defaultBorder;
+}
+
+.item-list a {
+	border-left: $defaultBorder;
 }

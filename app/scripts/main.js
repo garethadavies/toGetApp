@@ -36,4 +36,6 @@ require(['app'], function (App) {
 
   console.log(App);
 
+  App.start();
+
 });
