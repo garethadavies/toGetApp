@@ -1,5 +1,5 @@
 // require(['backbone', 'marionette', 'jquery.sidr'], function (Backbone, Marionette) {
-define(['marionette', 'backbone', 'jquery.sidr'], function (Marionette, Backbone) {
+define(['marionette', 'backbone', 'sidr', 'hammerjs'], function (Marionette, Backbone) {
 
   // set up the app instance
   var App = new Marionette.Application();
@@ -37,6 +37,20 @@ define(['marionette', 'backbone', 'jquery.sidr'], function (Marionette, Backbone
     $('.close-sidr').on('click', function() {
 
       $.sidr('close', 'sidr');
+
+    });
+
+    var openLeft = Hammer('body').on('swiperight', function(event) {
+
+      $.sidr('close', 'sidr2');
+      $.sidr('open', 'sidr');
+
+    });
+
+    var openRight = Hammer('body').on('swipeleft', function(event) {
+
+      $.sidr('close', 'sidr');
+      $.sidr('open', 'sidr2');
 
     });
 

@@ -19,10 +19,21 @@ _variables.scss
   box-sizing: border-box;
 }
 
+/* HTML & Body */
+/* line 16, ../sass/layout.scss */
+html,
+body {
+  height: 100%;
+}
+
+/* line 20, ../sass/layout.scss */
+html {
+  background: #f9f9f9;
+}
+
 /* Top bar */
-/* line 15, ../sass/layout.scss */
+/* line 25, ../sass/layout.scss */
 .top-bar {
   width: 100%;
-  height: 44px;
   border-bottom: 1px solid #dddddd;
 }

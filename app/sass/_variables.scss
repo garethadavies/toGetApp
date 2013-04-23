@@ -3,19 +3,26 @@ _variables.scss
 */
 
 /* Fonts */
-$baseFontSize: 1.4rem;
+$baseFontSize: 1.4rem; 
 
 /* Colours */
 $white: #fff;
 $grayDarker: #222;
 $grayDark: #666;
-$gray: #999; 
+$gray: #999;
+$grayLight: #999; 
 $grayLighter: #ddd;
+$grayLightest: #f9f9f9;
+
+$lightBlue: #179DC2;
+$darkBlue: #1785A3;
 
 /* Borders */
 $borderWidth: 1px;
 $borderStyle: solid;
 $borderColour: $grayLighter;
+
+$default-border-radius: 5px;
 
 $defaultBorder: $borderWidth $borderStyle $borderColour;
 

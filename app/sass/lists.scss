@@ -5,6 +5,7 @@ lists.scss
 /* Imports */
 @import "_variables";
 @import "_mixins";
+@import "compass/css3/border-radius";
 
 /* Lists */
 .unstyled-list ul {
@@ -13,14 +14,16 @@ lists.scss
 }
 
 .unstyled-list li {
-	margin: 0;
+	background: $white;
+	margin: 2%;
 	padding: 0 0 0 $defaultPadding;
-	width: 100%;
+	width: 96%;
 	height: $defaultButtonHeight;
 	list-style: none;
 	display: block;
 	line-height: 4.2rem;
-	border-bottom: $defaultBorder;
+	border: $defaultBorder;
+	@include border-radius($default-border-radius);
 	@include clearfix();
 }
 
@@ -39,4 +42,5 @@ lists.scss
 
 .unstyled-list i {
 	line-height: 4.4rem;
+	color: $grayLighter; 
 }

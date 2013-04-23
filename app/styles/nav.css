@@ -11,7 +11,22 @@ _variables.scss
 /* Padding */
 /* Margins */
 /* Dimensions */
-/* line 8, ../sass/nav.scss */
+/* 
+_mixins.scss
+*/
+/* Imports */
+/* Unstyled links */
+/* Clearfix */
+/* line 10, ../sass/nav.scss */
+.top-bar {
+  background: white;
+  padding: 2%;
+  position: relative;
+  overflow: hidden;
+  *zoom: 1;
+}
+
+/* line 19, ../sass/nav.scss */
 .top-bar a {
   color: #222222;
   width: 44px;
@@ -19,19 +34,32 @@ _variables.scss
   display: inline-block;
   text-align: center;
   margin: 0;
+  border: 1px solid #dddddd;
+  background: #f9f9f9;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
 }
 
-/* line 18, ../sass/nav.scss */
-.top-bar a.left {
-  border-right: 1px solid #dddddd;
+/* line 32, ../sass/nav.scss */
+.top-bar h1 {
+  position: absolute;
+  left: 55px;
+  width: 100%;
+  font-size: 2rem;
+  line-height: 4.8rem;
+  padding: 0 0 0 1.2rem;
+  font-weight: bold;
 }
 
-/* line 22, ../sass/nav.scss */
+/* line 46, ../sass/nav.scss */
 .top-bar a.right {
-  border-left: 1px solid #dddddd;
+  margin-left: 2%;
 }
 
-/* line 26, ../sass/nav.scss */
+/* line 51, ../sass/nav.scss */
 .top-bar i {
-  line-height: 4.4rem;
+  line-height: 4.2rem;
 }

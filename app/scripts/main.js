@@ -9,7 +9,8 @@ require.config({
     marionette: '../components/marionette/lib/core/amd/backbone.marionette',
     'backbone.wreqr' : '../components/marionette/public/javascripts/backbone.wreqr',
     'backbone.babysitter' : '../components/marionette/public/javascripts/backbone.babysitter',
-    'jquery.sidr': '../components/sidr/jquery.sidr.min'
+    'sidr': '../components/sidr/jquery.sidr.min',
+    'hammerjs': '../components/hammerjs/dist/jquery.hammer.min'
   },
   shim: {
     jquery: {
@@ -26,7 +27,10 @@ require.config({
       deps: ['jquery', 'underscore', 'backbone'],
       exports: 'Marionette'
     },
-    'jquery.sidr': {
+    'sidr': {
+      deps: ['jquery']
+    },
+    'hammerjs': {
       deps: ['jquery']
     }
   }
