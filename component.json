@@ -9,7 +9,8 @@
     "underscore-amd": "~1.4.4",
     "marionette": "~1.0.2",
     "modernizr": "~2.6.2",
-    "sidr": "~1.1.1"
+    "sidr": "~1.1.1",
+    "hammerjs": "~1.0.5"
   },
   "devDependencies": {}
 }

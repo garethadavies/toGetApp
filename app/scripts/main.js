@@ -3,13 +3,13 @@
 
 require.config({
   paths: {
-    jquery: 'vendor/jquery/jquery',
-    backbone: 'vendor/backbone-amd/backbone',
-    underscore: 'vendor/underscore-amd/underscore',
-    marionette: 'vendor/marionette/lib/core/amd/backbone.marionette',
-    'backbone.wreqr' : 'vendor/marionette/public/javascripts/backbone.wreqr',
-    'backbone.babysitter' : 'vendor/marionette/public/javascripts/backbone.babysitter',
-    'jquery.sidr': 'vendor/sidr/jquery.sidr.min'
+    jquery: '../components/jquery/jquery',
+    backbone: '../components/backbone-amd/backbone',
+    underscore: '../components/underscore-amd/underscore',
+    marionette: '../components/marionette/lib/core/amd/backbone.marionette',
+    'backbone.wreqr' : '../components/marionette/public/javascripts/backbone.wreqr',
+    'backbone.babysitter' : '../components/marionette/public/javascripts/backbone.babysitter',
+    'jquery.sidr': '../components/sidr/jquery.sidr.min'
   },
   shim: {
     jquery: {
