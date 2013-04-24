@@ -11,15 +11,15 @@ lists.scss
 .unstyled-list ul {
 	margin: 0;
 	padding: 0;
+	list-style: none;
 }
 
-.unstyled-list li {
+.get-list li {
 	background: $white;
-	margin: 2%;
+	margin: 5px;
 	padding: 0 0 0 $defaultPadding;
-	width: 96%;
+	// width: 96%;
 	height: $defaultButtonHeight;
-	list-style: none;
 	display: block;
 	line-height: 4.2rem;
 	border: $defaultBorder;
@@ -27,7 +27,7 @@ lists.scss
 	@include clearfix();
 }
 
-.unstyled-list a {
+.get-list a {
 	width: 100%;
 	color: $grayDarker;
 	width: $defaultButtonWidth;
@@ -40,7 +40,7 @@ lists.scss
 	float: right;
 }
 
-.unstyled-list i {
+.get-list i {
 	line-height: 4.4rem;
 	color: $grayLighter; 
 }

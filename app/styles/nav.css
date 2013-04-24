@@ -20,7 +20,7 @@ _mixins.scss
 /* line 10, ../sass/nav.scss */
 .top-bar {
   background: white;
-  padding: 2%;
+  padding: 5px;
   position: relative;
   overflow: hidden;
   *zoom: 1;
@@ -56,7 +56,7 @@ _mixins.scss
 
 /* line 46, ../sass/nav.scss */
 .top-bar a.right {
-  margin-left: 2%;
+  margin-left: 5px;
 }
 
 /* line 51, ../sass/nav.scss */

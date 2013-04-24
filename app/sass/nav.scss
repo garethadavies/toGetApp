@@ -11,7 +11,7 @@ nav.scss
 	background: $white;
 	// color: $white;
 	// text-align: center;
-	padding: 2%;
+	padding: 5px;
 	position: relative;
 	@include clearfix();
 }
@@ -45,7 +45,7 @@ nav.scss
 
 .top-bar a.right {
 	// border-left: $defaultBorder;
-	margin-left: 2%;
+	margin-left: 5px;
 }
 
 .top-bar i {

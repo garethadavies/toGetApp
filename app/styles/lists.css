@@ -22,16 +22,15 @@ _mixins.scss
 .unstyled-list ul {
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
-/* line 16, ../sass/lists.scss */
-.unstyled-list li {
+/* line 17, ../sass/lists.scss */
+.get-list li {
   background: white;
-  margin: 2%;
+  margin: 5px;
   padding: 0 0 0 1.2rem;
-  width: 96%;
   height: 44px;
-  list-style: none;
   display: block;
   line-height: 4.2rem;
   border: 1px solid #dddddd;
@@ -45,7 +44,7 @@ _mixins.scss
 }
 
 /* line 30, ../sass/lists.scss */
-.unstyled-list a {
+.get-list a {
   width: 100%;
   color: #222222;
   width: 44px;
@@ -58,7 +57,7 @@ _mixins.scss
 }
 
 /* line 43, ../sass/lists.scss */
-.unstyled-list i {
+.get-list i {
   line-height: 4.4rem;
   color: #dddddd;
 }

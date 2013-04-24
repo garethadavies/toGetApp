@@ -40,17 +40,35 @@ define(['marionette', 'backbone', 'sidr', 'hammerjs'], function (Marionette, Bac
 
     });
 
-    var openLeft = Hammer('body').on('swiperight', function(event) {
+    var hammertime = Hammer(element, {
+        drag_min_distance: 20
+    });
+
+    var openLeft = Hammer('#main-list').on('swiperight', function(event) {
 
       $.sidr('close', 'sidr2');
       $.sidr('open', 'sidr');
 
     });
 
-    var openRight = Hammer('body').on('swipeleft', function(event) {
+    var openRight = Hammer('#main-list').on('swipeleft', function(event) {
 
       $.sidr('close', 'sidr');
       $.sidr('open', 'sidr2');
+
+    });
+
+    var closeLeft = Hammer('#sidr').on('swipeleft', function(event) {
+
+      $.sidr('close', 'sidr');
+      // $.sidr('open', 'sidr');
+
+    });
+
+    var closeRight = Hammer('#sidr2').on('swiperight', function(event) {
+
+      $.sidr('close', 'sidr2');
+      // $.sidr('open', 'sidr2');
 
     });
 
