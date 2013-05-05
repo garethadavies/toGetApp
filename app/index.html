@@ -19,82 +19,72 @@
     <!-- endbuild -->
   </head>
   <body>
-      
-    <div class="top-bar">
-      
-      <h1>All Items</h1>
+    
+    <div class="relative tall">
 
-      <a href="#left-menu" class="left-menu left"><i class="icon-menu"></i></a>
-      <a href="#right-menu" class="right-menu right"><i class="icon-plus"></i></a>
-      <a href="#" class="right"><i class="icon-edit"></i></a>
+      <div class="drawers absolute">
 
-    </div>
+          <div class="left-drawer absolute">
 
-    <div id="sidr" class="sidr">
+              <div>
+
+                  <h3>Snap.js</h3>
+
+                  <div class="demo-social">
+                      <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-text="Snap.js - A Library for creating beautiful mobile shelfs in Javascript" data-url="http://jakiestfu.github.com/Snap.js/" data-count="none" data-via="jakiestfu">Tweet</a>
+                      <a href="https://twitter.com/jakiestfu" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @jakiestfu</a>
+                  </div>
+
+                  <h4>Demos</h4>
+
+                  <ul>
+                      <li><a href="default.html">Default</a></li>
+                      <li><a href="noDrag.html">No Drag</a></li>
+                      <li><a href="rightDisabled.html">Right Disabled</a></li>
+                      <li><a href="skinnyThreshold.html">Skinny Threshold</a></li>
+                      <li><a href="toggles.html">Toggles</a></li>
+                      <li><a href="classNames.html">Class Names</a></li>
+                    <li><a href="expand.html">Expanding</a></li>
+                    <li><a href="settings.html">Settings</a></li>
+                      <li><a href="ratchet/template.html">Ratchet</a></li>
+                  </ul>
+
+              </div>
+
+          </div>
+
+          <div class="right-drawer absolute">ssss</div>
+
+      </div>
       
-      <div class="top-bar">
-      
-        <h1 class="left">Lists</h1>
+      <div id="content" class="absolute">
 
-        <a href="#" class="close-sidr right"><i class="icon-cancel"></i></a>
-        <a href="#" class="right"><i class="icon-plus"></i></a>
+          <div class="relative tall">
+
+              <div class="toolbar absolute">
+
+
+                  <a href="#" id="open-left" class="left-menu left"><i class="icon-menu"></i></a>
+                  <a href="#" class="right"><i class="icon-plus"></i></a>
         <a href="#" class="right"><i class="icon-edit"></i></a>
 
 
-      </div>
+                  <span>List</span>
 
-      <div>
+              </div>
 
-        <ul class="unstyled-list">
-          <li>Toilet Roll <a href="#"><i class="icon-right-open"></i></a></li>
-          <li>Toothpaste <a href="#"><i class="icon-right-open"></i></a></li>
-          <li>Bananas <a href="#"><i class="icon-right-open"></i></a></li>
-          <li>Ready Brek <a href="#"><i class="icon-right-open"></i></a></li>
-          <li>Brown Bread <a href="#"><i class="icon-right-open"></i></a></li>
-          <li>White Bread <a href="#"><i class="icon-right-open"></i></a></li>
-        </ul>
+              <ul class="unstyled-list">
+                <li>Toilet Roll <a href="#"><i class="icon-right-open"></i></a></li>
+                <li>Toothpaste <a href="#"><i class="icon-right-open"></i></a></li>
+                <li>Bananas <a href="#"><i class="icon-right-open"></i></a></li>
+                <li>Ready Brek <a href="#"><i class="icon-right-open"></i></a></li>
+                <li>Brown Bread <a href="#"><i class="icon-right-open"></i></a></li>
+                <li>White Bread <a href="#"><i class="icon-right-open"></i></a></li>
+              </ul>
 
-      </div>
-
-    </div>
-
-    <div id="sidr2" class="sidr">
-      
-      <div class="top-bar">
-      
-        <h1 class="left">Add an item</h1>
-
-        <a href="#" class="close-sidr2 right"><i class="icon-cancel"></i></a>
+          </div>
 
       </div>
-
-      <div>
-
-        <ul class="unstyled-list">
-          <li>Toilet Roll <a href="#"><i class="icon-ok"></i></a></li>
-          <li>Toothpaste <a href="#"><i class="icon-ok"></i></a></li>
-          <li>Bananas <a href="#"><i class="icon-ok"></i></a></li>
-          <li>Ready Brek <a href="#"><i class="icon-ok"></i></a></li>
-          <li>Brown Bread <a href="#"><i class="icon-ok"></i></a></li>
-          <li>White Bread <a href="#"><i class="icon-ok"></i></a></li>
-        </ul>
-
-
-      </div>
-
-    </div>
-
-    <div id="main-list">
-
-      <ul class="unstyled-list get-list">
-        <li>Toilet Roll <a href="#"><i class="icon-ok"></i></a></li>
-        <li>Toothpaste <a href="#"><i class="icon-ok"></i></a></li>
-        <li>Bananas <a href="#"><i class="icon-ok"></i></a></li>
-        <li>Ready Brek <a href="#"><i class="icon-ok"></i></a></li>
-        <li>Brown Bread <a href="#"><i class="icon-ok"></i></a></li>
-        <li>White Bread <a href="#"><i class="icon-ok"></i></a></li>
-      </ul>
-
 
     </div>
 
@@ -102,5 +92,5 @@
     <script data-main="scripts/main" src="components/requirejs/require.js"></script>
     <!-- endbuild -->
 
-</body>
+  </body>
 </html>

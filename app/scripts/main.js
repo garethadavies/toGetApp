@@ -9,7 +9,8 @@ require.config({
     marionette: '../components/marionette/lib/core/amd/backbone.marionette',
     'backbone.wreqr' : '../components/marionette/public/javascripts/backbone.wreqr',
     'backbone.babysitter' : '../components/marionette/public/javascripts/backbone.babysitter',
-    'sidr': '../components/sidr/jquery.sidr.min',
+    // 'sidr': '../components/sidr/jquery.sidr.min',
+    'snap': '../components/snap/snap',
     'hammerjs': '../components/hammerjs/dist/jquery.hammer.min'
   },
   shim: {

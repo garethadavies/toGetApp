@@ -1,5 +1,5 @@
 // require(['backbone', 'marionette', 'jquery.sidr'], function (Backbone, Marionette) {
-define(['marionette', 'backbone', 'sidr', 'hammerjs'], function (Marionette, Backbone) {
+define(['marionette', 'backbone', 'snap'], function (Marionette, Backbone) {
 
   // set up the app instance
   var App = new Marionette.Application();
@@ -17,60 +17,81 @@ define(['marionette', 'backbone', 'sidr', 'hammerjs'], function (Marionette, Bac
 
     Backbone.history.start();
 
-    console.log('hello');
+    var snapper = new Snap({
 
-    $('.left-menu').sidr();
-
-    $('.right-menu').sidr({
-
-      name: 'sidr2',
-      side: 'right'
+      element: document.getElementById('content')
 
     });
 
-    $('.close-sidr2').on('click', function() {
+    $('.open-left').on('click', function() {
 
-      $.sidr('close', 'sidr2');
+      if (snapper.state().state == 'left') {
 
-    });
+        snapper.close();
 
-    $('.close-sidr').on('click', function() {
+      }
+      else {
 
-      $.sidr('close', 'sidr');
+        snapper.open('left');
 
-    });
-
-    var hammertime = Hammer(element, {
-        drag_min_distance: 20
-    });
-
-    var openLeft = Hammer('#main-list').on('swiperight', function(event) {
-
-      $.sidr('close', 'sidr2');
-      $.sidr('open', 'sidr');
+      }
 
     });
 
-    var openRight = Hammer('#main-list').on('swipeleft', function(event) {
+    // console.log('hello');
 
-      $.sidr('close', 'sidr');
-      $.sidr('open', 'sidr2');
+    // $('.left-menu').sidr();
 
-    });
+    // $('.right-menu').sidr({
 
-    var closeLeft = Hammer('#sidr').on('swipeleft', function(event) {
+    //   name: 'sidr2',
+    //   side: 'right'
 
-      $.sidr('close', 'sidr');
-      // $.sidr('open', 'sidr');
+    // });
 
-    });
+    // $('.close-sidr2').on('click', function() {
 
-    var closeRight = Hammer('#sidr2').on('swiperight', function(event) {
+    //   $.sidr('close', 'sidr2');
 
-      $.sidr('close', 'sidr2');
-      // $.sidr('open', 'sidr2');
+    // });
 
-    });
+    // $('.close-sidr').on('click', function() {
+
+    //   $.sidr('close', 'sidr');
+
+    // });
+
+    // var hammertime = Hammer(element, {
+    //     drag_min_distance: 20
+    // });
+
+    // var openLeft = Hammer('#main-list').on('swiperight', function(event) {
+
+    //   $.sidr('close', 'sidr2');
+    //   $.sidr('open', 'sidr');
+
+    // });
+
+    // var openRight = Hammer('#main-list').on('swipeleft', function(event) {
+
+    //   $.sidr('close', 'sidr');
+    //   $.sidr('open', 'sidr2');
+
+    // });
+
+    // var closeLeft = Hammer('#sidr').on('swipeleft', function(event) {
+
+    //   $.sidr('close', 'sidr');
+    //   // $.sidr('open', 'sidr');
+
+    // });
+
+    // var closeRight = Hammer('#sidr2').on('swiperight', function(event) {
+
+    //   $.sidr('close', 'sidr2');
+    //   // $.sidr('open', 'sidr2');
+
+    // });
 
   });
 
