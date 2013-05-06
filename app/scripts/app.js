@@ -19,7 +19,8 @@ define(['marionette', 'backbone', 'snap'], function (Marionette, Backbone) {
 
     var snapper = new Snap({
 
-      element: document.getElementById('content')
+      element: document.getElementById('content'),
+      minDragDistance: 20
 
     });
 
