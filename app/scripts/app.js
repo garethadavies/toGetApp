@@ -23,7 +23,7 @@ define(['marionette', 'backbone', 'snap'], function (Marionette, Backbone) {
 
     });
 
-    $('.open-left').on('click', function() {
+    $('#open-left').on('click', function() {
 
       if (snapper.state().state == 'left') {
 
