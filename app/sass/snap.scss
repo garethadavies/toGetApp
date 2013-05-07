@@ -45,40 +45,43 @@ body {
 	right: 0;
 	background: $white; 
 	/*border-bottom: 1px solid #111b32;*/
-	padding: 5px;
+	// padding: 5px;
 	border-bottom: $defaultBorder;
 }
 
 .toolbar a {
 	color: $grayDarker;
-	width: $defaultButtonWidth;
+	// width: $defaultButtonWidth;
+	text-decoration: none;
+	padding: 0 $defaultPadding;
 	height: $defaultButtonHeight;
 	display: inline-block;
 	text-align: center;
 	margin: 0;
-	border: $defaultBorder; 
-	background: $grayLightest;
-	@include border-radius($default-border-radius);
+	border-right: $defaultBorder; 
+	// background: $grayLightest;
+	// @include border-radius($default-border-radius);
 	// padding-top: 1.3rem; 44px - 18px = 26px / 2 = 13px;
 }
 
 .toolbar i {
-	line-height: 4.2rem; 
+	line-height: 4.4rem; 
 }
 
 .toolbar h1 {
 	position: absolute;
-	left: 55px;
+	left: 48px;
 	width: 100%;
-	font-size: 2rem;
-	line-height: 4.8rem;
+	font-size: 1.4rem;
+	line-height: 4.4rem;
 	padding: 0 0 0 $defaultPadding;
 	font-weight: bold;
 }
 
 .toolbar a.right {
-	// border-left: $defaultBorder;
-	margin-left: 5px;
+	border-left: $defaultBorder;
+	border-right: none;
+	// margin-left: 5px;
 }
 
 // .toolbar span {
@@ -118,7 +121,7 @@ body {
 	left: 0;
 	width: 265px;
 	bottom: 0;
-	background: $grayDarker;
+	background: $grayDarkest;
 	color: #eee;
 	overflow: auto;
 	-webkit-transition-property: top, bottom;
@@ -150,12 +153,12 @@ body {
 }
 
 .drawers .unstyled-list li {
-	border-bottom: $borderWidth $borderStyle $grayDark;
+	
 }
 
-// .drawers .unstyled-list a {
-// 	border-left: $borderWidth $borderStyle $grayDark;
-// }
+.drawers .unstyled-list a {
+	border-left: none;
+}
 
 // .drawers .top-bar a.left {
 // 	border-right: $borderWidth $borderStyle $grayDark;
@@ -166,7 +169,11 @@ body {
 // }
 
 .drawers .top-bar {
-	border-bottom: $borderWidth $borderStyle $grayDark;
+	border-bottom: $borderWidth $borderStyle $grayDarker;
+}
+
+.drawers .top-bar a {
+	// border: $borderWidth $borderStyle $grayDark;
 }
 
 // .drawer-list {
@@ -175,18 +182,23 @@ body {
 // }
 
 .drawer-list li {
-	margin: 0 5px 5px 5px;
+	// background: $grayDarker;
+	border-bottom: $borderWidth $borderStyle $grayDarker;
+	margin: 0;
 	padding: 0 0 0 $defaultPadding;
 	// width: 96%;
 	height: $defaultButtonHeight;
 	display: block;
 	line-height: 4.2rem;
-	@include border-radius($default-border-radius);
+	// border: $borderWidth $borderStyle $grayDarker;
+	// @include border-radius($default-border-radius);
 	@include clearfix();
 }
 
+
+
 .drawer-list a {
-	width: 100%;
+	// width: 100%;
 	color: $white;
 	width: $defaultButtonWidth;
 	height: $defaultButtonHeight;
@@ -194,18 +206,19 @@ body {
 	text-align: center;
 	margin: 0;
 	// padding-top: 1.3rem; // 44px - 18px = 26px / 2 = 13px;
-	border-left: $defaultBorder;
+	// border-left: $defaultBorder;
 	float: right;
 }
 
-.drawer-list i {
+.drawers i {
 	line-height: 4.4rem;
 	color: $grayLighter; 
 }
 
-// .drawers a {
-// 	color: white;
-// }
+.drawers a {
+	// background: $grayDarker;
+	color: white;
+}
 
 // .drawers h3 {
 // 	font-size: 36px;
