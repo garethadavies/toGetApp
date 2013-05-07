@@ -23,7 +23,7 @@ body {
   /* =14px */
   font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
-  color: #222222;
+  color: #333333;
 }
 
 /* Headers */
@@ -34,9 +34,4 @@ h1 {
 }
 
 /* Icons */
-/* line 27, ../sass/typography.scss */
-i {
-  font-size: 1.6rem;
-}
-
 /* Links */

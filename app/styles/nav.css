@@ -19,34 +19,25 @@ _mixins.scss
 /* Clearfix */
 /* line 10, ../sass/nav.scss */
 .top-bar {
-  padding: 5px;
+  background: #111111;
+  padding: 0;
   position: relative;
   overflow: hidden;
   *zoom: 1;
 }
 
-/* line 19, ../sass/nav.scss */
+/* line 20, ../sass/nav.scss */
 .top-bar a {
-  color: #222222;
-  width: 44px;
+  padding: 0 1.2rem;
+  text-decoration: none;
   height: 44px;
   display: inline-block;
   text-align: center;
   margin: 0;
-  border: 1px solid #dddddd;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-  border-radius: 5px;
+  border-left: 1px solid #333333;
 }
 
-/* line 46, ../sass/nav.scss */
-.top-bar a.right {
-  margin-left: 5px;
-}
-
-/* line 51, ../sass/nav.scss */
+/* line 54, ../sass/nav.scss */
 .top-bar i {
   line-height: 4.2rem;
 }

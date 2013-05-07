@@ -11,21 +11,24 @@ nav.scss
 	// background: $white;
 	// color: $white;
 	// text-align: center;
-	padding: 5px;
+	background: $grayDarkest;
+	padding: 0;
 	position: relative;
 	@include clearfix();
 }
 
 .top-bar a {
-	color: $grayDarker;
-	width: $defaultButtonWidth;
+	// color: $grayDarker;
+	// width: $defaultButtonWidth;
+	padding: 0 $defaultPadding;
+	text-decoration: none;
 	height: $defaultButtonHeight;
 	display: inline-block;
 	text-align: center;
 	margin: 0;
-	border: $defaultBorder; 
+	border-left: $borderWidth $borderStyle $grayDarker;
 	// background: $grayLightest;
-	@include border-radius($default-border-radius);
+	// @include border-radius($default-border-radius);
 	// padding-top: 1.3rem; // 44px - 18px = 26px / 2 = 13px;
 }
 
@@ -45,7 +48,7 @@ nav.scss
 
 .top-bar a.right {
 	// border-left: $defaultBorder;
-	margin-left: 5px;
+	// margin-left: 5px;
 }
 
 .top-bar i {

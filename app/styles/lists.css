@@ -28,7 +28,7 @@ _mixins.scss
 /* line 17, ../sass/lists.scss */
 .get-list {
   position: relative;
-  top: 60px;
+  top: 50px;
 }
 
 /* line 22, ../sass/lists.scss */
@@ -52,7 +52,7 @@ _mixins.scss
 /* line 35, ../sass/lists.scss */
 .get-list a {
   width: 100%;
-  color: #222222;
+  color: #333333;
   width: 44px;
   height: 44px;
   display: inline-block;
