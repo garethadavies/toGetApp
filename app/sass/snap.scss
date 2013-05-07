@@ -40,6 +40,7 @@ body {
 
 .toolbar {
 	// height: 44px;
+	display: static;
 	top: 0;
 	left: 0;
 	right: 0;
@@ -105,6 +106,14 @@ body {
 	bottom: 0;
 	z-index: 4;
 	-webkit-transform: translate3d(0, 0, 0);
+	-webkit-transition-property: top, bottom;
+	transition-property: top, bottom;
+	-webkit-transition-duration: .2s, .2s;
+	transition-duration: .2s, .2s;
+	-webkit-transition-timing-function: linear, linear;
+	transition-timing-function: linear, linear;
+	-webkit-overflow-scrolling: touch;
+	overflow: auto;
 }
 
 .drawers {
@@ -119,7 +128,7 @@ body {
 .right-drawer {
 	top: 0;
 	left: 0;
-	width: 265px;
+	width: 266px;
 	bottom: 0;
 	background: $grayDarkest;
 	color: #eee;
