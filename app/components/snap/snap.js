@@ -6,7 +6,7 @@
  * http://opensource.org/licenses/MIT
  *
  * Github:  http://github.com/jakiestfu/Snap.js/
- * Version: 1.7.2
+ * Version: 1.7.10
  */
 /*jslint browser: true*/
 /*global define, module, ender*/
@@ -86,6 +86,12 @@
                     }
                 }
             },
+            transitionCallback: function(){
+                return (cache.vendor==='Moz' || cache.vendor=='ms') ? 'transitionend' : cache.vendor+'TransitionEnd';
+            },
+            canTransform: function(){
+                return typeof settings.element.style[cache.vendor+'Transform'] !== 'undefined';
+            },
             deepExtend: function(destination, source) {
                 var property;
                 for (property in source) {
@@ -134,44 +140,91 @@
                         e.returnValue = false;
                     }
                 }
+            },
+            parentUntil: function(el, attr) {
+                while (el.parentNode) {
+                   if (el.getAttribute && el.getAttribute(attr)){
+                        return el;
+                    }
+                    el = el.parentNode;
+                }
+                return null;
             }
         },
         action = {
             translate: {
                 get: {
                     matrix: function(index) {
-                        var matrix = win.getComputedStyle(settings.element)[cache.vendor+'Transform'].match(/\((.*)\)/);
-                        if (matrix) {
-                            matrix = matrix[1].split(',');
-                            return parseInt(matrix[index], 10);
+
+                        if( !utils.canTransform() ){
+                            return parseInt(settings.element.style.left, 10);
+                        } else {
+                            var matrix = win.getComputedStyle(settings.element)[cache.vendor+'Transform'].match(/\((.*)\)/),
+                                ieOffset = 8;
+                            if (matrix) {
+                                matrix = matrix[1].split(',');
+                                if(matrix.length==16){
+                                    index+=ieOffset;
+                                }
+                                return parseInt(matrix[index], 10);
+                            }
+                            return 0;
                         }
-                        return 0;
                     }
                 },
+                easeCallback: function(){
+                    settings.element.style[cache.vendor+'Transition'] = '';
+                    cache.translation = action.translate.get.matrix(4);
+                    cache.easing = false;
+                    clearInterval(cache.animatingInterval);
+
+                    if(cache.easingTo===0){
+                        utils.klass.remove(doc.body, 'snapjs-right');
+                        utils.klass.remove(doc.body, 'snapjs-left');
+                    }
+
+                    utils.dispatchEvent('animated');
+                    utils.events.removeEvent(settings.element, utils.transitionCallback(), action.translate.easeCallback);
+                },
                 easeTo: function(n) {
-                    cache.easing = true;
-                    settings.element.style[cache.vendor+'Transition'] = 'all ' + settings.transitionSpeed + 's ' + settings.easing;
-                    var transitionCallback = cache.vendor==='Moz' ? 'transitionend' : cache.vendor+'TransitionEnd',
-                        animatingInterval = setInterval(function() {
+
+                    if( !utils.canTransform() ){
+                        cache.translation = n;
+                        action.translate.x(n);
+                    } else {
+                        cache.easing = true;
+                        cache.easingTo = n;
+
+                        settings.element.style[cache.vendor+'Transition'] = 'all ' + settings.transitionSpeed + 's ' + settings.easing;
+
+                        cache.animatingInterval = setInterval(function() {
                             utils.dispatchEvent('animating');
                         }, 1);
 
-                    utils.events.addEvent(settings.element, transitionCallback, function() {
-                        settings.element.style[cache.vendor+'Transition'] = '';
-                        cache.translation = action.translate.get.matrix(4);
-                        cache.easing = false;
-                        clearInterval(animatingInterval);
-                        utils.dispatchEvent('animated');
-                    });
-                    action.translate.x(n);
+                        utils.events.addEvent(settings.element, utils.transitionCallback(), action.translate.easeCallback);
+                        action.translate.x(n);
+                    }
+                    
                 },
                 x: function(n) {
                     if( (settings.disable=='left' && n>0) ||
                         (settings.disable=='right' && n<0)
                     ){ return; }
 
-                    var theTranslate = 'translate3d(' + parseInt(n, 10) + 'px, 0,0)';
-                    settings.element.style[cache.vendor+'Transform'] = theTranslate;
+                    n = parseInt(n, 10);
+                    if(isNaN(n)){
+                        n = 0;
+                    }
+
+                    if( utils.canTransform() ){
+                        var theTranslate = 'translate3d(' + n + 'px, 0,0)';
+                        settings.element.style[cache.vendor+'Transform'] = theTranslate;
+                    } else {
+                        settings.element.style.width = (win.innerWidth || doc.documentElement.clientWidth)+'px';
+
+                        settings.element.style.left = n+'px';
+                        settings.element.style.right = '';
+                    }
                 }
             },
             drag: {
@@ -188,13 +241,14 @@
                     utils.events.removeEvent(settings.element, utils.eventType('up'), action.drag.endDrag);
                 },
                 startDrag: function(e) {
-
                     // No drag on ignored elements
-                    var src = e.target ? e.target : e.srcElement;
-                    if (src.dataset && src.dataset.snapIgnore === "true") {
+                    var ignoreParent = utils.parentUntil(e.target ? e.target : e.srcElement, 'data-snap-ignore');
+                    
+                    if (ignoreParent) {
                         utils.dispatchEvent('ignore');
                         return;
                     }
+
                     utils.dispatchEvent('start');
                     settings.element.style[cache.vendor+'Transition'] = '';
                     cache.isDragging = true;
@@ -223,7 +277,7 @@
                     };
                 },
                 dragging: function(e) {
-                    if (cache.isDragging) {
+                    if (cache.isDragging && settings.touchToDrag) {
 
                         var thePageX = utils.page('X', e),
                             thePageY = utils.page('Y', e),
@@ -233,6 +287,11 @@
                             openingLeft = absoluteTranslation > 0,
                             translateTo = whileDragX,
                             diff;
+
+                        // Shown no intent already
+                        if((cache.intentChecked && !cache.hasIntent)){
+                            return;
+                        }
 
                         if(settings.addBodyClasses){
                             if((absoluteTranslation)>0){
@@ -256,7 +315,7 @@
                             cache.intentChecked = true;
                         }
 
-                        if ( 
+                        if (
                             (settings.minDragDistance>=Math.abs(thePageX-cache.startDragX)) && // Has user met minimum drag distance?
                             (cache.hasIntent === false)
                         ) {
@@ -327,6 +386,7 @@
                     if (cache.isDragging) {
                         utils.dispatchEvent('end');
                         var translated = action.translate.get.matrix(4);
+
                         // Tap Close
                         if (cache.dragWatchers.current === 0 && translated !== 0 && settings.tapToClose) {
                             utils.events.prevent(e);
@@ -335,6 +395,7 @@
                             cache.startDragX = 0;
                             return;
                         }
+
                         // Revealing Left
                         if (cache.simpleStates.opening === 'left') {
                             // Halfway, Flicking, or Too Far Out
@@ -376,9 +437,7 @@
             if (opts.element) {
                 utils.deepExtend(settings, opts);
                 cache.vendor = utils.vendor();
-                if(typeof cache.vendor!=='undefined' && settings.touchToDrag){
-                    action.drag.listen();
-                }
+                action.drag.listen();
             }
         };
         /*
@@ -407,8 +466,8 @@
             action.translate.easeTo(0);
         };
         this.expand = function(side){
-            var to = win.innerWidth;
-            
+            var to = win.innerWidth || doc.documentElement.clientWidth;
+
             if(side==='left'){
                 utils.klass.add(doc.body, 'snapjs-expand-left');
                 utils.klass.remove(doc.body, 'snapjs-expand-right');
