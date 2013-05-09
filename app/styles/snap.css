@@ -74,22 +74,19 @@ html, body {
 
 /* line 72, ../sass/snap.scss */
 .toolbar h1 {
-  position: absolute;
-  left: 48px;
-  width: 100%;
   font-size: 1.4rem;
   line-height: 4.4rem;
-  padding: 0 0 0 1.2rem;
+  margin: 0 0 0 6rem;
   font-weight: bold;
 }
 
-/* line 82, ../sass/snap.scss */
+/* line 79, ../sass/snap.scss */
 .toolbar a.right {
   border-left: 1px solid #dddddd;
   border-right: none;
 }
 
-/* line 101, ../sass/snap.scss */
+/* line 98, ../sass/snap.scss */
 #content {
   background: #f9f9f9;
   top: 0;
@@ -105,14 +102,15 @@ html, body {
   -webkit-transition-timing-function: linear, linear;
   transition-timing-function: linear, linear;
   -webkit-overflow-scrolling: touch;
+  padding-bottom: 5px;
 }
 
-/* line 119, ../sass/snap.scss */
+/* line 117, ../sass/snap.scss */
 .scrollable {
   overflow: auto;
 }
 
-/* line 123, ../sass/snap.scss */
+/* line 121, ../sass/snap.scss */
 .drawers {
   background: #333333;
   top: 0;
@@ -121,7 +119,7 @@ html, body {
   bottom: 0;
 }
 
-/* line 132, ../sass/snap.scss */
+/* line 130, ../sass/snap.scss */
 .left-drawer,
 .right-drawer {
   top: 0;
@@ -140,12 +138,12 @@ html, body {
   -webkit-overflow-scrolling: touch;
 }
 
-/* line 149, ../sass/snap.scss */
+/* line 147, ../sass/snap.scss */
 .left-drawer {
   z-index: 3;
 }
 
-/* line 153, ../sass/snap.scss */
+/* line 151, ../sass/snap.scss */
 .right-drawer {
   left: auto;
   right: 0;
@@ -153,7 +151,7 @@ html, body {
 }
 
 /* Drawers */
-/* line 161, ../sass/snap.scss */
+/* line 159, ../sass/snap.scss */
 .drawers h1 {
   font-size: 1.4rem;
   line-height: 4.2rem;
@@ -161,17 +159,17 @@ html, body {
   font-weight: bold;
 }
 
-/* line 172, ../sass/snap.scss */
+/* line 170, ../sass/snap.scss */
 .drawers .unstyled-list a {
   border-left: none;
 }
 
-/* line 184, ../sass/snap.scss */
+/* line 182, ../sass/snap.scss */
 .drawers .top-bar {
   border-bottom: 1px solid #333333;
 }
 
-/* line 197, ../sass/snap.scss */
+/* line 195, ../sass/snap.scss */
 .drawer-list li {
   border-bottom: 1px solid #333333;
   margin: 0;
@@ -183,7 +181,7 @@ html, body {
   *zoom: 1;
 }
 
-/* line 213, ../sass/snap.scss */
+/* line 211, ../sass/snap.scss */
 .drawer-list a {
   color: white;
   width: 44px;
@@ -194,25 +192,25 @@ html, body {
   float: right;
 }
 
-/* line 226, ../sass/snap.scss */
+/* line 224, ../sass/snap.scss */
 .drawers i {
   line-height: 4.4rem;
   color: #dddddd;
 }
 
-/* line 231, ../sass/snap.scss */
+/* line 229, ../sass/snap.scss */
 .drawers a {
   color: white;
 }
 
-/* line 272, ../sass/snap.scss */
+/* line 270, ../sass/snap.scss */
 .snapjs-right .left-drawer {
   left: auto;
   right: 0;
   z-index: 1;
 }
 
-/* line 278, ../sass/snap.scss */
+/* line 276, ../sass/snap.scss */
 #open-left {
   /*background: url(open.png) center center no-repeat;
   display: block;
@@ -220,7 +218,7 @@ html, body {
   height: 44px;*/
 }
 
-/* line 286, ../sass/snap.scss */
+/* line 284, ../sass/snap.scss */
 #no-drag {
   position: absolute;
   top: 50%;
@@ -235,7 +233,7 @@ html, body {
   line-height: 100px;
 }
 
-/* line 300, ../sass/snap.scss */
+/* line 298, ../sass/snap.scss */
 .toggler {
   width: 80%;
   background: rgba(255, 255, 255, 0.5);
@@ -247,7 +245,7 @@ html, body {
   text-align: center;
 }
 
-/* line 311, ../sass/snap.scss */
+/* line 309, ../sass/snap.scss */
 .search {
   padding-bottom: 10px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
@@ -256,7 +254,7 @@ html, body {
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
-/* line 319, ../sass/snap.scss */
+/* line 317, ../sass/snap.scss */
 #search {
   height: 30px;
   width: 87%;
@@ -276,13 +274,13 @@ html, body {
   box-shadow: inset 0 1px 2px -1px rgba(0, 0, 0, 0.5), 0 1px 2px -1px rgba(255, 255, 255, 0.4);
 }
 
-/* line 341, ../sass/snap.scss */
+/* line 339, ../sass/snap.scss */
 #search:focus {
   outline: none;
   border-color: #151515;
 }
 
-/* line 347, ../sass/snap.scss */
+/* line 345, ../sass/snap.scss */
 .left-drawer,
 .right-drawer {
   -webkit-transition: width 0.3s ease;
@@ -291,7 +289,7 @@ html, body {
   transition: width 0.3s ease;
 }
 
-/* line 354, ../sass/snap.scss */
+/* line 352, ../sass/snap.scss */
 .drawer-inner {
   -webkit-transition: opacity 0.3s ease;
   -moz-transition: opacity 0.3s ease;
@@ -299,25 +297,25 @@ html, body {
   transition: opacity 0.3s ease;
 }
 
-/* line 362, ../sass/snap.scss */
+/* line 360, ../sass/snap.scss */
 .snapjs-expand-left .drawer-inner,
 .snapjs-expand-right .drawer-inner {
   opacity: 0;
 }
 
-/* line 367, ../sass/snap.scss */
+/* line 365, ../sass/snap.scss */
 .snapjs-expand-left .left-drawer,
 .snapjs-expand-right .right-drawer {
   width: 100%;
 }
 
-/* line 371, ../sass/snap.scss */
+/* line 369, ../sass/snap.scss */
 .opt {
   padding: 20px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-/* line 376, ../sass/snap.scss */
+/* line 374, ../sass/snap.scss */
 .opt p {
   font-weight: bold;
   margin-top: 0;

@@ -70,12 +70,9 @@ body {
 }
 
 .toolbar h1 {
-	position: absolute;
-	left: 48px;
-	width: 100%;
 	font-size: 1.4rem;
 	line-height: 4.4rem;
-	padding: 0 0 0 $defaultPadding;
+	margin: 0 0 0 $defaultMargin * 5;
 	font-weight: bold;
 }
 
@@ -114,6 +111,7 @@ body {
 	transition-timing-function: linear, linear;
 	-webkit-overflow-scrolling: touch;
 	// overflow: auto;
+	padding-bottom: 5px;
 }
 
 .scrollable {
