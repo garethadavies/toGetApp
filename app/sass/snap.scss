@@ -6,11 +6,12 @@ demo.scss
 @import "_variables";
 @import "_mixins";
 @import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
 
 
 html, body {
 	height: 100%;
-	overflow: hidden;
+	overflow: hidden; 
 }
 
 body {
@@ -31,6 +32,10 @@ body {
 	position: absolute;
 }
 
+.fixed {
+	position: fixed;
+}
+
 /*.left {
 	float: left;
 }
@@ -40,7 +45,8 @@ body {
 
 .toolbar {
 	// height: 44px;
-	display: static;
+	// display: static;
+	z-index: 5;
 	top: 0;
 	left: 0;
 	right: 0;
@@ -48,6 +54,7 @@ body {
 	/*border-bottom: 1px solid #111b32;*/
 	// padding: 5px;
 	border-bottom: $defaultBorder;
+	@include box-shadow($grayLighter 1px 1px 3px);
 }
 
 .toolbar a {
@@ -77,8 +84,8 @@ body {
 }
 
 .toolbar a.right {
-	border-left: $defaultBorder;
-	border-right: none;
+	// border-left: $defaultBorder;
+	border: none;
 	// margin-left: 5px;
 }
 
@@ -111,7 +118,7 @@ body {
 	transition-timing-function: linear, linear;
 	-webkit-overflow-scrolling: touch;
 	// overflow: auto;
-	padding-bottom: 5px;
+	padding: 45px 0 5px 0;
 }
 
 .scrollable {
@@ -132,9 +139,9 @@ body {
 	left: 0;
 	width: 266px;
 	bottom: 0;
-	background: $grayDarkest;
 	color: #eee;
 	overflow: auto;
+	background: $grayDarkest;
 	-webkit-transition-property: top, bottom;
 	transition-property: top, bottom;
 	-webkit-transition-duration: .2s, .2s;
@@ -180,7 +187,7 @@ body {
 // }
 
 .drawers .top-bar {
-	border-bottom: $borderWidth $borderStyle $grayDarker;
+	border-bottom: $borderWidth $borderStyle $grayDark;
 }
 
 .drawers .top-bar a {
@@ -192,34 +199,39 @@ body {
 // 	top: 60px;
 // }
 
-.drawer-list li {
-	// background: $grayDarker;
-	border-bottom: $borderWidth $borderStyle $grayDarker;
-	margin: 0;
-	padding: 0 0 0 $defaultPadding;
-	// width: 96%;
-	height: $defaultButtonHeight;
-	display: block;
-	line-height: 4.2rem;
-	// border: $borderWidth $borderStyle $grayDarker;
-	// @include border-radius($default-border-radius);
-	@include clearfix();
-}
+// .drawer-list li:first-child {
+// 	// background: $grayDarker;
+// 	border-top: $borderWidth $borderStyle $grayDark;
+// }
+
+// .drawer-list li {
+// 	// background: $grayDarker;
+// 	border-bottom: $borderWidth $borderStyle $grayDark;
+// 	margin: 0;
+// 	padding: 0 0 0 $defaultPadding;
+// 	// width: 96%;
+// 	height: $defaultButtonHeight;
+// 	display: block;
+// 	line-height: 4.2rem;
+// 	// border: $borderWidth $borderStyle $grayDarker;
+// 	// @include border-radius($default-border-radius);
+// 	@include clearfix();
+// }
 
 
 
-.drawer-list a {
-	// width: 100%;
-	color: $white;
-	width: $defaultButtonWidth;
-	height: $defaultButtonHeight;
-	display: inline-block;
-	text-align: center;
-	margin: 0;
-	// padding-top: 1.3rem; // 44px - 18px = 26px / 2 = 13px;
-	// border-left: $defaultBorder;
-	float: right;
-}
+// .drawer-list a {
+// 	// width: 100%;
+// 	color: $white;
+// 	width: $defaultButtonWidth;
+// 	height: $defaultButtonHeight;
+// 	display: inline-block;
+// 	text-align: center;
+// 	margin: 0;
+// 	// padding-top: 1.3rem; // 44px - 18px = 26px / 2 = 13px;
+// 	// border-left: $defaultBorder;
+// 	float: right;
+// }
 
 .drawers i {
 	line-height: 4.4rem;

@@ -1,0 +1,55 @@
+/* 
+forms.scss
+*/
+/* Imports */
+/*
+_variables.scss
+*/
+/* Fonts */
+/* Colours */
+/* Borders */
+/* Padding */
+/* Margins */
+/* Dimensions */
+/* 
+_mixins.scss
+*/
+/* Imports */
+/* Unstyled links */
+/* Clearfix */
+/* Wrapper */
+/* line 11, ../sass/forms.scss */
+.input-wrapper {
+  margin: 5px;
+}
+
+/* Inputs */
+/* line 19, ../sass/forms.scss */
+input[type="text"],
+input[type="email"],
+input[type="search"],
+input[type="password"] {
+  width: 100%;
+  font-size: 100%;
+  border: 1px solid #dddddd;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  background: white;
+  box-shadow: none;
+  padding: 1.2rem;
+  -webkit-appearance: caret;
+  -moz-appearance: caret;
+  /* mobile firefox too! */
+}
+
+/* Drawers */
+/* line 36, ../sass/forms.scss */
+.drawers input[type="text"],
+.drawers input[type="email"],
+.drawers input[type="search"],
+.drawers input[type="password"] {
+  border: 1px solid #333333;
+}

@@ -14,10 +14,10 @@ lists.scss
 	list-style: none;
 }
 
-.get-list {
-	position: relative;
-	top: 50px;
-}
+// .get-list {
+// 	position: relative;
+// 	top: 50px;
+// }
 
 .get-list li {
 	background: $white;
@@ -48,4 +48,18 @@ lists.scss
 .get-list i {
 	line-height: 4.4rem;
 	color: $grayLighter; 
+}
+
+/* Drawers */
+.drawers {
+	.get-list li {
+		background: $grayDarkest;
+		border: $borderWidth $borderStyle $grayDark;
+	}
+}
+
+.drawers {
+	.get-list a {
+		color: $white;
+	}
 }

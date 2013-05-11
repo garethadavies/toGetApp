@@ -1,0 +1,40 @@
+/* 
+forms.scss
+*/
+
+/* Imports */
+@import "_variables";
+@import "_mixins";
+@import "compass/css3/border-radius";
+
+/* Wrapper */
+.input-wrapper {
+	margin: 5px;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="email"],
+input[type="search"],
+input[type="password"] {
+	width: 100%;
+	font-size: 100%;
+	border: $defaultBorder;
+	@include border-radius($default-border-radius);
+	background: $white;
+	box-shadow: none;
+	padding: $defaultPadding;
+	-webkit-appearance: caret;
+	-moz-appearance: caret; /* mobile firefox too! */
+}
+
+/* Drawers */
+.drawers {
+	input[type="text"],
+	input[type="email"],
+	input[type="search"],
+	input[type="password"] {
+		// background: $grayDarkest;
+		border: $borderWidth $borderStyle $grayDarker;
+	}	
+}
