@@ -18,29 +18,51 @@ _mixins.scss
 /* Unstyled links */
 /* Clearfix */
 /* line 11, ../sass/nav.scss */
-.top-bar {
+.toolbar {
   z-index: 5;
+  top: 0;
+  left: 0;
+  right: 0;
   background: white;
   padding: 5px 0;
-  position: relative;
-  overflow: hidden;
-  *zoom: 1;
+  border-bottom: 1px solid #dddddd;
   -webkit-box-shadow: #dddddd 1px 1px 3px;
   -moz-box-shadow: #dddddd 1px 1px 3px;
   box-shadow: #dddddd 1px 1px 3px;
+  text-align: center;
+  overflow: hidden;
+  *zoom: 1;
 }
 
-/* line 23, ../sass/nav.scss */
-.top-bar a {
-  padding: 0 1.2rem;
+/* line 24, ../sass/nav.scss */
+.toolbar a {
+  color: #333333;
   text-decoration: none;
+  padding: 0 1.2rem;
   height: 44px;
   display: inline-block;
   text-align: center;
   margin: 0;
 }
 
-/* line 57, ../sass/nav.scss */
-.top-bar i {
-  line-height: 4.2rem;
+/* line 34, ../sass/nav.scss */
+.toolbar i {
+  line-height: 4.4rem;
+}
+
+/* line 38, ../sass/nav.scss */
+.toolbar h1 {
+  font-size: 1.6rem;
+  line-height: 4.4rem;
+  font-weight: bold;
+}
+
+/* line 44, ../sass/nav.scss */
+.toolbar a.left {
+  border-right: 1px solid #dddddd;
+}
+
+/* line 48, ../sass/nav.scss */
+.toolbar a.right {
+  border-left: 1px solid #dddddd;
 }

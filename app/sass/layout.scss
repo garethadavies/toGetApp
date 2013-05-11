@@ -5,6 +5,8 @@ layout.scss
 /* Imports */
 @import "compass/css3/box-sizing";
 @import "_variables";
+@import "compass/css3/box-shadow";
+
 
 /* Box sizing */
 * {
@@ -15,15 +17,101 @@ layout.scss
 html,
 body {
 	height: 100%;
+	overflow: hidden; 
 }
 
 html {
 	background: $grayLightest; 
 }
 
-/* Top bar */
-.top-bar {
-	width: 100%;
-	// height: 44px;
-	border-bottom: $defaultBorder;
+/* Positioning */
+.tall {
+	height: 100%;
+}
+
+.relative {
+	position: relative;
+}
+
+.absolute {
+	position: absolute;
+}
+
+.fixed {
+	position: fixed;
+}
+
+/* Content area */
+.content-wrapper {
+	background: $grayLightest;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 4;
+	-webkit-transform: translate3d(0, 0, 0);
+	-webkit-transition-property: top, bottom;
+	transition-property: top, bottom;
+	-webkit-transition-duration: .2s, .2s;
+	transition-duration: .2s, .2s;
+	-webkit-transition-timing-function: linear, linear;
+	transition-timing-function: linear, linear;
+	-webkit-overflow-scrolling: touch;
+	padding: 55px 0 5px 0;
+	@include box-shadow($grayLight 0 0 8px);
+}
+
+.scrollable {
+	overflow: auto;
+}
+
+/* Drawers */
+.left-drawer-adjust {
+	padding-right: 3px;
+}
+
+.drawers {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: $grayLightest;
+}
+
+.left-drawer,
+.right-drawer {
+	top: 0;
+	left: 0;
+	width: 266px;
+	bottom: 0;
+	overflow: auto;
+	background: $grayLightest;
+	-webkit-transition-property: top, bottom;
+	transition-property: top, bottom;
+	-webkit-transition-duration: .2s, .2s;
+	transition-duration: .2s, .2s;
+	-webkit-transition-timing-function: linear, linear;
+	transition-timing-function: linear, linear;
+	-webkit-overflow-scrolling: touch;
+}
+
+.left-drawer {
+	z-index: 3;
+}
+
+.right-drawer {
+	left: auto;
+	right: 0;
+	z-index: 2;
+}
+
+/* Drawers */
+.drawers h1 {
+	padding: 0 0 0 $defaultPadding*1.5;
+}
+
+.snapjs-right .left-drawer {
+	left: auto;
+	right: 0;
+	z-index: 1;
 }

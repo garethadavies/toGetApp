@@ -12,7 +12,7 @@ _variables.scss
 /* Margins */
 /* Dimensions */
 /* Box sizing */
-/* line 10, ../sass/layout.scss */
+/* line 12, ../sass/layout.scss */
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -20,20 +20,121 @@ _variables.scss
 }
 
 /* HTML & Body */
-/* line 16, ../sass/layout.scss */
+/* line 18, ../sass/layout.scss */
 html,
 body {
   height: 100%;
+  overflow: hidden;
 }
 
-/* line 20, ../sass/layout.scss */
+/* line 23, ../sass/layout.scss */
 html {
   background: #f9f9f9;
 }
 
-/* Top bar */
-/* line 25, ../sass/layout.scss */
-.top-bar {
-  width: 100%;
-  border-bottom: 1px solid #dddddd;
+/* Positioning */
+/* line 28, ../sass/layout.scss */
+.tall {
+  height: 100%;
+}
+
+/* line 32, ../sass/layout.scss */
+.relative {
+  position: relative;
+}
+
+/* line 36, ../sass/layout.scss */
+.absolute {
+  position: absolute;
+}
+
+/* line 40, ../sass/layout.scss */
+.fixed {
+  position: fixed;
+}
+
+/* Content area */
+/* line 45, ../sass/layout.scss */
+.content-wrapper {
+  background: #f9f9f9;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 4;
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-transition-property: top, bottom;
+  transition-property: top, bottom;
+  -webkit-transition-duration: .2s, .2s;
+  transition-duration: .2s, .2s;
+  -webkit-transition-timing-function: linear, linear;
+  transition-timing-function: linear, linear;
+  -webkit-overflow-scrolling: touch;
+  padding: 55px 0 5px 0;
+  -webkit-box-shadow: #999999 0 0 8px;
+  -moz-box-shadow: #999999 0 0 8px;
+  box-shadow: #999999 0 0 8px;
+}
+
+/* line 64, ../sass/layout.scss */
+.scrollable {
+  overflow: auto;
+}
+
+/* Drawers */
+/* line 69, ../sass/layout.scss */
+.left-drawer-adjust {
+  padding-right: 3px;
+}
+
+/* line 73, ../sass/layout.scss */
+.drawers {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #f9f9f9;
+}
+
+/* line 82, ../sass/layout.scss */
+.left-drawer,
+.right-drawer {
+  top: 0;
+  left: 0;
+  width: 266px;
+  bottom: 0;
+  overflow: auto;
+  background: #f9f9f9;
+  -webkit-transition-property: top, bottom;
+  transition-property: top, bottom;
+  -webkit-transition-duration: .2s, .2s;
+  transition-duration: .2s, .2s;
+  -webkit-transition-timing-function: linear, linear;
+  transition-timing-function: linear, linear;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* line 98, ../sass/layout.scss */
+.left-drawer {
+  z-index: 3;
+}
+
+/* line 102, ../sass/layout.scss */
+.right-drawer {
+  left: auto;
+  right: 0;
+  z-index: 2;
+}
+
+/* Drawers */
+/* line 109, ../sass/layout.scss */
+.drawers h1 {
+  padding: 0 0 0 1.8rem;
+}
+
+/* line 113, ../sass/layout.scss */
+.snapjs-right .left-drawer {
+  left: auto;
+  right: 0;
+  z-index: 1;
 }

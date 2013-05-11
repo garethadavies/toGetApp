@@ -25,7 +25,7 @@ _mixins.scss
   list-style: none;
 }
 
-/* line 22, ../sass/lists.scss */
+/* line 17, ../sass/lists.scss */
 .get-list li {
   background: white;
   margin: 0 5px 5px 5px;
@@ -44,7 +44,7 @@ _mixins.scss
   *zoom: 1;
 }
 
-/* line 36, ../sass/lists.scss */
+/* line 30, ../sass/lists.scss */
 .get-list a {
   width: 100%;
   color: #333333;
@@ -57,10 +57,8 @@ _mixins.scss
   float: right;
 }
 
-/* line 49, ../sass/lists.scss */
+/* line 42, ../sass/lists.scss */
 .get-list i {
   line-height: 4.4rem;
   color: #dddddd;
 }
-
-/* Drawers */

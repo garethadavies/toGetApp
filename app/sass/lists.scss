@@ -14,16 +14,10 @@ lists.scss
 	list-style: none;
 }
 
-// .get-list {
-// 	position: relative;
-// 	top: 50px;
-// }
-
 .get-list li {
 	background: $white;
 	margin: 0 5px 5px 5px;
 	padding: 0 0 0 $defaultPadding;
-	// width: 96%;
 	height: $defaultButtonHeight;
 	display: block;
 	line-height: 4.2rem;
@@ -41,7 +35,6 @@ lists.scss
 	display: inline-block;
 	text-align: center;
 	margin: 0;
-	// padding-top: 1.3rem; // 44px - 18px = 26px / 2 = 13px;
 	border-left: $defaultBorder;
 	float: right;
 }
@@ -50,17 +43,3 @@ lists.scss
 	line-height: 4.4rem;
 	color: $grayLighter; 
 }
-
-/* Drawers */
-// .drawers {
-// 	.get-list li {
-// 		background: $grayDarkest;
-// 		border: $borderWidth $borderStyle $grayDark;
-// 	}
-// }
-
-// .drawers {
-// 	.get-list a {
-// 		color: $white;
-// 	}
-// }

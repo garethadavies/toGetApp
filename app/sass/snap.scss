@@ -9,32 +9,32 @@ demo.scss
 @import "compass/css3/box-shadow";
 
 
-html, body {
-	height: 100%;
-	overflow: hidden; 
-}
+// html, body {
+// 	height: 100%;
+// 	overflow: hidden; 
+// }
 
-body {
-	// margin: 0;
-	// padding: 0;
-	// font-family: sans-serif;
-}
+// body {
+// 	// margin: 0;
+// 	// padding: 0;
+// 	// font-family: sans-serif;
+// }
 
-.tall {
-	height: 100%;
-}
+// .tall {
+// 	height: 100%;
+// }
 
-.relative {
-	position: relative;
-}
+// .relative {
+// 	position: relative;
+// }
 
-.absolute {
-	position: absolute;
-}
+// .absolute {
+// 	position: absolute;
+// }
 
-.fixed {
-	position: fixed;
-}
+// .fixed {
+// 	position: fixed;
+// }
 
 /*.left {
 	float: left;
@@ -43,136 +43,135 @@ body {
 	float: right;
 }*/
 
-.toolbar {
-	// height: 44px;
-	// display: static;
-	z-index: 5;
-	top: 0;
-	left: 0;
-	right: 0;
-	background: $white; 
-	/*border-bottom: 1px solid #111b32;*/
-	padding: 5px 0;
-	border-bottom: $defaultBorder;
-	@include box-shadow($grayLighter 1px 1px 3px);
-	text-align: center;
-	@include clearfix();
-}
+// .toolbar {
+// 	// height: 44px;
+// 	// display: static;
+// 	z-index: 5;
+// 	top: 0;
+// 	left: 0;
+// 	right: 0;
+// 	background: $white; 
+// 	/*border-bottom: 1px solid #111b32;*/
+// 	padding: 5px 0;
+// 	border-bottom: $defaultBorder;
+// 	@include box-shadow($grayLighter 1px 1px 3px);
+// 	text-align: center;
+// 	@include clearfix();
+// }
 
-.toolbar a {
-	color: $grayDarker;
-	// width: $defaultButtonWidth;
-	text-decoration: none;
-	padding: 0 $defaultPadding;
-	height: $defaultButtonHeight;
-	display: inline-block;
-	text-align: center;
-	margin: 0;
-	// border-right: $defaultBorder; 
-	// background: $grayLightest;
-	// @include border-radius($default-border-radius);
-	// padding-top: 1.3rem; 44px - 18px = 26px / 2 = 13px;
-}
+// .toolbar a {
+// 	color: $grayDarker;
+// 	// width: $defaultButtonWidth;
+// 	text-decoration: none;
+// 	padding: 0 $defaultPadding;
+// 	height: $defaultButtonHeight;
+// 	display: inline-block;
+// 	text-align: center;
+// 	margin: 0;
+// 	// border-right: $defaultBorder; 
+// 	// background: $grayLightest;
+// 	// @include border-radius($default-border-radius);
+// 	// padding-top: 1.3rem; 44px - 18px = 26px / 2 = 13px;
+// }
 
-.toolbar i {
-	line-height: 4.4rem; 
-}
+// .toolbar i {
+// 	line-height: 4.4rem; 
+// }
 
-.toolbar h1 {
-	font-size: 1.6rem;
-	line-height: 4.4rem;
-	// margin: 0 0 0 $defaultMargin * 5.2;
-	font-weight: bold;
-}
+// .toolbar h1 {
+// 	font-size: 1.6rem;
+// 	line-height: 4.4rem;
+// 	// margin: 0 0 0 $defaultMargin * 5.2;
+// 	font-weight: bold;
+// }
 
-.toolbar a.left {
-	border-right: $defaultBorder;
-	// border: none;
-	// margin-left: 5px;
-}
+// .toolbar a.left {
+// 	border-right: $defaultBorder;
+// 	// border: none;
+// 	// margin-left: 5px;
+// }
 
-.left-drawer-adjust {
-	padding-right: 3px;
-}
+// .left-drawer-adjust {
+// 	padding-right: 3px;
+// }
 
-.toolbar a.right {
-	border-left: $defaultBorder;
-	// border: none;
-	// margin-left: 5px;
-}
+// .toolbar a.right {
+// 	border-left: $defaultBorder;
+// 	// border: none;
+// 	// margin-left: 5px;
+// }
 
-.content-wrapper {
-	background: $grayLightest;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	z-index: 4;
-	-webkit-transform: translate3d(0, 0, 0);
-	-webkit-transition-property: top, bottom;
-	transition-property: top, bottom;
-	-webkit-transition-duration: .2s, .2s;
-	transition-duration: .2s, .2s;
-	-webkit-transition-timing-function: linear, linear;
-	transition-timing-function: linear, linear;
-	-webkit-overflow-scrolling: touch;
-	// overflow: auto;
-	padding: 55px 0 5px 0;
-	@include box-shadow($grayLight 0 0 8px);
+// .content-wrapper {
+// 	background: $grayLightest;
+// 	top: 0;
+// 	left: 0;
+// 	right: 0;
+// 	bottom: 0;
+// 	z-index: 4;
+// 	-webkit-transform: translate3d(0, 0, 0);
+// 	-webkit-transition-property: top, bottom;
+// 	transition-property: top, bottom;
+// 	-webkit-transition-duration: .2s, .2s;
+// 	transition-duration: .2s, .2s;
+// 	-webkit-transition-timing-function: linear, linear;
+// 	transition-timing-function: linear, linear;
+// 	-webkit-overflow-scrolling: touch;
+// 	// overflow: auto;
+// 	padding: 55px 0 5px 0;
+// 	@include box-shadow($grayLight 0 0 8px);
+// }
 
-}
+// .scrollable {
+// 	overflow: auto;
+// }
 
-.scrollable {
-	overflow: auto;
-}
+// .drawers {
+// 	top: 0;
+// 	left: 0;
+// 	right: 0;
+// 	bottom: 0;
+// 	background: $grayLightest;
+// }
 
-.drawers {
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background: $grayLightest;
-}
+// .left-drawer,
+// .right-drawer {
+// 	top: 0;
+// 	left: 0;
+// 	width: 266px;
+// 	bottom: 0;
+// 	// color: #eee;
+// 	overflow: auto;
+// 	background: $grayLightest;
+// 	-webkit-transition-property: top, bottom;
+// 	transition-property: top, bottom;
+// 	-webkit-transition-duration: .2s, .2s;
+// 	transition-duration: .2s, .2s;
+// 	-webkit-transition-timing-function: linear, linear;
+// 	transition-timing-function: linear, linear;
+// 	-webkit-overflow-scrolling: touch;
+// }
 
-.left-drawer,
-.right-drawer {
-	top: 0;
-	left: 0;
-	width: 266px;
-	bottom: 0;
-	// color: #eee;
-	overflow: auto;
-	background: $grayLightest;
-	-webkit-transition-property: top, bottom;
-	transition-property: top, bottom;
-	-webkit-transition-duration: .2s, .2s;
-	transition-duration: .2s, .2s;
-	-webkit-transition-timing-function: linear, linear;
-	transition-timing-function: linear, linear;
-	-webkit-overflow-scrolling: touch;
-}
+// .left-drawer {
+// 	z-index: 3;
+// }
 
-.left-drawer {
-	z-index: 3;
-}
+// .right-drawer {
+// 	left: auto;
+// 	right: 0;
+// 	z-index: 2;
+// }
 
-.right-drawer {
-	left: auto;
-	right: 0;
-	z-index: 2;
-}
+// /* Drawers */
 
-/* Drawers */
+// .drawers h1 {
+// 	// font-size: $baseFontSize;
+// 	// line-height: 4.2rem;
+// 	padding: 0 0 0 $defaultPadding*1.5;
+// 	// font-weight: bold;
+// }
 
-.drawers h1 {
-	// font-size: $baseFontSize;
-	// line-height: 4.2rem;
-	padding: 0 0 0 $defaultPadding*1.5;
-	// font-weight: bold;
-}
-
-.snapjs-right .left-drawer {
-	left: auto;
-	right: 0;
-	z-index: 1;
-}
+// .snapjs-right .left-drawer {
+// 	left: auto;
+// 	right: 0;
+// 	z-index: 1;
+// }
