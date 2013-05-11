@@ -1,185 +1,127 @@
 {
-  "name": "togetapp-v1.0",
+  "name": "togetapp-v10",
+  "css_prefix_text": "icon-",
+  "css_use_suffix": false,
   "glyphs": [
     {
-      "search": [
-        "plus"
-      ],
-      "code": 43,
-      "uid": "dbd39eb5a1d67beb54cfcb535e840e0f",
-      "file": "plus",
-      "css": "plus",
-      "orig_css": "plus",
-      "orig_code": 43,
-      "src": "iconic",
-      "from": 43
+      "uid": "bc64550dd022ce21604f97309b346cea",
+      "css": "cog-1",
+      "code": 59392,
+      "src": "entypo"
     },
     {
-      "search": [
-        "settings",
-        "cog",
-        "gear",
-        "params"
-      ],
-      "code": 9881,
-      "from": 9881,
-      "uid": "e99461abfef3923546da8d745372c995",
-      "css": "cog",
-      "orig_css": "cog",
-      "orig_code": 9881,
+      "uid": "413717f5ea649e8d8b93938be277264a",
+      "css": "calendar",
+      "code": 128197,
+      "src": "entypo"
+    },
+    {
+      "uid": "0a3192de65a73ca1501b073ad601f87d",
+      "css": "arrow-combo",
+      "code": 59215,
+      "src": "entypo"
+    },
+    {
+      "uid": "8704cd847a47b64265b8bb110c8b4d62",
+      "css": "down-open",
+      "code": 59228,
+      "src": "entypo"
+    },
+    {
+      "uid": "c311c48d79488965b0fab7f9cd12b6b5",
+      "css": "left-open",
+      "code": 59229,
+      "src": "entypo"
+    },
+    {
+      "uid": "749e7d90a9182938180f1d2d8c33584e",
+      "css": "right-open",
+      "code": 59230,
+      "src": "entypo"
+    },
+    {
+      "uid": "9c7ff134960bb5a82404e4aeaab366d9",
+      "css": "up-open",
+      "code": 59231,
+      "src": "entypo"
+    },
+    {
+      "uid": "3bd18d47a12b8709e9f4fe9ead4f7518",
+      "css": "arrows-ccw",
+      "code": 128260,
+      "src": "entypo"
+    },
+    {
+      "uid": "d2c6b59d9a239140cb76be0627480855",
+      "css": "dot",
+      "code": 59275,
+      "src": "entypo"
+    },
+    {
+      "uid": "13b11ab72c6ae9c97ee12428e17f3a4e",
+      "css": "dot-2",
+      "code": 59276,
+      "src": "entypo"
+    },
+    {
+      "uid": "d10920db2e79c997c5e783279291970c",
+      "css": "dot-3",
+      "code": 59277,
+      "src": "entypo"
+    },
+    {
+      "uid": "559647a6f430b3aeadbecd67194451dd",
+      "css": "menu",
+      "code": 61641,
       "src": "fontawesome"
     },
     {
-      "search": [
-        "pencil",
-        "write",
-        "reply",
-        "edit"
-      ],
-      "code": 9997,
-      "from": 9997,
+      "uid": "25a81737628d1e654a30ad412d7d6dd7",
+      "css": "align-justify",
+      "code": 59265,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "b90d80c250a9bbdd6cd3fe00e6351710",
+      "css": "ok",
+      "code": 10003,
+      "src": "iconic"
+    },
+    {
+      "uid": "11e664deed5b2587456a4f9c01d720b6",
+      "css": "cancel",
+      "code": 10005,
+      "src": "iconic"
+    },
+    {
+      "uid": "dbd39eb5a1d67beb54cfcb535e840e0f",
+      "css": "plus",
+      "code": 43,
+      "src": "iconic"
+    },
+    {
       "uid": "jqzwo6i8oicjbn049sh2856d8anrqoli",
       "css": "edit",
-      "orig_css": "edit",
-      "orig_code": 9997,
+      "code": 9997,
       "src": "typicons"
     },
     {
-      "search": [
-        "ok",
-        true,
-        "check",
-        "mark"
-      ],
-      "code": 10003,
-      "uid": "b90d80c250a9bbdd6cd3fe00e6351710",
-      "file": "check",
-      "css": "ok",
-      "orig_css": "ok",
-      "orig_code": 10003,
-      "src": "iconic",
-      "from": 10003
+      "uid": "3v2lgx3os8ub377alyqm8mn2o7r4zywg",
+      "css": "th",
+      "code": 9871,
+      "src": "modernpics"
     },
     {
-      "search": [
-        "close",
-        "cancel",
-        "reject"
-      ],
-      "code": 10005,
-      "uid": "11e664deed5b2587456a4f9c01d720b6",
-      "file": "x",
-      "css": "cancel",
-      "orig_css": "cancel",
-      "orig_code": 10005,
-      "src": "iconic",
-      "from": 10005
+      "uid": "v4mhug5rzlh2qzlo09kfx03e6e2alqql",
+      "css": "cw",
+      "code": 10227,
+      "src": "modernpics"
     },
     {
-      "search": [
-        "arrow",
-        "dropdown",
-        "combobox"
-      ],
-      "code": 59215,
-      "uid": "0a3192de65a73ca1501b073ad601f87d",
-      "css": "arrow-combo",
-      "orig_css": "arrow-combo",
-      "orig_code": 59215,
-      "src": "entypo",
-      "from": 59215
-    },
-    {
-      "search": [
-        "arrow",
-        "down"
-      ],
-      "code": 59228,
-      "uid": "8704cd847a47b64265b8bb110c8b4d62",
-      "css": "down-open",
-      "orig_css": "down-open",
-      "orig_code": 59228,
-      "src": "entypo",
-      "from": 59228
-    },
-    {
-      "search": [
-        "arrow",
-        "left"
-      ],
-      "code": 59229,
-      "uid": "c311c48d79488965b0fab7f9cd12b6b5",
-      "css": "left-open",
-      "orig_css": "left-open",
-      "orig_code": 59229,
-      "src": "entypo",
-      "from": 59229
-    },
-    {
-      "search": [
-        "arrow",
-        "right"
-      ],
-      "code": 59230,
-      "uid": "749e7d90a9182938180f1d2d8c33584e",
-      "css": "right-open",
-      "orig_css": "right-open",
-      "orig_code": 59230,
-      "src": "entypo",
-      "from": 59230
-    },
-    {
-      "search": [
-        "arrow",
-        "up"
-      ],
-      "code": 59231,
-      "uid": "9c7ff134960bb5a82404e4aeaab366d9",
-      "css": "up-open",
-      "orig_css": "up-open",
-      "orig_code": 59231,
-      "src": "entypo",
-      "from": 59231
-    },
-    {
-      "search": [
-        "menu"
-      ],
-      "code": 61641,
-      "uid": "559647a6f430b3aeadbecd67194451dd",
-      "css": "menu",
-      "orig_css": "menu",
-      "orig_code": 61641,
-      "src": "fontawesome",
-      "from": 61641
-    },
-    {
-      "search": [
-        "calendar",
-        "date"
-      ],
-      "code": 128197,
-      "uid": "413717f5ea649e8d8b93938be277264a",
-      "css": "calendar",
-      "orig_css": "calendar",
-      "orig_code": 128197,
-      "src": "entypo",
-      "from": 128197
-    },
-    {
-      "search": [
-        "circle",
-        "sync",
-        "reload",
-        "refresh"
-      ],
-      "code": 128260,
-      "uid": "3bd18d47a12b8709e9f4fe9ead4f7518",
-      "css": "arrows-ccw",
-      "orig_css": "arrows-ccw",
-      "orig_code": 128260,
-      "src": "entypo",
-      "from": 128260
+      "uid": "6083c8aa5e3345476a24a28ac1afaa61",
+      "css": "cog",
+      "code": 57609,
+      "src": "elusive"
     }
   ]
 }

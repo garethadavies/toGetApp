@@ -34,6 +34,7 @@ _mixins.scss
   display: block;
   line-height: 4.2rem;
   border: 1px solid #dddddd;
+  cursor: pointer;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
@@ -43,7 +44,7 @@ _mixins.scss
   *zoom: 1;
 }
 
-/* line 35, ../sass/lists.scss */
+/* line 36, ../sass/lists.scss */
 .get-list a {
   width: 100%;
   color: #333333;
@@ -56,7 +57,7 @@ _mixins.scss
   float: right;
 }
 
-/* line 48, ../sass/lists.scss */
+/* line 49, ../sass/lists.scss */
 .get-list i {
   line-height: 4.4rem;
   color: #dddddd;

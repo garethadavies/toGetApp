@@ -55,6 +55,8 @@ body {
 	padding: 5px 0;
 	border-bottom: $defaultBorder;
 	@include box-shadow($grayLighter 1px 1px 3px);
+	text-align: center;
+	@include clearfix();
 }
 
 .toolbar a {
@@ -66,7 +68,7 @@ body {
 	display: inline-block;
 	text-align: center;
 	margin: 0;
-	border-right: $defaultBorder; 
+	// border-right: $defaultBorder; 
 	// background: $grayLightest;
 	// @include border-radius($default-border-radius);
 	// padding-top: 1.3rem; 44px - 18px = 26px / 2 = 13px;
@@ -77,32 +79,29 @@ body {
 }
 
 .toolbar h1 {
-	font-size: 1.4rem;
+	font-size: 1.6rem;
 	line-height: 4.4rem;
-	margin: 0 0 0 $defaultMargin * 5.2;
+	// margin: 0 0 0 $defaultMargin * 5.2;
 	font-weight: bold;
 }
 
-.toolbar a.right {
-	// border-left: $defaultBorder;
-	border: none;
+.toolbar a.left {
+	border-right: $defaultBorder;
+	// border: none;
 	// margin-left: 5px;
 }
 
-// .toolbar span {
-// 	position: absolute;
-// 	top: 0;
-// 	left: 0;
-// 	right: 0;
-// 	height: 21px;
-// 	text-align: center;
-// 	line-height: 45px;
-// 	/*color: #FFF;*/
-// 	font-weight: bold;
-// 	text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);
-// }
+.left-drawer-adjust {
+	padding-right: 3px;
+}
 
-#content {
+.toolbar a.right {
+	border-left: $defaultBorder;
+	// border: none;
+	// margin-left: 5px;
+}
+
+.content-wrapper {
 	background: $grayLightest;
 	top: 0;
 	left: 0;
@@ -166,229 +165,14 @@ body {
 /* Drawers */
 
 .drawers h1 {
-	font-size: $baseFontSize;
-	line-height: 4.2rem;
-	padding: 0 0 0 $defaultPadding;
-	font-weight: bold;
+	// font-size: $baseFontSize;
+	// line-height: 4.2rem;
+	padding: 0 0 0 $defaultPadding*1.5;
+	// font-weight: bold;
 }
-
-.drawers .unstyled-list li {
-	
-}
-
-// .drawers .unstyled-list a {
-// 	border-left: none;
-// }
-
-// .drawers .top-bar a.left {
-// 	border-right: $borderWidth $borderStyle $grayDark;
-// }
-
-// .drawers .top-bar a.right {
-// 	border-left: $borderWidth $borderStyle $grayDark;
-// }
-
-// .drawers .top-bar {
-// 	border-bottom: $borderWidth $borderStyle $grayDark;
-// }
-
-// .drawers .top-bar a {
-// 	// border: $borderWidth $borderStyle $grayDark;
-// }
-
-// .drawer-list {
-// 	position: relative;
-// 	top: 60px;
-// }
-
-// .drawer-list li:first-child {
-// 	// background: $grayDarker;
-// 	border-top: $borderWidth $borderStyle $grayDark;
-// }
-
-// .drawer-list li {
-// 	// background: $grayDarker;
-// 	border-bottom: $borderWidth $borderStyle $grayDark;
-// 	margin: 0;
-// 	padding: 0 0 0 $defaultPadding;
-// 	// width: 96%;
-// 	height: $defaultButtonHeight;
-// 	display: block;
-// 	line-height: 4.2rem;
-// 	// border: $borderWidth $borderStyle $grayDarker;
-// 	// @include border-radius($default-border-radius);
-// 	@include clearfix();
-// }
-
-
-
-// .drawer-list a {
-// 	// width: 100%;
-// 	color: $white;
-// 	width: $defaultButtonWidth;
-// 	height: $defaultButtonHeight;
-// 	display: inline-block;
-// 	text-align: center;
-// 	margin: 0;
-// 	// padding-top: 1.3rem; // 44px - 18px = 26px / 2 = 13px;
-// 	// border-left: $defaultBorder;
-// 	float: right;
-// }
-
-// .drawers i {
-// 	line-height: 4.4rem;
-// 	color: $grayLighter; 
-// }
-
-// .drawers a {
-// 	// background: $grayDarker;
-// 	color: white;
-// }
-
-// .drawers h3 {
-// 	font-size: 36px;
-// 	font-weight: normal;
-// 	margin: 15px;
-// }
-
-// .drawers h4 {
-// 	padding: 15px;
-// 	border-top: 1px solid rgba(255, 255, 255, 0.1);
-// 	margin-bottom: 0;
-// }
-
-// .drawers ul {
-// 	padding: 0;
-// 	margin: 0;
-// 	list-style-type: none;
-// }
-
-// .drawers ul li a {
-// 	display: block;
-// 	border-bottom: 1px solid rgba(0,0,0, 0.1);
-// 	border-top: 1px solid rgba(255, 255, 255, 0.1);
-// 	padding: 15px;
-// 	font-weight: bold;
-// 	text-shadow: 0 1px 0 #000;
-// 	text-decoration: none;
-// 	color: #ccc;
-// 	text-indent: 20px;
-// }
-
-// .drawers p {
-// 	opacity: 0.5;
-// 	padding: 15px;
-// 	font-size: 12px;
-// }
 
 .snapjs-right .left-drawer {
 	left: auto;
 	right: 0;
 	z-index: 1;
-}
-
-#open-left {
-
-	/*background: url(open.png) center center no-repeat;
-	display: block;
-	width: 44px;
-	height: 44px;*/
-}
-
-#no-drag {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 50%;
-	height: 100px;
-	margin-left: -25%;
-	margin-top: -50px;
-	background: red;
-	color: #FFF;
-	text-align: center;
-	line-height: 100px;
-}
-
-.toggler {
-	width: 80%;
-	background: rgba(255,255,255,0.5);
-	margin: 0 auto;
-	position: relative;
-	top: 70px;
-	padding: 20px;
-	margin-bottom: 20px;
-	text-align: center;
-}
-
-.search{
-	padding-bottom: 10px;
-	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
-	-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
-	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
-}
-
-#search {
-	height: 30px;
-	width: 87%;
-	margin: 7px 7px 0 7px;
-	
-	background: linear-gradient(#414A5A,#4C5464);
-	background: -webkit-linear-gradient(#414A5A,#4C5464);
-	
-	padding-left: 15px;
-	
-	border: 1px solid #222936;
-	-webkit-border-radius: 25px;
-	-moz-border-radius: 25px;
-	border-radius: 25px;
-	-webkit-box-shadow: inset 0 1px 2px -1px rgba(0, 0, 0, 0.5),0 1px 2px -1px rgba(255, 255, 255, 0.4);
-	-moz-box-shadow: inset 0 1px 2px -1px rgba(0, 0, 0, 0.5),0 1px 2px -1px rgba(255, 255, 255, 0.4);
-	box-shadow: inset 0 1px 2px -1px rgba(0, 0, 0, 0.5),0 1px 2px -1px rgba(255, 255, 255, 0.4);
-	-webkit-box-shadow: inset 0 1px 2px -1px rgba(0, 0, 0, 0.5),0 1px 2px -1px rgba(255, 255, 255, 0.4);
-	-moz-box-shadow: inset 0 1px 2px -1px rgba(0, 0, 0, 0.5),0 1px 2px -1px rgba(255, 255, 255, 0.4);
-	box-shadow: inset 0 1px 2px -1px rgba(0, 0, 0, 0.5),0 1px 2px -1px rgba(255, 255, 255, 0.4);
-}
-	
-#search:focus{
-	outline: none;
-	border-color: #151515;
-}
-
-.left-drawer,
-.right-drawer {
-	-webkit-transition: width 0.3s ease; 
-	-moz-transition: width 0.3s ease; 
-	-o-transition: width 0.3s ease; 
-	transition: width 0.3s ease; 
-}
-
-.drawer-inner{
-	-webkit-transition: opacity 0.3s ease; 
-	-moz-transition: opacity 0.3s ease; 
-	-o-transition: opacity 0.3s ease; 
-	transition: opacity 0.3s ease; 
-}
-
-.snapjs-expand-left .drawer-inner,
-.snapjs-expand-right .drawer-inner{
-	opacity: 0;
-}
-
-.snapjs-expand-left .left-drawer,
-.snapjs-expand-right .right-drawer{
-	width: 100%;
-}
-
-.opt {
-	padding: 20px;
-	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.opt p {
-	font-weight: bold;
-	margin-top: 0;
-	margin-bottom: 5px;
-	color: #222;
-	color: rgba(0,0,0,0.6);
 }

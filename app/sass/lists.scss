@@ -28,6 +28,7 @@ lists.scss
 	display: block;
 	line-height: 4.2rem;
 	border: $defaultBorder;
+	cursor: pointer;
 	@include border-radius($default-border-radius);
 	@include clearfix();
 }

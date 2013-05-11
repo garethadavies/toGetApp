@@ -38,7 +38,7 @@ define(['marionette', 'backbone', 'snap'], function (Marionette, Backbone) {
 
     });
 
-    $('.open-left').on('click', function() {
+    $('#content li').on('click', function() {
 
       snapper.open('right');
 
