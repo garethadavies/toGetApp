@@ -12,11 +12,12 @@ nav.scss
 	// background: $white;
 	// color: $white;
 	// text-align: center;
-	background: $grayDarkest; 
-	padding: 0;
+	z-index: 5;
+	background: $white; 
+	padding: 5px 0;
 	position: relative;
 	@include clearfix();
-	@include box-shadow($black 1px 1px 3px);
+	@include box-shadow($grayLighter 1px 1px 3px);
 }
 
 .top-bar a {

@@ -19,17 +19,18 @@ _mixins.scss
 /* Clearfix */
 /* line 11, ../sass/nav.scss */
 .top-bar {
-  background: #222222;
-  padding: 0;
+  z-index: 5;
+  background: white;
+  padding: 5px 0;
   position: relative;
   overflow: hidden;
   *zoom: 1;
-  -webkit-box-shadow: black 1px 1px 3px;
-  -moz-box-shadow: black 1px 1px 3px;
-  box-shadow: black 1px 1px 3px;
+  -webkit-box-shadow: #dddddd 1px 1px 3px;
+  -moz-box-shadow: #dddddd 1px 1px 3px;
+  box-shadow: #dddddd 1px 1px 3px;
 }
 
-/* line 22, ../sass/nav.scss */
+/* line 23, ../sass/nav.scss */
 .top-bar a {
   padding: 0 1.2rem;
   text-decoration: none;
@@ -39,7 +40,7 @@ _mixins.scss
   margin: 0;
 }
 
-/* line 56, ../sass/nav.scss */
+/* line 57, ../sass/nav.scss */
 .top-bar i {
   line-height: 4.2rem;
 }

@@ -52,7 +52,7 @@ body {
 	right: 0;
 	background: $white; 
 	/*border-bottom: 1px solid #111b32;*/
-	// padding: 5px;
+	padding: 5px 0;
 	border-bottom: $defaultBorder;
 	@include box-shadow($grayLighter 1px 1px 3px);
 }
@@ -79,7 +79,7 @@ body {
 .toolbar h1 {
 	font-size: 1.4rem;
 	line-height: 4.4rem;
-	margin: 0 0 0 $defaultMargin * 5;
+	margin: 0 0 0 $defaultMargin * 5.2;
 	font-weight: bold;
 }
 
@@ -118,7 +118,9 @@ body {
 	transition-timing-function: linear, linear;
 	-webkit-overflow-scrolling: touch;
 	// overflow: auto;
-	padding: 45px 0 5px 0;
+	padding: 55px 0 5px 0;
+	@include box-shadow($grayLight 0 0 8px);
+
 }
 
 .scrollable {
@@ -126,11 +128,11 @@ body {
 }
 
 .drawers {
-	background: $grayDarker;
 	top: 0;
 	left: 0;
 	right: 0;
 	bottom: 0;
+	background: $grayLightest;
 }
 
 .left-drawer,
@@ -139,9 +141,9 @@ body {
 	left: 0;
 	width: 266px;
 	bottom: 0;
-	color: #eee;
+	// color: #eee;
 	overflow: auto;
-	background: $grayDarkest;
+	background: $grayLightest;
 	-webkit-transition-property: top, bottom;
 	transition-property: top, bottom;
 	-webkit-transition-duration: .2s, .2s;
@@ -174,9 +176,9 @@ body {
 	
 }
 
-.drawers .unstyled-list a {
-	border-left: none;
-}
+// .drawers .unstyled-list a {
+// 	border-left: none;
+// }
 
 // .drawers .top-bar a.left {
 // 	border-right: $borderWidth $borderStyle $grayDark;
@@ -186,13 +188,13 @@ body {
 // 	border-left: $borderWidth $borderStyle $grayDark;
 // }
 
-.drawers .top-bar {
-	border-bottom: $borderWidth $borderStyle $grayDark;
-}
+// .drawers .top-bar {
+// 	border-bottom: $borderWidth $borderStyle $grayDark;
+// }
 
-.drawers .top-bar a {
-	// border: $borderWidth $borderStyle $grayDark;
-}
+// .drawers .top-bar a {
+// 	// border: $borderWidth $borderStyle $grayDark;
+// }
 
 // .drawer-list {
 // 	position: relative;
@@ -233,15 +235,15 @@ body {
 // 	float: right;
 // }
 
-.drawers i {
-	line-height: 4.4rem;
-	color: $grayLighter; 
-}
+// .drawers i {
+// 	line-height: 4.4rem;
+// 	color: $grayLighter; 
+// }
 
-.drawers a {
-	// background: $grayDarker;
-	color: white;
-}
+// .drawers a {
+// 	// background: $grayDarker;
+// 	color: white;
+// }
 
 // .drawers h3 {
 // 	font-size: 36px;

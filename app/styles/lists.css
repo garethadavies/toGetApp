@@ -63,13 +63,3 @@ _mixins.scss
 }
 
 /* Drawers */
-/* line 55, ../sass/lists.scss */
-.drawers .get-list li {
-  background: #222222;
-  border: 1px solid #666666;
-}
-
-/* line 62, ../sass/lists.scss */
-.drawers .get-list a {
-  color: white;
-}

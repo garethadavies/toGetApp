@@ -34,4 +34,10 @@ h1 {
 }
 
 /* Icons */
+/* line 27, ../sass/typography.scss */
+i {
+  font-size: 1.8rem;
+  color: #333333;
+}
+
 /* Links */
