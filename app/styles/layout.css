@@ -70,10 +70,10 @@ html {
   -webkit-transition-timing-function: linear, linear;
   transition-timing-function: linear, linear;
   -webkit-overflow-scrolling: touch;
-  padding: 55px 0 5px 0;
-  -webkit-box-shadow: #999999 0 0 8px;
-  -moz-box-shadow: #999999 0 0 8px;
-  box-shadow: #999999 0 0 8px;
+  padding: 55px 0 0.6rem 0;
+  -webkit-box-shadow: #cccccc 0 0 8px;
+  -moz-box-shadow: #cccccc 0 0 8px;
+  box-shadow: #cccccc 0 0 8px;
 }
 
 /* line 64, ../sass/layout.scss */
@@ -83,11 +83,6 @@ html {
 
 /* Drawers */
 /* line 69, ../sass/layout.scss */
-.left-drawer-adjust {
-  padding-right: 3px;
-}
-
-/* line 73, ../sass/layout.scss */
 .drawers {
   top: 0;
   left: 0;
@@ -96,7 +91,7 @@ html {
   background: #f9f9f9;
 }
 
-/* line 82, ../sass/layout.scss */
+/* line 78, ../sass/layout.scss */
 .left-drawer,
 .right-drawer {
   top: 0;
@@ -114,12 +109,12 @@ html {
   -webkit-overflow-scrolling: touch;
 }
 
-/* line 98, ../sass/layout.scss */
+/* line 94, ../sass/layout.scss */
 .left-drawer {
   z-index: 3;
 }
 
-/* line 102, ../sass/layout.scss */
+/* line 98, ../sass/layout.scss */
 .right-drawer {
   left: auto;
   right: 0;
@@ -127,12 +122,12 @@ html {
 }
 
 /* Drawers */
-/* line 109, ../sass/layout.scss */
+/* line 105, ../sass/layout.scss */
 .drawers h1 {
   padding: 0 0 0 1.8rem;
 }
 
-/* line 113, ../sass/layout.scss */
+/* line 109, ../sass/layout.scss */
 .snapjs-right .left-drawer {
   left: auto;
   right: 0;

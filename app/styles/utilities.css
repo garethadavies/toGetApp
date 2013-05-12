@@ -15,8 +15,18 @@ utilities
 }
 
 /* Clearfix */
-/* line 19, ../sass/utilities.scss */
+/* line 18, ../sass/utilities.scss */
 .clearfix {
   overflow: hidden;
   *zoom: 1;
+}
+
+/* line 23, ../sass/utilities.scss */
+.left-drawer-adjust {
+  padding-right: 3px;
+}
+
+/* line 27, ../sass/utilities.scss */
+.right-drawer-adjust {
+  padding-left: 3px;
 }

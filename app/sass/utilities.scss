@@ -15,8 +15,15 @@ utilities
 }
 
 /* Clearfix */
-
 .clearfix {
   overflow: hidden;
   @include has-layout;
+}
+
+.left-drawer-adjust {
+	padding-right: 3px;
+}
+
+.right-drawer-adjust {
+	padding-left: 3px;
 }
