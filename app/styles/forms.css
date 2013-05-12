@@ -20,15 +20,17 @@ _mixins.scss
 /* Wrapper */
 /* line 12, ../sass/forms.scss */
 .input-wrapper {
-  margin: 5px;
+  margin: 1.2rem 0.6rem;
 }
 
 /* Inputs */
-/* line 20, ../sass/forms.scss */
+/* line 22, ../sass/forms.scss */
 input[type="text"],
 input[type="email"],
 input[type="search"],
-input[type="password"] {
+input[type="password"],
+select,
+button {
   width: 100%;
   font-size: 100%;
   border: 1px solid #dddddd;
@@ -38,9 +40,24 @@ input[type="password"] {
   -o-border-radius: 5px;
   border-radius: 5px;
   background: white;
-  box-shadow: none;
   padding: 1.2rem;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+}
+
+/* Buttons */
+/* line 33, ../sass/forms.scss */
+button {
+  font-weight: 600;
+  margin-top: 1.2rem;
+  background: #f9f9f9;
+  border-color: #cccccc;
+}
+
+/* line 42, ../sass/forms.scss */
+.form-item-delete {
+  background: red;
+  color: white;
+  border: none;
 }

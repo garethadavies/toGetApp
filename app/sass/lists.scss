@@ -16,7 +16,7 @@ lists.scss
 
 .get-list li {
 	background: $white;
-	margin: 0 5px 5px 5px;
+	margin: 0 $defaultPadding/2 $defaultPadding/2 $defaultPadding/2;
 	padding: 0 0 0 $defaultPadding;
 	height: $defaultButtonHeight;
 	display: block;

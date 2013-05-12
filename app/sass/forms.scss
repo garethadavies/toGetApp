@@ -10,20 +10,37 @@ forms.scss
 
 /* Wrapper */
 .input-wrapper {
-	margin: 5px;
+	margin: $defaultMargin $defaultMargin/2;
 }
 
 /* Inputs */
 input[type="text"],
 input[type="email"],
 input[type="search"],
-input[type="password"] {
+input[type="password"],
+select,
+button {
 	width: 100%;
 	font-size: 100%;
 	border: $defaultBorder;
 	@include border-radius($default-border-radius);
 	background: $white;
-	box-shadow: none;
 	padding: $defaultPadding;
 	@include appearance(none);
+}
+
+/* Buttons */
+button {
+	font-weight: 600;
+	margin-top: $defaultMargin;
+	// color: $white;
+	background: $grayLightest;
+	border-color: $grayLight;
+	// border-bottom: $borderWidth $borderStyle $grayLight;
+}
+
+.form-item-delete {
+	background: red;
+	color: $white;
+	border: none;
 }

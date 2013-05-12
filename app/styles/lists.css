@@ -28,7 +28,7 @@ _mixins.scss
 /* line 17, ../sass/lists.scss */
 .get-list li {
   background: white;
-  margin: 0 5px 5px 5px;
+  margin: 0 0.6rem 0.6rem 0.6rem;
   padding: 0 0 0 1.2rem;
   height: 44px;
   display: block;
