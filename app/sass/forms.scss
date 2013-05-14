@@ -19,7 +19,8 @@ input[type="email"],
 input[type="search"],
 input[type="password"],
 select,
-button {
+button,
+.select-wrapper {
 	width: 100%;
 	font-size: 100%;
 	border: $defaultBorder;
@@ -27,4 +28,26 @@ button {
 	background: $white;
 	padding: $defaultPadding;
 	@include appearance(none);
+}
+
+/* Combos */
+
+.select-wrapper {
+	padding: 0;
+	z-index: 0;
+
+	select {
+		background: none;
+		border: none;
+		margin: 0;
+	}
+
+	.combo-icon {
+		position: absolute;
+		right: 0;
+		top: 0;
+		padding: $defaultPadding $defaultPadding/1.2;
+		border-left: $defaultBorder;
+		z-index: -1;
+	}
 }

@@ -48,9 +48,7 @@ define(['marionette', 'backbone', 'snap'], function (Marionette, Backbone) {
 
       snapper.close();
 
-    });
-
-    
+    });    
 
   });
 

@@ -24,13 +24,14 @@ _mixins.scss
 }
 
 /* Inputs */
-/* line 22, ../sass/forms.scss */
+/* line 23, ../sass/forms.scss */
 input[type="text"],
 input[type="email"],
 input[type="search"],
 input[type="password"],
 select,
-button {
+button,
+.select-wrapper {
   width: 100%;
   font-size: 100%;
   border: 1px solid #dddddd;
@@ -44,4 +45,26 @@ button {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+}
+
+/* Combos */
+/* line 35, ../sass/forms.scss */
+.select-wrapper {
+  padding: 0;
+  z-index: 0;
+}
+/* line 39, ../sass/forms.scss */
+.select-wrapper select {
+  background: none;
+  border: none;
+  margin: 0;
+}
+/* line 45, ../sass/forms.scss */
+.select-wrapper .combo-icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 1.2rem 1rem;
+  border-left: 1px solid #dddddd;
+  z-index: -1;
 }
