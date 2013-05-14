@@ -29,7 +29,6 @@ _mixins.scss
 .get-list li {
   background: white;
   margin: 0 0.6rem 0.6rem 0.6rem;
-  padding: 0 0 0 1.2rem;
   height: 44px;
   display: block;
   line-height: 4.2rem;
@@ -58,6 +57,11 @@ _mixins.scss
 }
 
 /* line 42, ../sass/lists.scss */
-.get-list i {
+.get-list a:first-child {
+  float: left;
+}
+
+/* line 46, ../sass/lists.scss */
+.get-list a:first-child i {
   line-height: 4.4rem;
 }
