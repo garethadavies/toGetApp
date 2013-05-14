@@ -1,0 +1,22 @@
+/* 
+buttons.scss
+*/
+
+/* Imports */
+@import "_variables";
+
+/* Buttons */
+button {
+	font-weight: 600;
+	margin-top: $defaultMargin;
+	// color: $white;
+	background: $white;
+	border-color: $grayLight;
+	// border-bottom: $borderWidth $borderStyle $grayLight;
+}
+
+.form-item-delete {
+	background: red;
+	color: $white;
+	border: none;
+}

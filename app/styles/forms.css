@@ -45,19 +45,3 @@ button {
   -moz-appearance: none;
   appearance: none;
 }
-
-/* Buttons */
-/* line 33, ../sass/forms.scss */
-button {
-  font-weight: 600;
-  margin-top: 1.2rem;
-  background: #f9f9f9;
-  border-color: #cccccc;
-}
-
-/* line 42, ../sass/forms.scss */
-.form-item-delete {
-  background: red;
-  color: white;
-  border: none;
-}

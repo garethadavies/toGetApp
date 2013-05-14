@@ -28,19 +28,3 @@ button {
 	padding: $defaultPadding;
 	@include appearance(none);
 }
-
-/* Buttons */
-button {
-	font-weight: 600;
-	margin-top: $defaultMargin;
-	// color: $white;
-	background: $grayLightest;
-	border-color: $grayLight;
-	// border-bottom: $borderWidth $borderStyle $grayLight;
-}
-
-.form-item-delete {
-	background: red;
-	color: $white;
-	border: none;
-}
