@@ -9,9 +9,7 @@ require.config({
     marionette: '../components/marionette/lib/core/amd/backbone.marionette',
     'backbone.wreqr' : '../components/marionette/public/javascripts/backbone.wreqr',
     'backbone.babysitter' : '../components/marionette/public/javascripts/backbone.babysitter',
-    // 'sidr': '../components/sidr/jquery.sidr.min',
-    'snap': '../components/snap/snap',
-    'hammerjs': '../components/hammerjs/dist/jquery.hammer.min'
+    'snap': '../components/snap/snap'
   },
   shim: {
     jquery: {
@@ -28,18 +26,20 @@ require.config({
       deps: ['jquery', 'underscore', 'backbone'],
       exports: 'Marionette'
     },
-    'sidr': {
-      deps: ['jquery']
-    },
-    'hammerjs': {
+    'snap': {
       deps: ['jquery']
     }
   }
 });
 
-require(['app'], function (App) {
+require([
 
-  console.log(App);
+  'app',
+  'app.controller'
+
+], function(App, Controller) {
+
+  // console.log(App);
 
   App.start();
 

@@ -1,0 +1,34 @@
+{
+    "lists":
+    [
+        {
+            "listId": 1,
+            "listTitle": "Shopping"
+        },
+        {
+            "listId": 2,
+            "listTitle": "Birthdays"
+        }
+    ],
+    "items":
+    [
+        {
+            "itemId": 1,
+            "itemTitle": "Toilet Roll",
+            "listId": 1,
+            "state": false
+        },
+        {
+            "itemId": 2,
+            "itemTitle": "Bread",
+            "listId": 1,
+            "state": false
+        },
+        {
+            "itemId": 3,
+            "itemTitle": "Cake",
+            "listId": 2,
+            "state": false
+        }   
+    ]
+}

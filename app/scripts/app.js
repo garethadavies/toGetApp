@@ -1,5 +1,10 @@
-// require(['backbone', 'marionette', 'jquery.sidr'], function (Backbone, Marionette) {
-define(['marionette', 'backbone', 'snap'], function (Marionette, Backbone) {
+define([
+
+  'marionette',
+  'backbone',
+  'snap'
+
+], function(Marionette, Backbone, Snap) {
 
   // set up the app instance
   var App = new Marionette.Application();
