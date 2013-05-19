@@ -9,9 +9,9 @@
     "underscore-amd": "~1.4.4",
     "marionette": "~1.0.2",
     "modernizr": "~2.6.2",
-    "sidr": "~1.1.1",
-    "hammerjs": "~1.0.5",
-    "snap": "https://github.com/jakiestfu/Snap.js.git"
+    "snap": "https://github.com/jakiestfu/Snap.js.git",
+    "tpl": "https://github.com/ZeeAgency/requirejs-tpl.git",
+    "backbone.localStorage": "~1.1.3"
   },
   "devDependencies": {}
 }

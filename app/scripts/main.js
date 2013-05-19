@@ -9,7 +9,9 @@ require.config({
     marionette: '../components/marionette/lib/core/amd/backbone.marionette',
     'backbone.wreqr' : '../components/marionette/public/javascripts/backbone.wreqr',
     'backbone.babysitter' : '../components/marionette/public/javascripts/backbone.babysitter',
-    'snap': '../components/snap/snap'
+    'snap': '../components/snap/snap',
+    tpl: '../components/tpl/tpl',
+    'backbone.localStorage': 'components/backbone.localStorage/backbone.localStorage'
   },
   shim: {
     jquery: {
@@ -26,6 +28,9 @@ require.config({
       deps: ['jquery', 'underscore', 'backbone'],
       exports: 'Marionette'
     },
+    'backbone.localStorage': {
+      deps: ['backbone']
+    },
     'snap': {
       deps: ['jquery']
     }
@@ -34,13 +39,21 @@ require.config({
 
 require([
 
+  'backbone',
   'app',
-  'app.controller'
+  'app.controller',
+  'app.router'
 
-], function(App, Controller) {
-
-  // console.log(App);
+], function(Backbone, App, Controller, Router) {
 
   App.start();
+
+  new Router({
+
+    controller : Controller
+
+  });
+
+  Backbone.history.start();
 
 });

@@ -1,19 +1,17 @@
-define([
+/*global define*/
 
-  'marionette',
-  'backbone',
-  'underscore',
-  'app',
-  'app.entities',
-  'app.views'
+define(['vent'], function (vent) {
 
-], function(Marionette, Backbone, _, App, Entities, Views) {
+  'use strict';
 
-  console.log(App);
-  console.log(Entities);
-  console.log(Views);
+  return {
 
-  // export the app from this module
-  return App.Controller;
+    setFilter: function(param) {
+
+      vent.trigger('todoList:filter', param.trim() || '');
+
+    }
+
+  };
 
 });

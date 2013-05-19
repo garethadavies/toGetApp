@@ -1,63 +1,96 @@
+/*global $*/
 define([
 
   'marionette',
-  'backbone',
-  'snap'
+  'vent',
+  'collections/TodoList',
+  'views/Header',
+  'views/TodoListCompositeView',
+  'views/Footer'
 
-], function(Marionette, Backbone, Snap) {
+], function(marionette, vent, TodoList, Header, TodoListCompositeView, Footer) {
 
-  // set up the app instance
-  var App = new Marionette.Application();
+    'use strict';
 
-  App.addRegions({
+    var App = new marionette.Application(),
+        todoList = new TodoList();
 
-    someRegion: '#some-div',
-    anotherRegion: '#another-div'
-
-  });
-
-  App.addInitializer(function(options) {
-
-  // new MyAppRouter();
-
-    Backbone.history.start();
-
-    var snapper = new Snap({
-
-      element: document.getElementById('content')
-
+    App.bindTo(todoList, 'all', function() {
+      if (todoList.length === 0) {
+        App.main.$el.hide();
+        App.footer.$el.hide();
+      } else {
+        App.main.$el.show();
+        App.footer.$el.show();
+      }
     });
 
-    $('#open-left').on('click', function() {
+    App.addRegions({
+      header : '#header',
+      main   : '#main',
+      footer : '#footer'
+    });
 
-      if (snapper.state().state == 'left') {
+    App.addInitializer(function(){
+
+      var viewOptions = {
+        collection : todoList
+      };
+
+      App.header.show(new Header(viewOptions));
+      App.main.show(new TodoListCompositeView(viewOptions));
+      App.footer.show(new Footer(viewOptions));
+
+      todoList.fetch();
+
+      var snapper = new Snap({
+
+        element: document.getElementById('content')
+
+      });
+
+      $('#open-left').on('click', function() {
+
+        if (snapper.state().state == 'left') {
+
+          snapper.close();
+
+        }
+        else {
+
+          snapper.open('left');
+
+        }
+
+      });
+
+      $('#content li').on('click', function() {
+
+        snapper.open('right');
+
+      });
+
+      $('.close-panels').on('click', function() {
 
         snapper.close();
 
-      }
-      else {
-
-        snapper.open('left');
-
-      }
+      }); 
 
     });
 
-    $('#content li').on('click', function() {
 
-      snapper.open('right');
-
+    vent.on('todoList:filter',function(filter) {
+      filter = filter || 'all';
+      $('#todoapp').attr('class', 'filter-' + filter);
     });
 
-    $('.close-panels').on('click', function() {
+    vent.on('todoList:clear:completed',function(){
+      function destroy(todo)     { todo.destroy(); }
 
-      snapper.close();
+      todoList.getCompleted().forEach(destroy);
+    });
 
-    });    
+    return App;
 
-  });
-
-  // export the app from this module
-  return App;
-
-});
+  }
+);

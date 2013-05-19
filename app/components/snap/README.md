@@ -15,6 +15,7 @@ A Library for creating beautiful mobile shelfs in Javascript
 * [Public Methods](#public-methods)
 * [Gotchas](#gotchas)
 * [FAQ's](#faq)
+* [Compliments](#compliments)
 * [Licensing](#licensing)
 * [Extras](#extras)
 
@@ -312,6 +313,14 @@ To solve the flicker, apply the following CSS to the element in question
     -ms-backface-visibility:hidden; /* Internet Explorer 10+ */
 }
 ```
+
+## Compliments
+
+This code attempts to make your webapp's feel more "native". These other repos go well with it, too!
+
+* [Snap.js](https://github.com/jakiestfu/Snap.js)
+* [AppScroll.js](https://github.com/jakiestfu/AppScroll)
+* [fastclick](https://github.com/ftlabs/fastclick)
 
 ## Licensing
 
