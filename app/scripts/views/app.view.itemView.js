@@ -1,21 +1,33 @@
 /*global define*/
 
-define(['marionette','templates'], function (Marionette,templates) {
-  "use strict";
+define([
+
+  'marionette',
+  'templates'
+
+], function(Marionette, templates) {
+
+  'use strict';
 
   return Marionette.CompositeView.extend({
-    tagName : 'li',
-    template : templates.todoItemView,
+    
+    tagName: 'li',
+    
+    template: templates.itemView,
 
-    ui : {
-      edit : '.edit'
+    ui: {
+      
+      edit: '.edit'
+    
     },
 
-    events : {
+    events: {
+      
       'click .destroy' : 'destroy',
       'dblclick label' : 'onEditClick',
       'keypress .edit' : 'onEditKeypress',
       'click .toggle'  : 'toggle'
+    
     },
 
     initialize : function() {

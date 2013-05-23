@@ -5,7 +5,7 @@ define([
   'marionette',
   'templates'
 
-], function (Marionette, templates) {
+], function(Marionette, templates) {
 
   'use strict';
 

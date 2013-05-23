@@ -1,4 +1,8 @@
-define(['marionette'],function(marionette) {
+define([
+
+	'marionette'
+
+], function(marionette) {
 
   'use strict';
 

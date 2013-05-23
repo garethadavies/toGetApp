@@ -1,4 +1,9 @@
-define(['backbone','lib/backbone-localStorage'],function(Backbone){
+define([
+
+  'backbone',
+  'backbone.localStorage'
+
+], function(Backbone) {
 
   'use strict';
 

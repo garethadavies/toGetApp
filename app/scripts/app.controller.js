@@ -1,6 +1,6 @@
 /*global define*/
 
-define(['vent'], function (vent) {
+define(function() {
 
   'use strict';
 
@@ -8,10 +8,30 @@ define(['vent'], function (vent) {
 
     setFilter: function(param) {
 
-      vent.trigger('todoList:filter', param.trim() || '');
+      // vent.trigger('todoList:filter', param.trim() || '');
 
     }
 
   };
 
 });
+
+// define([
+
+// 	'vent'
+
+// ], function (vent) {
+
+//   'use strict';
+
+//   return {
+
+//     setFilter: function(param) {
+
+//       // vent.trigger('todoList:filter', param.trim() || '');
+
+//     }
+
+//   };
+
+// });

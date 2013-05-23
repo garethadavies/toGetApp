@@ -1,4 +1,10 @@
-define(['backbone','models/Todo','lib/backbone-localStorage'],function(Backbone,Todo) {
+define([
+
+  'backbone',
+  'app.models',
+  'backbone.localStorage'
+
+],function(Backbone, Todo) {
 
   'use strict';
 

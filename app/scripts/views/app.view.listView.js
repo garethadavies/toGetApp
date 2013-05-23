@@ -1,7 +1,15 @@
 /*global define*/
 
-define(['marionette','templates','vent','views/TodoItemView'], function (Marionette,templates,vent,ItemView) {
-  "use strict";
+define([
+
+  'marionette',
+  'templates',
+  // 'vent',
+  'views/app.views.itemView'
+
+], function(Marionette, templates, ItemView) {
+  
+  'use strict';
 
   return Marionette.CompositeView.extend({
     template : templates.todosCompositeView,

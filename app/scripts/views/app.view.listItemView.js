@@ -1,7 +1,13 @@
 /*global define*/
 
-define(['marionette','templates'], function (Marionette,templates) {
-  "use strict";
+define([
+
+  'marionette',
+  'templates'
+
+], function(Marionette, templates) {
+  
+  'use strict';
 
   return Marionette.CompositeView.extend({
     tagName : 'li',

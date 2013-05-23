@@ -1,6 +1,4 @@
 /*global require*/
-'use strict';
-
 require.config({
   paths: {
     jquery: '../components/jquery/jquery',
@@ -9,9 +7,9 @@ require.config({
     marionette: '../components/marionette/lib/core/amd/backbone.marionette',
     'backbone.wreqr' : '../components/marionette/public/javascripts/backbone.wreqr',
     'backbone.babysitter' : '../components/marionette/public/javascripts/backbone.babysitter',
-    'snap': '../components/snap/snap',
+    snap: '../components/snap/snap',
     tpl: '../components/tpl/tpl',
-    'backbone.localStorage': 'components/backbone.localStorage/backbone.localStorage'
+    'backbone.localStorage': '../components/backbone.localStorage/backbone.localStorage'
   },
   shim: {
     jquery: {
@@ -31,7 +29,7 @@ require.config({
     'backbone.localStorage': {
       deps: ['backbone']
     },
-    'snap': {
+    snap: {
       deps: ['jquery']
     }
   }
@@ -50,7 +48,7 @@ require([
 
   new Router({
 
-    controller : Controller
+    controller: Controller
 
   });
 
