@@ -2,3 +2,6 @@
 *.sublime-project
 .DS_Store
 .sass-cache
+
+app/components
+node_modules/
