@@ -5,9 +5,10 @@ define([
   'marionette',
   'templates',
   // 'vent',
+  'app.models',
   'views/app.view.itemView'
 
-], function(Marionette, templates, ItemView) {
+], function(Marionette, templates, Model, ItemView) {
 
   'use strict';
 
@@ -70,11 +71,20 @@ define([
 
       if (e.which === ENTER_KEY && todoText) {
 
-        console.log(e);
+        // console.log(e);
 
-        this.model.set('title', todoText).save();
-        
-        this.$el.removeClass('editing');
+        var model = new Model;
+
+        model.set('title', todoText).save();
+
+        // console.log(model);
+
+        this.collection.add(model);
+
+        // console.log(this.collection);
+
+        // TODO: Reset the input
+        this.ui.itemInput.val('');
 
       }
     }

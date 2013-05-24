@@ -31,7 +31,7 @@ define([
     },
 
     initialize : function() {
-      this.bindTo(this.model, 'change', this.render, this);
+      this.listenTo(this.model, 'change', this.render, this);
     },
 
     onRender : function() {

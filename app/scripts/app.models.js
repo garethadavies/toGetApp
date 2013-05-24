@@ -19,6 +19,8 @@ define([
       
     },
 
+    idAttribute: 'itemId',
+
     initialize: function() {
 
       if (this.isNew()) this.set('created', Date.now());
