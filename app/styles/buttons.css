@@ -15,7 +15,6 @@ _variables.scss
 /* line 9, ../sass/buttons.scss */
 button {
   font-weight: 600;
-  margin-top: 1.2rem;
   background: white;
   border-color: #cccccc;
 }
@@ -25,4 +24,10 @@ button {
   background: red;
   color: white;
   border: none;
+}
+
+/* line 24, ../sass/buttons.scss */
+.button-add-item {
+  width: auto;
+  text-align: center;
 }
