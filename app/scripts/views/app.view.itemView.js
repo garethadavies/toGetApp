@@ -87,9 +87,11 @@ define([
 
     completed: function() {
 
+      var completed = (this.model.get('completed') === false) ? true : false;
+
       this.model.set({
 
-        completed: true
+        completed: completed
 
       }).save();
 

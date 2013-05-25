@@ -38,7 +38,7 @@ define([
     var viewOptions = {
 
       collection: todoList
-    
+
     };
 
     App.header.show(new Header(viewOptions));
@@ -67,9 +67,16 @@ define([
 
     });
 
-    $('#content li').on('click', function() {
+    $('#content li').on('click', function(e) {
 
-      snapper.open('right');
+      console.log(e);
+
+      // Make sure the list item has been clicked
+      if (e.target.tagName === 'LI') {
+
+        snapper.open('right');
+
+      }
 
     });
 

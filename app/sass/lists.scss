@@ -32,6 +32,7 @@ lists.scss
 	a {
 		width: 100%;
 		color: $grayDarker;
+		background: $white;
 		width: $defaultButtonWidth;
 		height: $defaultButtonHeight;
 		display: inline-block;
@@ -56,6 +57,11 @@ lists.scss
 
 	.completed i {
 		color: green;
+	}
+
+	.item-tick {
+		position: relative;
+		z-index: 2;
 	}
 
 }
