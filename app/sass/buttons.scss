@@ -8,10 +8,11 @@ buttons.scss
 /* Buttons */
 button {
 	font-weight: 600;
+	cursor: pointer;
 	// margin-top: $defaultMargin;
 	// color: $white;
 	background: $white;
-	border-color: $grayLight;
+	border-color: $grayLighter;
 	// border-bottom: $borderWidth $borderStyle $grayLight;
 }
 
@@ -19,9 +20,4 @@ button {
 	background: red;
 	color: $white;
 	border: none;
-}
-
-.button-add-item {
-	width: auto;
-	text-align: center;
 }

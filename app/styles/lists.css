@@ -25,10 +25,11 @@ _mixins.scss
   list-style: none;
 }
 
-/* line 17, ../sass/lists.scss */
+/* line 19, ../sass/lists.scss */
 .get-list li {
   background: white;
   margin: 0 0.6rem 0.6rem 0.6rem;
+  padding: 0 0 0 1.2rem;
   height: 44px;
   display: block;
   line-height: 4.2rem;
@@ -42,8 +43,7 @@ _mixins.scss
   overflow: hidden;
   *zoom: 1;
 }
-
-/* line 30, ../sass/lists.scss */
+/* line 32, ../sass/lists.scss */
 .get-list a {
   width: 100%;
   color: #333333;
@@ -55,13 +55,19 @@ _mixins.scss
   border-left: 1px solid #dddddd;
   float: right;
 }
-
-/* line 42, ../sass/lists.scss */
+/* line 44, ../sass/lists.scss */
 .get-list a:first-child {
   float: left;
 }
-
-/* line 46, ../sass/lists.scss */
+/* line 48, ../sass/lists.scss */
 .get-list a:first-child i {
   line-height: 4.4rem;
+}
+/* line 53, ../sass/lists.scss */
+.get-list .active i {
+  color: #cccccc;
+}
+/* line 57, ../sass/lists.scss */
+.get-list .completed i {
+  color: green;
 }

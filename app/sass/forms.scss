@@ -23,6 +23,7 @@ button,
 .select-wrapper {
 	width: 100%;
 	font-size: 100%;
+	height: 50px;
 	border: $defaultBorder;
 	@include border-radius($default-border-radius);
 	background: $white;
@@ -52,6 +53,17 @@ button,
 	}
 }
 
-input[type="text"].add-item {
-	width: auto;
+.add-item-wrapper {
+	position: relative;
+
+	button {
+		position: absolute;
+		top: 0;
+		right: -2px;
+		z-index: 2;
+		width: auto;
+		text-align: center;
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+	}
 }

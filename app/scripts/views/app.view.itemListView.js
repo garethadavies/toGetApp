@@ -30,7 +30,8 @@ define([
     events: {
       
       'click #toggle-all': 'onToggleAllClick',
-      'keypress .add-item': 'addItem'
+      'keypress .add-item': 'addInputKeypress',
+      'click .button-add-item': 'addItem'
     
     },
 
@@ -44,12 +45,16 @@ define([
 
       this.updateToggleCheckbox();
 
+      console.log(this.collection);
+
     },
 
     updateToggleCheckbox: function() {
 
       function reduceCompleted(left, right) { return left && right.get('completed'); }
+
       var allCompleted = this.collection.reduce(reduceCompleted,true);
+
       this.ui.toggle.prop('checked', allCompleted);
 
     },
@@ -57,19 +62,32 @@ define([
     onToggleAllClick: function(evt) {
 
       var isChecked = evt.currentTarget.checked;
+
       this.collection.each(function(todo){
+
         todo.save({'completed': isChecked});
+
       });
 
     },
 
-    addItem: function(e) {
+    addInputKeypress: function(e) {
 
-      var
-      ENTER_KEY = 13,
-      todoText = this.ui.itemInput.val().trim();
+      var ENTER_KEY = 13;
 
-      if (e.which === ENTER_KEY && todoText) {
+      if (e.which === ENTER_KEY) {
+
+        this.addItem();
+
+      }
+
+    },
+
+    addItem: function() {
+
+      var todoText = this.ui.itemInput.val().trim();
+
+      if (todoText) {
 
         // console.log(e);
 

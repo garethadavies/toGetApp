@@ -14,36 +14,48 @@ lists.scss
 	list-style: none;
 }
 
-.get-list li {
-	background: $white;
-	margin: 0 $defaultPadding/2 $defaultPadding/2 $defaultPadding/2;
-	// padding: 0 0 0 $defaultPadding;
-	height: $defaultButtonHeight;
-	display: block;
-	line-height: 4.2rem;
-	border: $defaultBorder;
-	cursor: pointer;
-	@include border-radius($default-border-radius);
-	@include clearfix();
-}
+.get-list {
 
-.get-list a {
-	width: 100%;
-	color: $grayDarker;
-	width: $defaultButtonWidth;
-	height: $defaultButtonHeight;
-	display: inline-block;
-	text-align: center;
-	margin: 0;
-	border-left: $defaultBorder;
-	float: right;
-}
+	li {
+		background: $white;
+		margin: 0 $defaultPadding/2 $defaultPadding/2 $defaultPadding/2;
+		padding: 0 0 0 $defaultPadding;
+		height: $defaultButtonHeight;
+		display: block;
+		line-height: 4.2rem;
+		border: $defaultBorder;
+		cursor: pointer;
+		@include border-radius($default-border-radius);
+		@include clearfix();
+	}
 
-.get-list a:first-child {
-	float: left;
-}
+	a {
+		width: 100%;
+		color: $grayDarker;
+		width: $defaultButtonWidth;
+		height: $defaultButtonHeight;
+		display: inline-block;
+		text-align: center;
+		margin: 0;
+		border-left: $defaultBorder;
+		float: right;
+	}
+	
+	a:first-child {
+		float: left;
+	}
 
-.get-list a:first-child i {
-	line-height: 4.4rem;
-	// color: $grayLight; 
+	a:first-child i {
+		line-height: 4.4rem;
+		// color: $grayLight; 
+	}
+
+	.active i {
+		color: $grayLight;
+	}
+
+	.completed i {
+		color: green;
+	}
+
 }

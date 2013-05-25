@@ -15,19 +15,14 @@ _variables.scss
 /* line 9, ../sass/buttons.scss */
 button {
   font-weight: 600;
+  cursor: pointer;
   background: white;
-  border-color: #cccccc;
+  border-color: #dddddd;
 }
 
-/* line 18, ../sass/buttons.scss */
+/* line 19, ../sass/buttons.scss */
 .form-item-delete {
   background: red;
   color: white;
   border: none;
-}
-
-/* line 24, ../sass/buttons.scss */
-.button-add-item {
-  width: auto;
-  text-align: center;
 }
