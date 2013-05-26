@@ -10,9 +10,9 @@ define([
   'use strict';
 
   return Marionette.CompositeView.extend({
-    
+
     tagName: 'li',
-    
+
     template: templates.itemView,
 
     ui: {
@@ -27,7 +27,8 @@ define([
       'dblclick label': 'onEditClick',
       'keypress .edit': 'onEditKeypress',
       'click .toggle': 'toggle',
-      'click .item-tick': 'completed'
+      'click .item-tick': 'completed',
+      'click .item-remove': 'destroy'
 
     },
 

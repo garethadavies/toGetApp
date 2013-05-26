@@ -50,7 +50,6 @@ _mixins.scss
   background: white;
   width: 44px;
   height: 44px;
-  display: inline-block;
   text-align: center;
   margin: 0;
   border-left: 1px solid #dddddd;
@@ -65,12 +64,12 @@ _mixins.scss
   line-height: 4.4rem;
 }
 /* line 54, ../sass/lists.scss */
-.get-list .active i {
+.get-list .active .item-tick i {
   color: #cccccc;
 }
 /* line 58, ../sass/lists.scss */
-.get-list .completed i {
-  color: green;
+.get-list .completed .item-tick i {
+  color: #66CC00;
 }
 /* line 62, ../sass/lists.scss */
 .get-list .item-tick {

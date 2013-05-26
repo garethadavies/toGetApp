@@ -35,7 +35,7 @@ lists.scss
 		background: $white;
 		width: $defaultButtonWidth;
 		height: $defaultButtonHeight;
-		display: inline-block;
+		// display: inline-block;
 		text-align: center;
 		margin: 0;
 		border-left: $defaultBorder;
@@ -51,12 +51,12 @@ lists.scss
 		// color: $grayLight; 
 	}
 
-	.active i {
+	.active .item-tick i {
 		color: $grayLight;
 	}
 
-	.completed i {
-		color: green;
+	.completed .item-tick i {
+		color: #66CC00;
 	}
 
 	.item-tick {
