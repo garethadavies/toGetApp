@@ -5,7 +5,7 @@ define([
   'marionette',
   'templates'
 
-], function(Marionette, templates) {
+], function(Marionette, Templates) {
 
   'use strict';
 
@@ -13,7 +13,7 @@ define([
 
     tagName: 'li',
 
-    template: templates.itemView,
+    template: Templates.itemView,
 
     ui: {
 

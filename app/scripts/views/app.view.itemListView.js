@@ -8,13 +8,13 @@ define([
   'app.models',
   'views/app.view.itemView'
 
-], function(Marionette, templates, Model, ItemView) {
+], function(Marionette, Templates, Model, ItemView) {
 
   'use strict';
 
   return Marionette.CompositeView.extend({
 
-    template: templates.itemListView,
+    template: Templates.itemListView,
 
     itemView: ItemView,
 

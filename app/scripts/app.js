@@ -4,11 +4,11 @@ define([
   'marionette',
   // 'vent',
   'app.collections',
-  'views/app.view.header',
+  'views/app.view.itemHeader',
   'views/app.view.itemListView',
   'snap'
 
-], function(marionette, TodoList, Header, TodoListCompositeView, Snap) {
+], function(marionette, TodoList, ItemHeader, ItemListView, Snap) {
 
   'use strict';
 
@@ -28,21 +28,46 @@ define([
 
   App.addRegions({
 
-    header: '#content-header',
-    main: '#content-main'
+    itemsHeader: '#content-header',
+    itemsMain: '#content-main',
+    listsHeader: '#content-header',
+    listsMain: '#content-main',
+    editHeader: '#content-header',
+    editMain: '#content-main'
 
   });
 
   App.addInitializer(function(){
 
-    var viewOptions = {
+    var itemsOptions = {
 
       collection: todoList
 
     };
 
-    App.header.show(new Header(viewOptions));
-    App.main.show(new TodoListCompositeView(viewOptions));
+    /*
+    Show the items
+    */
+
+    App.itemsHeader.show(new ItemHeader(itemsOptions));
+    App.itemsMain.show(new ItemListView(itemsOptions));
+
+    /*
+    Show the lists
+    */
+
+    // App.listsHeader.show(new Header(viewOptions));
+    // App.listsMain.show(new TodoListCompositeView(viewOptions));
+
+    /*
+    Show the items
+    */
+
+    // App.editHeader.show(new Header(viewOptions));
+    // App.editMain.show(new TodoListCompositeView(viewOptions));
+
+    /*
+    */
 
     todoList.fetch();
 
