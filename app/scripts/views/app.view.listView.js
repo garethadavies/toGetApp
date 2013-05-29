@@ -5,16 +5,19 @@ define([
   'marionette',
   'templates',
   // 'vent',
-  'views/app.views.itemView'
+  'views/app.view.listItemView'
 
-], function(Marionette, templates, ItemView) {
+], function(Marionette, Templates, ListItemView) {
   
   'use strict';
 
   return Marionette.CompositeView.extend({
-    template : templates.todosCompositeView,
-    itemView : ItemView,
-    itemViewContainer : '#todo-list',
+
+    template : Templates.listView,
+
+    itemView : ListItemView,
+
+    itemViewContainer : '#list-list',
 
     ui : {
       toggle : '#toggle-all'
@@ -25,7 +28,7 @@ define([
     },
 
     initialize : function() {
-      this.bindTo(this.collection, 'all', this.updateToggleCheckbox, this);
+      this.listenTo(this.collection, 'all', this.updateToggleCheckbox, this);
     },
 
     onRender : function() {

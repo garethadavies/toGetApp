@@ -11,10 +11,12 @@ define([
 
   return Marionette.ItemView.extend({
 
-    template : templates.header,
+    template : templates.listHeader,
 
     ui: {
-      input : '#new-todo'
+      
+      input : '#new-list'
+    
     },
 
     events: {

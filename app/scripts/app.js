@@ -3,21 +3,27 @@ define([
 
   'marionette',
   // 'vent',
-  'app.collections',
+  'collections/app.collection.items',
+  'collections/app.collection.lists',
   'views/app.view.itemHeader',
   'views/app.view.itemListView',
+  'views/app.view.listHeader',
+  'views/app.view.listView',
+  'views/app.view.itemEditHeader',
+  'views/app.view.itemEditView',
   'snap'
 
-], function(marionette, TodoList, ItemHeader, ItemListView, Snap) {
+], function(Marionette, ItemCollection, ListCollection, ItemHeader, ItemListView, ListHeader, ListView, ItemEditHeader, ItemEditView, Snap) {
 
   'use strict';
 
   var
-  App = new marionette.Application(),
-  todoList = new TodoList();
+  App = new Marionette.Application(),
+  itemCollection = new ItemCollection(),
+  listCollection = new ListCollection();
 
-  App.listenTo(todoList, 'all', function() {
-    // if (todoList.length === 0) {
+  App.listenTo(itemCollection, 'all', function() {
+    // if (itemCollection.length === 0) {
     //   App.main.$el.hide();
     //   // App.footer.$el.hide();
     // } else {
@@ -30,18 +36,24 @@ define([
 
     itemsHeader: '#content-header',
     itemsMain: '#content-main',
-    listsHeader: '#content-header',
-    listsMain: '#content-main',
-    editHeader: '#content-header',
-    editMain: '#content-main'
+    listsHeader: '#list-header',
+    listsMain: '#list-main',
+    editHeader: '#edit-header',
+    editMain: '#edit-main'
 
   });
 
   App.addInitializer(function(){
 
-    var itemsOptions = {
+    var
+    itemsOptions = {
 
-      collection: todoList
+      collection: itemCollection
+
+    },
+    listsOptions = {
+
+      collection: listCollection
 
     };
 
@@ -56,20 +68,25 @@ define([
     Show the lists
     */
 
-    // App.listsHeader.show(new Header(viewOptions));
-    // App.listsMain.show(new TodoListCompositeView(viewOptions));
+    App.listsHeader.show(new ListHeader(listsOptions));
+    App.listsMain.show(new ListView(listsOptions));
 
     /*
     Show the items
     */
 
     // App.editHeader.show(new Header(viewOptions));
-    // App.editMain.show(new TodoListCompositeView(viewOptions));
+    // App.editMain.show(new ItemCollectionCompositeView(viewOptions));
+
+    /*
+    Fetch the collections
+    */
+
+    itemCollection.fetch();
+    listCollection.fetch();
 
     /*
     */
-
-    todoList.fetch();
 
     var snapper = new Snap({
 
@@ -113,15 +130,15 @@ define([
 
   });
 
-  // vent.on('todoList:filter',function(filter) {
+  // vent.on('itemCollection:filter',function(filter) {
   //   filter = filter || 'all';
   //   $('#todoapp').attr('class', 'filter-' + filter);
   // });
 
-  // vent.on('todoList:clear:completed',function(){
+  // vent.on('itemCollection:clear:completed',function(){
   //   function destroy(todo)     { todo.destroy(); }
 
-  //   todoList.getCompleted().forEach(destroy);
+  //   itemCollection.getCompleted().forEach(destroy);
   // });
 
   return App;
