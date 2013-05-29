@@ -1,20 +1,20 @@
 define([
 
   'backbone',
-  'app.models',
+  'models/app.model.list',
   'backbone.localStorage'
 
-],function(Backbone, Todo) {
+], function(Backbone, ListModel) {
 
   'use strict';
 
-  function isCompleted(todo) { return todo.get('completed'); }
+  function isCompleted(list) { return list.get('completed'); }
 
   return Backbone.Collection.extend({
 
-    model: Todo,
+    model: ListModel,
 
-    localStorage: new Backbone.LocalStorage('todos-backbone'),
+    localStorage: new Backbone.LocalStorage('lists-backbone'),
 
     getCompleted: function() {
 
@@ -28,9 +28,9 @@ define([
 
     },
 
-    comparator: function(todo) {
+    comparator: function(list) {
 
-      return todo.get('created');
+      return list.get('created');
 
     }
 

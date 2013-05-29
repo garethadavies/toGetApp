@@ -5,10 +5,10 @@ define([
   'marionette',
   'templates',
   // 'vent',
-  'app.models',
+  'models/app.model.item',
   'views/app.view.itemView'
 
-], function(Marionette, Templates, Model, ItemView) {
+], function(Marionette, Templates, ItemModel, ItemView) {
 
   'use strict';
 
@@ -45,7 +45,7 @@ define([
 
       this.updateToggleCheckbox();
 
-      console.log(this.collection);
+      // console.log(this.collection);
 
     },
 
@@ -63,9 +63,9 @@ define([
 
       var isChecked = evt.currentTarget.checked;
 
-      this.collection.each(function(todo){
+      this.collection.each(function(item){
 
-        todo.save({'completed': isChecked});
+        item.save({'completed': isChecked});
 
       });
 
@@ -85,15 +85,15 @@ define([
 
     addItem: function() {
 
-      var todoText = this.ui.itemInput.val().trim();
+      var itemText = this.ui.itemInput.val().trim();
 
-      if (todoText) {
+      if (itemText) {
 
         // console.log(e);
 
-        var model = new Model;
+        var model = new ItemModel;
 
-        model.set('title', todoText).save();
+        model.set('title', itemText).save();
 
         // console.log(model);
 
@@ -105,6 +105,7 @@ define([
         this.ui.itemInput.val('');
 
       }
+      
     }
 
   });

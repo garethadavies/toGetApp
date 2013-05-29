@@ -9,17 +9,17 @@ define([
 
   return Backbone.Model.extend({
 
-    localStorage: new Backbone.LocalStorage('todos-backbone'),
+    localStorage: new Backbone.LocalStorage('items-backbone'),
 
     defaults: {
 
-      title     : '',
-      completed : false,
-      created   : 0
+      title: '',
+      completed: false,
+      created: Date.now()
       
     },
 
-    idAttribute: 'itemId',
+    idAttribute: 'listId',
 
     initialize: function() {
 
