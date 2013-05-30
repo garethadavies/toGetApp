@@ -15,7 +15,8 @@ define([
 
     ui: {
 
-      edit : '.edit'
+      titleField: '#form-item-name',
+      listCombo: '#form-item-list'
     
     },
 
@@ -24,7 +25,8 @@ define([
       'click .destroy' : 'destroy',
       'dblclick label' : 'onEditClick',
       'keypress .edit' : 'onEditKeypress',
-      'click .toggle'  : 'toggle'
+      'click .toggle'  : 'toggle',
+      'submit #form-edit-item': 'saveItem'
     
     },
 
@@ -70,6 +72,26 @@ define([
       //   this.model.set('title', todoText).save();
       //   this.$el.removeClass('editing');
       // }
+
+    },
+
+    saveItem: function(e) {
+
+      e.preventDefault();
+
+      console.log(this.ui.titleField.val());
+      console.log(this.ui.listCombo.find('option:selected').val());
+
+      console.log(Backbone);
+
+      this.model.set({
+
+        title: this.ui.titleField.val(),
+        listId: this.ui.listCombo.find('option:selected').val()
+
+      });
+
+      this.model.save();
 
     }
 

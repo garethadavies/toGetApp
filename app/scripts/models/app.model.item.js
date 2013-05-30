@@ -15,15 +15,16 @@ define([
 
       title: '',
       completed: false,
-      created: Date.now()
+      created: Date.now(),
+      listId: null
       
     },
 
-    idAttribute: 'listId',
+    idAttribute: 'itemId',
 
     initialize: function() {
 
-      if (this.isNew()) this.set('created', Date.now());
+      // if (this.isNew()) this.set('created', Date.now());
 
     },
 

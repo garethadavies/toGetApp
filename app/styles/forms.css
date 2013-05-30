@@ -68,13 +68,15 @@ button,
   padding: 1.2rem 1rem;
   border-left: 1px solid #dddddd;
   z-index: -1;
+  height: 48px;
+  line-height: 2.2rem;
 }
 
-/* line 56, ../sass/forms.scss */
+/* line 58, ../sass/forms.scss */
 .add-item-wrapper {
   position: relative;
 }
-/* line 59, ../sass/forms.scss */
+/* line 61, ../sass/forms.scss */
 .add-item-wrapper button {
   position: absolute;
   top: 0;
