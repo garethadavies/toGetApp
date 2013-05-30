@@ -72,13 +72,6 @@ define([
     App.listsMain.show(new ListView(listsOptions));
 
     /*
-    Show the items
-    */
-
-    // App.editHeader.show(new Header(viewOptions));
-    // App.editMain.show(new ItemCollectionCompositeView(viewOptions));
-
-    /*
     Fetch the collections
     */
 
@@ -109,24 +102,24 @@ define([
 
     });
 
-    $('#content li').on('click', function(e) {
+    // $('#content li').on('click', function(e) {
 
-      console.log(e);
+    //   // console.log(e);
 
-      // Make sure the list item has been clicked
-      if (e.target.tagName === 'LI') {
+    //   // Make sure the list item has been clicked
+    //   if (e.target.tagName === 'LI') {
 
-        snapper.open('right');
+    //     snapper.open('right');
 
-      }
+    //   }
 
-    });
+    // });
 
-    $('.close-panels').on('click', function() {
+    // $('.close-panels').on('click', function() {
 
-      snapper.close();
+    //   snapper.close();
 
-    }); 
+    // }); 
 
   });
 
@@ -140,6 +133,54 @@ define([
 
   //   itemCollection.getCompleted().forEach(destroy);
   // });
+
+  App.vent.on('edit:item', function(e, model) {
+
+    var itemOptions = {
+
+      model: model
+
+    },
+    snapper = new Snap({
+
+      element: document.getElementById('content')
+
+    });
+
+    /*
+    Post-show
+    */
+
+    App.editMain.on('show', function(view) {
+
+      // console.log(view);
+      // console.log(itemCollection);
+
+      var target = view.$el.find('#form-item-list');
+
+      _.each(listCollection.models, function(value, index) {
+
+        target.append(new Option(value.get('title'), value.get('listId')));
+
+      });
+
+    });
+
+    /*
+    Show the items
+    */
+
+    App.editHeader.show(new ItemEditHeader(itemOptions));
+
+    App.editMain.show(new ItemEditView(itemOptions));
+
+    if (e.target.tagName === 'LI') {
+
+      snapper.open('right');
+
+    }
+
+  });
 
   return App;
 

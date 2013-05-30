@@ -31,7 +31,8 @@ define([
       
       'click #toggle-all': 'onToggleAllClick',
       'keypress .add-item': 'addInputKeypress',
-      'click .button-add-item': 'addItem'
+      'click .button-add-item': 'addItem',
+      'click li': 'editItem'
     
     },
 

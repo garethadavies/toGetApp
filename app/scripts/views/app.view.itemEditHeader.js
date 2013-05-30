@@ -11,7 +11,7 @@ define([
 
   return Marionette.ItemView.extend({
 
-    template : templates.header,
+    template : templates.itemEditHeader,
 
     ui: {
       input : '#new-todo'
@@ -19,8 +19,7 @@ define([
 
     events: {
       
-      'click #items-edit': 'editItems',
-      'click #items-done': 'closeEdit'
+      'click .close-panels': 'closeEdit'
     
     },
 
@@ -38,13 +37,13 @@ define([
 
     closeEdit: function() {
 
-      $('#content-list li').find('.item-remove').addClass('hide');
+      var snapper = new Snap({
 
-      $('#content-list li').find('.item-tick').removeClass('hide');
+        element: document.getElementById('content')
 
-      this.$el.find('#items-done').addClass('hide');
+      });
 
-      this.$el.find('#items-edit').removeClass('hide');
+      snapper.close();
 
     },
 

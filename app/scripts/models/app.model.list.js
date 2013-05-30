@@ -18,7 +18,7 @@ define([
       
     },
 
-    idAttribute: 'itemId',
+    idAttribute: 'listId',
 
     initialize: function() {
 

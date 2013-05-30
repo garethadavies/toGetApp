@@ -28,12 +28,16 @@ define([
       'keypress .edit': 'onEditKeypress',
       'click .toggle': 'toggle',
       'click .item-tick': 'completed',
-      'click .item-remove': 'destroy'
+      'click .item-remove': 'destroy',
+      'click': 'editItem'
 
     },
 
     initialize: function() {
 
+      // console.log(this);
+
+      // this.listenTo(this.$el, 'click', this.editItem, this);
       this.listenTo(this.model, 'change', this.render, this);
 
     },
@@ -95,6 +99,14 @@ define([
         completed: completed
 
       }).save();
+
+    },
+
+    editItem: function(e) {
+
+      var App = require('app');
+
+      App.vent.trigger('edit:item', e, this.model);
 
     }
 

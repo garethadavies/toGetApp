@@ -16,6 +16,10 @@ button {
 	// border-bottom: $borderWidth $borderStyle $grayLight;
 }
 
+button[type="submit"] {
+	margin-top: $defaultMargin; 
+}
+
 .form-item-delete {
 	background: red;
 	color: $white;

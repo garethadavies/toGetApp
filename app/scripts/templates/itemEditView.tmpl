@@ -1,26 +1,26 @@
-<div class="input-wrapper right-drawer-adjust">
+<form id="form-edit-item">
 
-  <input id="form-item-name" type="text" placeholder="Name your item" class="add-item" value="Toilet roll">
+	<div class="input-wrapper right-drawer-adjust">
 
-</div>
+	  <input id="form-item-name" type="text" placeholder="Name your item" class="add-item" value="<%= title %>">
 
-<div class="input-wrapper right-drawer-adjust">
+	</div>
 
-  <div class="relative select-wrapper">
+	<div class="input-wrapper right-drawer-adjust">
 
-    <i class="icon-down-open combo-icon"></i>
+	  <div class="relative select-wrapper">
 
-    <select name="form-item-list" id="form-item-list">
-      <option>Add this item to a list</option>
-      <option>------------------</option>
-      <option value="1">Shopping</option>
-      <option value="2">Christmas</option>
-      <option value="3">Birthday gifts</option>
-      <option value="4">Holiday clothes</option>
-    </select>
+	    <i class="icon-down-open combo-icon"></i>
 
-  </div>
+	    <select name="form-item-list" id="form-item-list">
+	      <option>Add this item to a list</option>
+	      <option>------------------</option>
+	    </select>
 
-  <button class="form-item-update">Update</button>
+	  </div>
 
-</div>
+	  <button type="submit" class="form-item-update">Update</button>
+
+	</div>
+
+</form>
