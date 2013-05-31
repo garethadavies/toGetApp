@@ -147,6 +147,12 @@ define([
 
     });
 
+    if (e.target.tagName === 'LI') {
+
+      snapper.open('right');
+
+    }
+
     /*
     Post-show
     */
@@ -158,9 +164,57 @@ define([
 
       var target = view.$el.find('#form-item-list');
 
+      // console.log(target[0].options.length);
+
       _.each(listCollection.models, function(value, index) {
 
-        target.append(new Option(value.get('title'), value.get('listId')));
+        var
+        exists = false,
+        listId = value.get('listId'),
+        title = value.get('title');
+
+        _.each(target[0].options, function(item) {
+
+          var
+          option = $(item),
+          optionValue = option.val();
+
+          // console.log($(item).val());
+          // console.log(index);
+          // console.log(model.get('listId'));
+
+          option.prop('selected', false);
+
+          // If the listId is already in the combo
+          if (optionValue === listId) {
+
+            exists = true;
+
+          }
+
+        });
+
+        // If the list item does not exist
+        if (!exists) {
+
+          target.append(new Option(value.get('title'), value.get('listId')));
+
+        }
+
+        _.each(target[0].options, function(item) {
+
+          var
+          option = $(item),
+          optionValue = option.val();
+
+          // Does the item already have a listId set?
+          if (model.get('listId') === optionValue) {
+
+            option.prop('selected', true);
+
+          }
+
+        });
 
       });
 
@@ -173,12 +227,6 @@ define([
     App.editHeader.show(new ItemEditHeader(itemOptions));
 
     App.editMain.show(new ItemEditView(itemOptions));
-
-    if (e.target.tagName === 'LI') {
-
-      snapper.open('right');
-
-    }
 
   });
 

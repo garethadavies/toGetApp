@@ -32,7 +32,7 @@ define([
 
     initialize: function() {
 
-      this.listenTo(this.model, 'change', this.render, this);
+      // this.listenTo(this.model, 'change', this.render, this);
 
     },
 
@@ -79,10 +79,10 @@ define([
 
       e.preventDefault();
 
-      console.log(this.ui.titleField.val());
-      console.log(this.ui.listCombo.find('option:selected').val());
+      // console.log(this.ui.titleField.val());
+      // console.log(this.ui.listCombo.find('option:selected').val());
 
-      console.log(Backbone);
+      // console.log(Backbone);
 
       this.model.set({
 
