@@ -14,13 +14,35 @@ define([
     template : Templates.itemHeader,
 
     ui: {
-      input : '#new-todo'
+
+      input: '#new-todo',
+      itemCount: '#item-count'
+
     },
 
     events: {
 
       'click #items-edit': 'editItems',
       'click #items-done': 'closeEdit'
+
+    },
+
+    initialize: function() {
+
+      this.listenTo(this.collection, 'add', this.showCount, this);
+      this.listenTo(this.collection, 'remove', this.showCount, this);
+
+    },
+
+    onRender: function() {
+
+      this.showCount();
+
+    },
+
+    showCount: function() {
+
+      this.ui.itemCount.text(this.collection.length);
 
     },
 

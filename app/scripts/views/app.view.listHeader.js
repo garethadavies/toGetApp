@@ -15,7 +15,8 @@ define([
 
     ui: {
       
-      input : '#new-list'
+      input : '#new-list',
+      listCount: '#list-count'
     
     },
 
@@ -24,6 +25,25 @@ define([
       'click #items-edit': 'editItems',
       'click #items-done': 'closeEdit'
     
+    },
+
+    initialize: function() {
+
+      this.listenTo(this.collection, 'add', this.showCount, this);
+      this.listenTo(this.collection, 'remove', this.showCount, this);
+
+    },
+
+    onRender: function() {
+
+      this.showCount();
+
+    },
+
+    showCount: function() {
+
+      this.ui.listCount.text(this.collection.length);
+
     },
 
     editItems: function() {

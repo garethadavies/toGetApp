@@ -58,6 +58,13 @@ define([
     };
 
     /*
+    Fetch the collections
+    */
+
+    itemCollection.fetch();
+    listCollection.fetch();
+
+    /*
     Show the items
     */
 
@@ -70,13 +77,6 @@ define([
 
     App.listsHeader.show(new ListHeader(listsOptions));
     App.listsMain.show(new ListView(listsOptions));
-
-    /*
-    Fetch the collections
-    */
-
-    itemCollection.fetch();
-    listCollection.fetch();
 
     /*
     */
