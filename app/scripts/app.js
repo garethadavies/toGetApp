@@ -230,6 +230,43 @@ define([
 
   });
 
+  App.vent.on('filter:items', function(list) {
+
+    var
+    listId = list.get('listId'),
+    filteredCollection = itemCollection.clone();
+
+    // itemCollection.fetch();
+
+    // console.log(listId);
+
+    var filtered = filteredCollection.filter(function(item) {
+
+      return item.get('listId') === listId;
+
+    });
+
+    // console.log(filtered);
+
+    filteredCollection.reset(filtered);
+
+    App.itemsHeader.show(new ItemHeader({
+
+      collection: filteredCollection
+
+    }));
+
+    App.itemsMain.show(new ItemListView({
+
+      collection: filteredCollection
+
+    }));
+
+    //
+    $('#items-title').text(list.get('title'));
+
+  });
+
   return App;
 
 });

@@ -22,8 +22,8 @@ define([
 
     events: {
       
-      'click #items-edit': 'editItems',
-      'click #items-done': 'closeEdit'
+      'click #lists-edit': 'editlists',
+      'click #lists-done': 'closeEdit'
     
     },
 
@@ -46,27 +46,27 @@ define([
 
     },
 
-    editItems: function() {
+    editlists: function() {
 
-      $('#content-list li').find('.item-remove').removeClass('hide');
+      $('#list-list li').find('.list-remove').removeClass('hide');
 
-      $('#content-list li').find('.item-tick').addClass('hide');
+      $('#list-list li').find('.list-tick').addClass('hide');
 
-      this.$el.find('#items-done').removeClass('hide');
+      this.$el.find('#lists-done').removeClass('hide');
 
-      this.$el.find('#items-edit').addClass('hide');
+      this.$el.find('#lists-edit').addClass('hide');
 
     },
 
     closeEdit: function() {
 
-      $('#content-list li').find('.item-remove').addClass('hide');
+      $('#list-list li').find('.list-remove').addClass('hide');
 
-      $('#content-list li').find('.item-tick').removeClass('hide');
+      $('#list-list li').find('.list-tick').removeClass('hide');
 
-      this.$el.find('#items-done').addClass('hide');
+      this.$el.find('#lists-done').addClass('hide');
 
-      this.$el.find('#items-edit').removeClass('hide');
+      this.$el.find('#lists-edit').removeClass('hide');
 
     },
 

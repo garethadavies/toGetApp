@@ -26,55 +26,40 @@ define([
       'click .destroy' : 'destroy',
       'dblclick label' : 'onEditClick',
       'keypress .edit' : 'onEditKeypress',
-      'click .toggle'  : 'toggle'
-    
+      'click .toggle'  : 'toggle',
+      'click .list-remove': 'destroy',
+      'click': 'filterItems'
+
     },
 
     initialize: function() {
 
       this.listenTo(this.model, 'change', this.render, this);
-    
+
     },
 
     onRender: function() {
 
-      this.$el.removeClass('active completed');
-      if (this.model.get('completed')) this.$el.addClass('completed');
-      else this.$el.addClass('active');
-    
+      // this.$el.removeClass('active completed');
+      // if (this.model.get('completed')) this.$el.addClass('completed');
+      // else this.$el.addClass('active');
+
     },
 
     destroy: function() {
-      
+
       this.model.destroy();
-    
+
     },
 
-    toggle: function() {
-      
-      this.model.toggle().save();
-    
-    },
+    filterItems: function() {
 
-    onEditClick : function() {
-      
-      this.$el.addClass('editing');
-      this.ui.edit.focus();
-    
-    },
+      var App = require('app');
 
-    onEditKeypress : function(evt) {
-      
-      var ENTER_KEY = 13;
-      var todoText = this.ui.edit.val().trim();
+      App.vent.trigger('filter:items', this.model);
 
-      if ( evt.which === ENTER_KEY && todoText ) {
-        this.model.set('title', todoText).save();
-        this.$el.removeClass('editing');
-      }
-    
     }
-  
+
   });
 
 });
