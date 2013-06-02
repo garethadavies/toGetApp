@@ -30,7 +30,11 @@ define([
 
     comparator: function(item) {
 
-      return item.get('created');
+      var created = item.get('created');
+
+      // console.log(item.get('title'));
+
+      return created;
 
     }
 

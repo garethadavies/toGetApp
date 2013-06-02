@@ -35,6 +35,14 @@ define([
     
     },
 
+    appendHtml: function(cv, iv, index){
+
+      var $container = this.getItemViewContainer(cv);
+
+      $container.prepend(iv.el);
+
+    },
+
     initialize: function() {
       
       this.listenTo(this.collection, 'all', this.updateToggleCheckbox, this);

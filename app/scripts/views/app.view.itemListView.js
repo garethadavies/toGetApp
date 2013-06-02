@@ -28,17 +28,27 @@ define([
     },
 
     events: {
-      
+
       'click #toggle-all': 'onToggleAllClick',
       'keypress .add-item': 'addInputKeypress',
       'click .button-add-item': 'addItem',
       'click li': 'editItem'
-    
+
+    },
+
+    appendHtml: function(cv, iv, index){
+
+      var $container = this.getItemViewContainer(cv);
+
+      $container.prepend(iv.el);
+
     },
 
     initialize: function() {
 
-      this.listenTo(this.collection, 'all', this.updateToggleCheckbox, this);
+      // this.listenTo(this.collection, 'all', this.updateToggleCheckbox, this);
+
+      // this.listenTo(this.collection, 'add', this.render, this);
 
     },
 
@@ -94,11 +104,18 @@ define([
 
         var model = new ItemModel;
 
-        model.set('title', itemText).save();
+        model.set({
+
+          title: itemText,
+          created: Date.now()
+
+        }).save();
 
         // console.log(model);
 
         this.collection.add(model);
+
+        // this.collection.sort();
 
         // console.log(this.collection);
 

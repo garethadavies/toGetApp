@@ -15,7 +15,7 @@ define([
 
       title: '',
       created: Date.now()
-      
+
     },
 
     idAttribute: 'listId',

@@ -15,9 +15,9 @@ define([
 
       title: '',
       completed: false,
-      created: Date.now(),
+      // created: Date.now(),
       listId: null
-      
+
     },
 
     idAttribute: 'itemId',
