@@ -38,9 +38,11 @@ define([
 
     onRender: function() {
       
-      // Load the list items into the combo
+      if (this.model) {
 
-      // <option value="1">Shopping</option>
+        this.ui.titleField.val(this.model.get('title'));
+
+      }
 
     },
 

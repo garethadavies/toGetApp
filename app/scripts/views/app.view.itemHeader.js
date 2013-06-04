@@ -3,9 +3,11 @@
 define([
 
   'marionette',
-  'templates'
+  'templates',
+  'views/app.view.itemEditHeader',
+  'views/app.view.itemEditView'
 
-], function(Marionette, Templates) {
+], function(Marionette, Templates, EditHeader, EditView) {
 
   'use strict';
 
@@ -22,7 +24,8 @@ define([
 
     events: {
 
-      'click #items-edit': 'editItems',
+      'click #items-add': 'openRightPanel',
+      'click #open-left': 'openLeftPanel',
       'click #items-done': 'closeEdit'
 
     },
@@ -86,6 +89,25 @@ define([
         this.ui.input.val('');
 
       }
+
+    },
+
+    openRightPanel: function() {
+
+      var App = require('app');
+
+      App.editHeader.show(new EditHeader());
+      App.editMain.show(new EditView());
+
+      App.vent.trigger('open:right');
+
+    },
+
+    openLeftPanel: function() {
+
+      var App = require('app');
+
+      App.vent.trigger('open:left');
 
     }
 

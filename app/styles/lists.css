@@ -29,7 +29,6 @@ _mixins.scss
 .get-list li {
   background: white;
   margin: 0 0.6rem 0.6rem 0.6rem;
-  padding: 0 0 0 1.2rem;
   height: 44px;
   display: block;
   line-height: 4.2rem;
@@ -45,6 +44,8 @@ _mixins.scss
 }
 /* line 32, ../sass/lists.scss */
 .get-list a {
+  position: relative;
+  z-index: 2;
   width: 100%;
   color: #333333;
   background: white;
@@ -52,27 +53,30 @@ _mixins.scss
   height: 44px;
   text-align: center;
   margin: 0;
-  border-left: 1px solid #dddddd;
   float: right;
 }
-/* line 45, ../sass/lists.scss */
+/* line 46, ../sass/lists.scss */
 .get-list a:first-child {
   float: left;
 }
-/* line 49, ../sass/lists.scss */
+/* line 50, ../sass/lists.scss */
 .get-list a:first-child i {
   line-height: 4.4rem;
 }
-/* line 54, ../sass/lists.scss */
+/* line 55, ../sass/lists.scss */
 .get-list .active .item-tick i {
   color: #cccccc;
 }
-/* line 58, ../sass/lists.scss */
+/* line 59, ../sass/lists.scss */
 .get-list .completed .item-tick i {
   color: #66CC00;
 }
-/* line 62, ../sass/lists.scss */
+/* line 63, ../sass/lists.scss */
 .get-list .item-tick {
-  position: relative;
-  z-index: 2;
+  border-right: 1px solid #dddddd;
+  margin-right: 1.2rem;
+}
+/* line 68, ../sass/lists.scss */
+.get-list .item-remove {
+  border-left: 1px solid #dddddd;
 }

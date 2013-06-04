@@ -19,7 +19,7 @@ lists.scss
 	li {
 		background: $white;
 		margin: 0 $defaultPadding/2 $defaultPadding/2 $defaultPadding/2;
-		padding: 0 0 0 $defaultPadding;
+		// padding: 0 0 0 $defaultPadding;
 		height: $defaultButtonHeight;
 		display: block;
 		line-height: 4.2rem;
@@ -30,6 +30,8 @@ lists.scss
 	}
 
 	a {
+		position: relative;
+		z-index: 2;
 		width: 100%;
 		color: $grayDarker;
 		background: $white;
@@ -38,7 +40,6 @@ lists.scss
 		// display: inline-block;
 		text-align: center;
 		margin: 0;
-		border-left: $defaultBorder;
 		float: right;
 	}
 	
@@ -60,8 +61,12 @@ lists.scss
 	}
 
 	.item-tick {
-		position: relative;
-		z-index: 2;
+		border-right: $defaultBorder;
+		margin-right: $defaultMargin;
+	}
+
+	.item-remove {
+		border-left: $defaultBorder;
 	}
 
 }

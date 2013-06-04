@@ -13,14 +13,20 @@ define([
   'views/app.view.itemEditView',
   'snap'
 
-], function(Marionette, ItemCollection, ListCollection, ItemHeader, ItemListView, ListHeader, ListView, ItemEditHeader, ItemEditView, Snap) {
+], function(Marionette, ItemCollection, ListCollection, ItemHeader, ItemListView, ListHeader, ListView, EditHeader, EditView, Snap) {
 
   'use strict';
 
   var
+  that = this,
   App = new Marionette.Application(),
   itemCollection = new ItemCollection(),
-  listCollection = new ListCollection();
+  listCollection = new ListCollection(),
+  snapper = new Snap({
+
+    element: document.getElementById('content')
+
+  });
 
   App.listenTo(itemCollection, 'all', function() {
     // if (itemCollection.length === 0) {
@@ -79,28 +85,29 @@ define([
     App.listsMain.show(new ListView(listsOptions));
 
     /*
+    Show the add/edit form
     */
 
-    var snapper = new Snap({
+    App.editHeader.show(new EditHeader());
+    App.editMain.show(new EditView());
 
-      element: document.getElementById('content')
+    /*
+    */
 
-    });
+    // $('#open-left').on('click', function() {
 
-    $('#open-left').on('click', function() {
+    //   if (snapper.state().state == 'left') {
 
-      if (snapper.state().state == 'left') {
+    //     snapper.close();
 
-        snapper.close();
+    //   }
+    //   else {
 
-      }
-      else {
+    //     snapper.open('left');
 
-        snapper.open('left');
+    //   }
 
-      }
-
-    });
+    // });
 
     // $('#content li').on('click', function(e) {
 
@@ -134,18 +141,31 @@ define([
   //   itemCollection.getCompleted().forEach(destroy);
   // });
 
+  App.vent.on('open:right', function() {
+
+    snapper.open('right');
+
+  });
+
+  App.vent.on('open:left', function() {
+
+    snapper.open('left');
+
+  });
+
+  App.vent.on('close:panels', function() {
+
+    snapper.close();
+
+  });
+
   App.vent.on('edit:item', function(e, model) {
 
     var itemOptions = {
 
       model: model
 
-    },
-    snapper = new Snap({
-
-      element: document.getElementById('content')
-
-    });
+    };
 
     if (e.target.tagName === 'LI') {
 
@@ -224,9 +244,9 @@ define([
     Show the items
     */
 
-    App.editHeader.show(new ItemEditHeader(itemOptions));
+    App.editHeader.show(new EditHeader(itemOptions));
 
-    App.editMain.show(new ItemEditView(itemOptions));
+    App.editMain.show(new EditView(itemOptions));
 
   });
 
