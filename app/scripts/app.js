@@ -153,18 +153,27 @@ define([
   //   itemCollection.getCompleted().forEach(destroy);
   // });
 
-  App.vent.on('add:item', function(options) {
+  App.vent.on('add:item', function(options, callback) {
+
+    // console.log(options);
 
     var model = new ItemModel();
 
     model.set({
 
-      title: itemText,
-      created: Date.now()
+      title: options.title,
+      created: Date.now(),
+      listId: options.listId
 
     }).save();
 
     itemCollection.add(model);
+
+    if (callback) {
+
+      callback(model);
+
+    }
 
   });
 

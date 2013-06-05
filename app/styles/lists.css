@@ -62,5 +62,5 @@ _mixins.scss
 }
 /* line 55, ../sass/lists.scss */
 .get-list .completed .item-tick i {
-  color: #66CC00;
+  color: #339966;
 }

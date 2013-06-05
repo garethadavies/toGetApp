@@ -17,7 +17,9 @@ define([
 
       titleField: '#form-item-name',
       listCombo: '#form-item-list',
-      button: '.form-item-button'
+      button: '.form-item-button',
+      notification: '.notification',
+      notificationText: '#notification-text'
     
     },
 
@@ -90,12 +92,13 @@ define([
       e.preventDefault();
 
       var
+      that = this,
       App = require('app'),
       title = this.ui.titleField.val(),
       listId = this.ui.listCombo.find('option:selected').val();
 
       // Validate
-      if (title && listId) {
+      if (title) {
 
         // If we are updating a model
         if (this.model) {
@@ -117,9 +120,18 @@ define([
             title: title,
             listId: listId
 
-          });
+          }, function(model) {
 
-          App.editMain.trigger('show');
+            // Re-render the form
+            that.render();
+
+            that.ui.notificationText.text('Your item has been added');
+
+            that.ui.notification.removeClass('hide');
+
+            that.ui.notification.delay(2000).fadeOut(1000);
+
+          });
 
         }
 

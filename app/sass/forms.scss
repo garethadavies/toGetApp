@@ -78,3 +78,20 @@ input[type="text"].inline-input {
 		border-bottom-left-radius: 0;
 	}
 }
+
+/* Notification */
+
+.notification {
+	padding: $defaultPadding;
+	margin-bottom: $defaultMargin;
+	color: $white;
+
+	i {
+		color: $white;
+	}
+}
+
+.success {
+	background: $green;
+	@include border-radius($default-border-radius);
+}
