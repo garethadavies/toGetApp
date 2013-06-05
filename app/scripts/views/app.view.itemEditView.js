@@ -89,19 +89,48 @@ define([
 
       e.preventDefault();
 
-      // console.log(this.ui.titleField.val());
-      // console.log(this.ui.listCombo.find('option:selected').val());
+      var
+      App = require('app'),
+      title = this.ui.titleField.val(),
+      listId = this.ui.listCombo.find('option:selected').val();
 
-      // console.log(Backbone);
+      // Validate
+      if (title && listId) {
 
-      this.model.set({
+        // If we are updating a model
+        if (this.model) {
 
-        title: this.ui.titleField.val(),
-        listId: this.ui.listCombo.find('option:selected').val()
+          this.model.set({
 
-      });
+            title: title,
+            listId: listId
 
-      this.model.save();
+          });
+
+          this.model.save();
+
+        }
+        else {
+
+          App.vent.trigger('add:item', {
+
+            title: title,
+            listId: listId
+
+          });
+
+          App.editMain.trigger('show');
+
+        }
+
+      }
+      else {
+
+        // Show error message?
+
+        return;
+
+      }
 
     }
 

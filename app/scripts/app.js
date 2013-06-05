@@ -11,9 +11,10 @@ define([
   'views/app.view.listView',
   'views/app.view.itemEditHeader',
   'views/app.view.itemEditView',
+  'models/app.model.item',
   'snap'
 
-], function(Marionette, ItemCollection, ListCollection, ItemHeader, ItemListView, ListHeader, ListView, EditHeader, EditView, Snap) {
+], function(Marionette, ItemCollection, ListCollection, ItemHeader, ItemListView, ListHeader, ListView, EditHeader, EditView, ItemModel, Snap) {
 
   'use strict';
 
@@ -82,6 +83,13 @@ define([
     listCollection.fetch();
 
     /*
+    Show the add/edit form
+    */
+
+    App.editHeader.show(new EditHeader());
+    App.editMain.show(new EditView());
+
+    /*
     Show the items
     */
 
@@ -94,13 +102,6 @@ define([
 
     App.listsHeader.show(new ListHeader(listsOptions));
     App.listsMain.show(new ListView(listsOptions));
-
-    /*
-    Show the add/edit form
-    */
-
-    App.editHeader.show(new EditHeader());
-    App.editMain.show(new EditView());
 
     /*
     */
@@ -152,6 +153,21 @@ define([
   //   itemCollection.getCompleted().forEach(destroy);
   // });
 
+  App.vent.on('add:item', function(options) {
+
+    var model = new ItemModel();
+
+    model.set({
+
+      title: itemText,
+      created: Date.now()
+
+    }).save();
+
+    itemCollection.add(model);
+
+  });
+
   App.vent.on('open:right', function() {
 
     snapper.open('right');
@@ -196,62 +212,10 @@ define([
 
     App.editMain.on('show', function(view) {
 
-      // console.log(view);
-      // console.log(itemCollection);
+      App.vent.trigger('combo:lists', {
 
-      var target = view.$el.find('#form-item-list');
-
-      // console.log(target[0].options.length);
-
-      _.each(listCollection.models, function(value, index) {
-
-        var
-        exists = false,
-        listId = value.get('listId'),
-        title = value.get('title');
-
-        _.each(target[0].options, function(item) {
-
-          var
-          option = $(item),
-          optionValue = option.val();
-
-          // console.log($(item).val());
-          // console.log(index);
-          // console.log(model.get('listId'));
-
-          option.prop('selected', false);
-
-          // If the listId is already in the combo
-          if (optionValue === listId) {
-
-            exists = true;
-
-          }
-
-        });
-
-        // If the list item does not exist
-        if (!exists) {
-
-          target.append(new Option(value.get('title'), value.get('listId')));
-
-        }
-
-        _.each(target[0].options, function(item) {
-
-          var
-          option = $(item),
-          optionValue = option.val();
-
-          // Does the item already have a listId set?
-          if (model.get('listId') === optionValue) {
-
-            option.prop('selected', true);
-
-          }
-
-        });
+        view: view,
+        model: model
 
       });
 
@@ -264,6 +228,74 @@ define([
     App.editHeader.show(new EditHeader(itemOptions));
 
     App.editMain.show(new EditView(itemOptions));
+
+  });
+
+  App.vent.on('combo:lists', function(options) {
+
+    // console.log(view);
+    // console.log(itemCollection);
+
+    var target = options.view.$el.find('#form-item-list');
+
+    // console.log(target[0].options.length);
+
+    _.each(listCollection.models, function(value, index) {
+
+      var
+      exists = false,
+      listId = value.get('listId'),
+      title = value.get('title');
+
+      _.each(target[0].options, function(item) {
+
+        var
+        option = $(item),
+        optionValue = option.val();
+
+        // console.log($(item).val());
+        // console.log(index);
+        // console.log(model.get('listId'));
+
+        option.prop('selected', false);
+
+        // If the listId is already in the combo
+        if (optionValue === listId) {
+
+          exists = true;
+
+        }
+
+      });
+
+      // If the list item does not exist
+      if (!exists) {
+
+        target.append(new Option(value.get('title'), value.get('listId')));
+
+      }
+
+      // Has a model been supplied (edit state)
+      if (options.model) {
+
+        _.each(target[0].options, function(item) {
+
+          var
+          option = $(item),
+          optionValue = option.val();
+
+          // Does the item already have a listId set?
+          if (options.model.get('listId') === optionValue) {
+
+            option.prop('selected', true);
+
+          }
+
+        });
+
+      }
+
+    });
 
   });
 

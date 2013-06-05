@@ -55,15 +55,11 @@ define([
 
     updateList: function() {
 
-      console.log(this.model);
-
       this.model.set({
 
         title: this.ui.listTitleInput.val()
 
-      });
-
-      this.model.save();
+      }).save();
 
     },
 

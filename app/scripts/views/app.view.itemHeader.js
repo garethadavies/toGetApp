@@ -102,6 +102,13 @@ define([
 
       App.vent.trigger('open:right');
 
+      App.vent.trigger('combo:lists', {
+
+        view: App.editMain.currentView,
+        model: undefined
+
+      });
+
     },
 
     openLeftPanel: function() {
