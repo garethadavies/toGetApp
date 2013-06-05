@@ -57,25 +57,13 @@ lists.scss
 	}
 
 	.item-tick {
-		border-left: none;
-		border-right: $defaultBorder;
-		margin-right: $defaultMargin;
+		// border-left: none;
+		// border-right: $defaultBorder;
+		// margin-right: $defaultMargin;
 	}
 
 	.item-remove {
 		// border-left: $defaultBorder;
-	}
-
-}
-
-.content-wrapper {
-
-	.get-list {
-
-		li {
-			padding-left: 0;
-		}
-
 	}
 
 }

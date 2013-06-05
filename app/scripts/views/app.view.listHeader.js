@@ -22,7 +22,9 @@ define([
 
     events: {
       
-      'click .close-panels': 'closeEdit'
+      'click #lists-edit': 'openEdit',
+      'click #lists-done': 'closeEdit',
+      'click .close-panels': 'closePanel'
     
     },
 
@@ -45,7 +47,43 @@ define([
 
     },
 
+    openEdit: function() {
+
+      var listItems = $('#list-list li');
+
+      listItems.find('.list-remove').removeClass('hide');
+
+      listItems.find('.list-title-input').removeClass('hide');
+
+      listItems.find('.list-tick').addClass('hide');
+
+      listItems.find('.list-title').addClass('hide');
+
+      this.$el.find('#lists-done').removeClass('hide');
+
+      this.$el.find('#lists-edit').addClass('hide');
+
+    },
+
     closeEdit: function() {
+
+      var listItems = $('#list-list li');
+
+      listItems.find('.list-remove').addClass('hide');
+
+      listItems.find('.list-title-input').addClass('hide');
+
+      listItems.find('.list-tick').removeClass('hide');
+
+      listItems.find('.list-title').removeClass('hide');
+
+      this.$el.find('#lists-done').addClass('hide');
+
+      this.$el.find('#lists-edit').removeClass('hide');
+
+    },
+
+    closePanel: function() {
 
       var App = require('app');
 

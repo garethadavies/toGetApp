@@ -64,14 +64,3 @@ _mixins.scss
 .get-list .completed .item-tick i {
   color: #66CC00;
 }
-/* line 59, ../sass/lists.scss */
-.get-list .item-tick {
-  border-left: none;
-  border-right: 1px solid #dddddd;
-  margin-right: 1.2rem;
-}
-
-/* line 75, ../sass/lists.scss */
-.content-wrapper .get-list li {
-  padding-left: 0;
-}

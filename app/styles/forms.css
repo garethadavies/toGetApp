@@ -48,19 +48,27 @@ button,
   appearance: none;
 }
 
+/* Inline inputs */
+/* line 35, ../sass/forms.scss */
+input[type="text"].inline-input {
+  margin-left: -0.85714rem;
+  height: 36px;
+  width: 198px;
+}
+
 /* Combos */
-/* line 36, ../sass/forms.scss */
+/* line 43, ../sass/forms.scss */
 .select-wrapper {
   padding: 0;
   z-index: 0;
 }
-/* line 40, ../sass/forms.scss */
+/* line 47, ../sass/forms.scss */
 .select-wrapper select {
   background: none;
   border: none;
   margin: 0;
 }
-/* line 46, ../sass/forms.scss */
+/* line 53, ../sass/forms.scss */
 .select-wrapper .combo-icon {
   position: absolute;
   right: 0;
@@ -72,11 +80,11 @@ button,
   line-height: 2.2rem;
 }
 
-/* line 58, ../sass/forms.scss */
+/* line 65, ../sass/forms.scss */
 .add-item-wrapper {
   position: relative;
 }
-/* line 61, ../sass/forms.scss */
+/* line 68, ../sass/forms.scss */
 .add-item-wrapper button {
   position: absolute;
   top: 0;

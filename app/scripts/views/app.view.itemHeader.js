@@ -26,6 +26,7 @@ define([
 
       'click #items-add': 'openRightPanel',
       'click #open-left': 'openLeftPanel',
+      'click #items-edit': 'openEdit',
       'click #items-done': 'closeEdit'
 
     },
@@ -49,7 +50,7 @@ define([
 
     },
 
-    editItems: function() {
+    openEdit: function() {
 
       $('#content-list li').find('.item-remove').removeClass('hide');
 

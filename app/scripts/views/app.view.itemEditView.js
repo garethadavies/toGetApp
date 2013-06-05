@@ -16,7 +16,8 @@ define([
     ui: {
 
       titleField: '#form-item-name',
-      listCombo: '#form-item-list'
+      listCombo: '#form-item-list',
+      button: '.form-item-button'
     
     },
 
@@ -41,6 +42,13 @@ define([
       if (this.model) {
 
         this.ui.titleField.val(this.model.get('title'));
+
+        this.ui.button.text('Update');
+
+      }
+      else {
+
+        this.ui.button.text('Add');
 
       }
 

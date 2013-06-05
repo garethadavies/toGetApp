@@ -31,6 +31,13 @@ button,
 	@include appearance(none);
 }
 
+/* Inline inputs */
+input[type="text"].inline-input {
+	margin-left: -$defaultPadding/1.4;
+	height: 36px;
+	width: 198px;
+}
+
 /* Combos */
 
 .select-wrapper {

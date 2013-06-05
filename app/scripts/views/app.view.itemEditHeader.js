@@ -22,7 +22,7 @@ define([
 
     events: {
       
-      'click .close-panels': 'closeEdit'
+      'click .close-panels': 'closePanel'
     
     },
 
@@ -43,7 +43,7 @@ define([
 
     },
 
-    closeEdit: function() {
+    closePanel: function() {
 
       var App = require('app');
 
