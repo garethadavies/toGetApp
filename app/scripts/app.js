@@ -28,6 +28,15 @@ define([
 
   });
 
+  /*
+  Disable snapper after slide
+  */
+  snapper.on('end', function(){
+    
+    snapper.disable();
+  
+  });
+
   App.listenTo(itemCollection, 'all', function() {
     // if (itemCollection.length === 0) {
     //   App.main.$el.hide();
@@ -50,6 +59,8 @@ define([
   });
 
   App.addInitializer(function(){
+
+    snapper.disable();
 
     var
     itemsOptions = {
@@ -145,17 +156,23 @@ define([
 
     snapper.open('right');
 
+    snapper.enable();
+
   });
 
   App.vent.on('open:left', function() {
 
     snapper.open('left');
 
+    snapper.enable();
+
   });
 
   App.vent.on('close:panels', function() {
 
     snapper.close();
+
+    snapper.disable();
 
   });
 

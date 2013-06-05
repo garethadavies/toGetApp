@@ -19,7 +19,7 @@ lists.scss
 	li {
 		background: $white;
 		margin: 0 $defaultPadding/2 $defaultPadding/2 $defaultPadding/2;
-		// padding: 0 0 0 $defaultPadding;
+		padding: 0 0 0 $defaultPadding;
 		height: $defaultButtonHeight;
 		display: block;
 		line-height: 4.2rem;
@@ -40,17 +40,13 @@ lists.scss
 		// display: inline-block;
 		text-align: center;
 		margin: 0;
-		float: right;
-	}
-	
-	a:first-child {
-		float: left;
+		border-left: $defaultBorder;
 	}
 
-	a:first-child i {
-		line-height: 4.4rem;
-		// color: $grayLight; 
-	}
+	// a:first-child i {
+	// 	line-height: 4.4rem;
+	// 	// color: $grayLight; 
+	// }
 
 	.active .item-tick i {
 		color: $grayLight;
@@ -61,12 +57,25 @@ lists.scss
 	}
 
 	.item-tick {
+		border-left: none;
 		border-right: $defaultBorder;
 		margin-right: $defaultMargin;
 	}
 
 	.item-remove {
-		border-left: $defaultBorder;
+		// border-left: $defaultBorder;
+	}
+
+}
+
+.content-wrapper {
+
+	.get-list {
+
+		li {
+			padding-left: 0;
+		}
+
 	}
 
 }

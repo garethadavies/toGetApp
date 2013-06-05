@@ -22,8 +22,7 @@ define([
 
     events: {
       
-      'click #lists-edit': 'editlists',
-      'click #lists-done': 'closeEdit'
+      'click .close-panels': 'closeEdit'
     
     },
 
@@ -46,27 +45,11 @@ define([
 
     },
 
-    editlists: function() {
-
-      $('#list-list li').find('.list-remove').removeClass('hide');
-
-      $('#list-list li').find('.list-tick').addClass('hide');
-
-      this.$el.find('#lists-done').removeClass('hide');
-
-      this.$el.find('#lists-edit').addClass('hide');
-
-    },
-
     closeEdit: function() {
 
-      $('#list-list li').find('.list-remove').addClass('hide');
+      var App = require('app');
 
-      $('#list-list li').find('.list-tick').removeClass('hide');
-
-      this.$el.find('#lists-done').addClass('hide');
-
-      this.$el.find('#lists-edit').removeClass('hide');
+      App.vent.trigger('close:panels');
 
     },
 

@@ -29,6 +29,7 @@ _mixins.scss
 .get-list li {
   background: white;
   margin: 0 0.6rem 0.6rem 0.6rem;
+  padding: 0 0 0 1.2rem;
   height: 44px;
   display: block;
   line-height: 4.2rem;
@@ -53,30 +54,24 @@ _mixins.scss
   height: 44px;
   text-align: center;
   margin: 0;
-  float: right;
+  border-left: 1px solid #dddddd;
 }
-/* line 46, ../sass/lists.scss */
-.get-list a:first-child {
-  float: left;
-}
-/* line 50, ../sass/lists.scss */
-.get-list a:first-child i {
-  line-height: 4.4rem;
-}
-/* line 55, ../sass/lists.scss */
+/* line 51, ../sass/lists.scss */
 .get-list .active .item-tick i {
   color: #cccccc;
 }
-/* line 59, ../sass/lists.scss */
+/* line 55, ../sass/lists.scss */
 .get-list .completed .item-tick i {
   color: #66CC00;
 }
-/* line 63, ../sass/lists.scss */
+/* line 59, ../sass/lists.scss */
 .get-list .item-tick {
+  border-left: none;
   border-right: 1px solid #dddddd;
   margin-right: 1.2rem;
 }
-/* line 68, ../sass/lists.scss */
-.get-list .item-remove {
-  border-left: 1px solid #dddddd;
+
+/* line 75, ../sass/lists.scss */
+.content-wrapper .get-list li {
+  padding-left: 0;
 }
