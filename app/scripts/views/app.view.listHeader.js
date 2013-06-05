@@ -22,8 +22,8 @@ define([
 
     events: {
       
-      'click #lists-edit': 'openEdit',
-      'click #lists-done': 'closeEdit',
+      // 'click #lists-edit': 'openEdit',
+      // 'click #lists-done': 'closeEdit',
       'click .close-panels': 'closePanel'
     
     },

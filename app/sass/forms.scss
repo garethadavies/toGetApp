@@ -33,9 +33,11 @@ button,
 
 /* Inline inputs */
 input[type="text"].inline-input {
+	// position: relative;
+	// z-index: 2;
 	margin-left: -$defaultPadding/1.4;
 	height: 36px;
-	width: 198px;
+	width: 154px;
 }
 
 /* Combos */

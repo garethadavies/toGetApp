@@ -61,7 +61,11 @@ define([
 
     destroy: function() {
 
-      this.model.destroy();
+      if (confirm('Are you sure?')) {
+
+        this.model.destroy();
+
+      }
 
     },
 

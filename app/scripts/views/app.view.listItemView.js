@@ -17,7 +17,12 @@ define([
 
     ui: {
 
-      edit : '.edit'
+      edit : '.edit',
+      listTitleInput: '.list-title-input',
+      listTitle: '.list-title',
+      listEditButton: '.list-edit',
+      listRemoveButton: '.list-remove',
+      listUpdateButton: '.list-update'
 
     },
 
@@ -28,7 +33,9 @@ define([
       'keypress .edit' : 'onEditKeypress',
       'click .toggle'  : 'toggle',
       'click .list-remove': 'destroy',
-      'click': 'filterItems'
+      'click': 'filterItems',
+      'click .list-update': 'updateList',
+      'click .list-edit': 'openEdit'
 
     },
 
@@ -46,17 +53,56 @@ define([
 
     },
 
-    destroy: function() {
+    updateList: function() {
 
-      this.model.destroy();
+      console.log(this.model);
+
+      this.model.set({
+
+        title: this.ui.listTitleInput.val()
+
+      });
+
+      this.model.save();
 
     },
 
-    filterItems: function() {
+    openEdit: function() {
+
+      this.ui.listRemoveButton.removeClass('hide');
+
+      this.ui.listTitleInput.removeClass('hide');
+
+      this.ui.listUpdateButton.removeClass('hide');
+
+      this.ui.listEditButton.addClass('hide');
+
+      this.ui.listTitle.addClass('hide');
+
+    },
+
+    destroy: function() {
+
+      var that = this;
+
+      if (confirm('Are you sure?')) {
+
+        that.model.destroy();
+
+      }
+
+    },
+
+    filterItems: function(e) {
 
       var App = require('app');
 
-      App.vent.trigger('filter:items', this.model);
+      // Makes sure we have clicked on the list item
+      if (e.target.tagName === 'LI') {
+
+        App.vent.trigger('filter:items', this.model);
+
+      }
 
     }
 
