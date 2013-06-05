@@ -59,7 +59,18 @@ define([
 
         title: this.ui.listTitleInput.val()
 
-      }).save();
+      });
+
+      if (this.model.hasChanged()) {
+
+        this.model.save();
+
+      }
+      else {
+
+        this.closeEdit();
+
+      }
 
     },
 
@@ -74,6 +85,20 @@ define([
       this.ui.listEditButton.addClass('hide');
 
       this.ui.listTitle.addClass('hide');
+
+    },
+
+    closeEdit: function() {
+
+      this.ui.listRemoveButton.addClass('hide');
+
+      this.ui.listTitleInput.addClass('hide');
+
+      this.ui.listUpdateButton.addClass('hide');
+
+      this.ui.listEditButton.removeClass('hide');
+
+      this.ui.listTitle.removeClass('hide');
 
     },
 
