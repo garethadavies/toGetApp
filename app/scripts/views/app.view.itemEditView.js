@@ -112,6 +112,15 @@ define([
 
           this.model.save();
 
+          App.vent.trigger('notify', {
+
+            target: that.ui.notification,
+            textTarget: that.ui.notificationText,
+            mode: 'success',
+            message: 'Your item has been updated'
+
+          });
+
         }
         else {
 
@@ -125,11 +134,14 @@ define([
             // Re-render the form
             that.render();
 
-            that.ui.notificationText.text('Your item has been added');
+            App.vent.trigger('notify', {
 
-            that.ui.notification.removeClass('hide');
+              target: that.ui.notification,
+              textTarget: that.ui.notificationText,
+              mode: 'success',
+              message: 'Your item has been added'
 
-            that.ui.notification.delay(2000).fadeOut(1000);
+            });
 
           });
 

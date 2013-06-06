@@ -345,6 +345,24 @@ define([
 
   });
 
+  App.vent.on('notify', function(options) {
+
+    options.textTarget.text(options.message);
+
+    options.target.removeClass('hide');
+
+    options.target.addClass(options.mode);
+
+    if (options.mode === 'success') {
+
+      options.target.find('i').addClass('icon-ok');
+
+    } 
+
+    options.target.delay(2000).fadeOut(1000);
+
+  });
+
   return App;
 
 });

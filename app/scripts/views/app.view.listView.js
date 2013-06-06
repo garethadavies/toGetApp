@@ -51,6 +51,8 @@ define([
 
     onRender: function() {
 
+      this.$el.find('ul').prepend('<li>View all items</li>');
+
     },
 
     addInputKeypress: function(e) {
