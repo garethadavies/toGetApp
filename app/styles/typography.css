@@ -40,4 +40,8 @@ i {
   color: #333333;
 }
 
-/* Links */
+/* Styling */
+/* line 34, ../sass/typography.scss */
+.bold {
+  font-weight: bold;
+}
