@@ -118,8 +118,10 @@ define([
 
       var App = require('app');
 
+      console.log(e.target.tagName);
+
       // Makes sure we have clicked on the list item
-      if (e.target.tagName === 'LI') {
+      if (e.target.tagName !== 'LI' || e.target.tagName !== 'SPAN') {
 
         App.vent.trigger('filter:items', this.model);
 

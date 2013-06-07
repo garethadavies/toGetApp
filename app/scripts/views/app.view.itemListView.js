@@ -29,7 +29,6 @@ define([
 
     events: {
 
-      'click #toggle-all': 'onToggleAllClick',
       'keypress .add-item': 'addInputKeypress',
       'click .button-add-item': 'addItem',
       'click li': 'editItem'
@@ -53,32 +52,8 @@ define([
     },
 
     onRender: function() {
-
-      this.updateToggleCheckbox();
-
+      
       // console.log(this.collection);
-
-    },
-
-    updateToggleCheckbox: function() {
-
-      function reduceCompleted(left, right) { return left && right.get('completed'); }
-
-      var allCompleted = this.collection.reduce(reduceCompleted,true);
-
-      this.ui.toggle.prop('checked', allCompleted);
-
-    },
-
-    onToggleAllClick: function(evt) {
-
-      var isChecked = evt.currentTarget.checked;
-
-      this.collection.each(function(item){
-
-        item.save({'completed': isChecked});
-
-      });
 
     },
 
