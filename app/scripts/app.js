@@ -328,6 +328,23 @@ define([
 
     filteredCollection.reset(filtered);
 
+    // After we have shown the item header
+    App.itemsHeader.on('show', function(view) {
+
+      // Change the item list title
+      view.ui.itemsTitle.text(list.get('title'));
+
+    });
+
+    // After we have shown the new item list
+    App.itemsMain.on('show', function(view) {
+
+      view.ui.filterControl.removeClass('hide');
+
+      view.ui.filterText.text(list.get('title'));
+
+    });
+
     App.itemsHeader.show(new ItemHeader({
 
       collection: filteredCollection
@@ -340,8 +357,38 @@ define([
 
     }));
 
-    //
-    $('#items-title').text(list.get('title'));
+  });
+
+  App.vent.on('remove:filter', function() {
+
+    // After we have shown the item header
+    App.itemsHeader.on('show', function(view) {
+
+      // Change the item list title
+      view.ui.itemsTitle.text('All items');
+
+    });
+
+    // After we have shown the new item list
+    App.itemsMain.on('show', function(view) {
+
+      view.ui.filterControl.addClass('hide');
+
+      view.ui.filterText.text('');
+
+    });
+
+    App.itemsHeader.show(new ItemHeader({
+
+      collection: itemCollection
+
+    }));
+
+    App.itemsMain.show(new ItemListView({
+
+      collection: itemCollection
+
+    }));
 
   });
 

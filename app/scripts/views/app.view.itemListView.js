@@ -22,8 +22,9 @@ define([
 
     ui: {
 
-      toggle: '#toggle-all',
-      itemInput: '.add-item'
+      contentList: '#content-list',
+      filterControl: '#filter-control',
+      filterText: '#filter-text'
 
     },
 
@@ -31,7 +32,8 @@ define([
 
       'keypress .add-item': 'addInputKeypress',
       'click .button-add-item': 'addItem',
-      'click li': 'editItem'
+      'click li': 'editItem',
+      'click #filter-remove': 'removeFilter'
 
     },
 
@@ -99,6 +101,16 @@ define([
 
       }
       
+    },
+
+    removeFilter: function(e) {
+
+      e.preventDefault();
+
+      var App = require('app');
+
+      App.vent.trigger('remove:filter');
+
     }
 
   });

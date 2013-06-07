@@ -18,7 +18,8 @@ define([
     ui: {
 
       input: '#new-todo',
-      itemCount: '#item-count'
+      itemCount: '#item-count',
+      itemsTitle: '#items-title'
 
     },
 
