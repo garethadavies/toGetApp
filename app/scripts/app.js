@@ -343,6 +343,9 @@ define([
 
       view.ui.filterText.text(list.get('title'));
 
+      // Show the filtered item list
+      App.vent.trigger('close:panels');
+
     });
 
     App.itemsHeader.show(new ItemHeader({

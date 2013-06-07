@@ -6,9 +6,10 @@ define([
   'templates',
   // 'vent',
   'models/app.model.item',
-  'views/app.view.itemView'
+  'views/app.view.itemView',
+  'views/app.view.emptyView'
 
-], function(Marionette, Templates, ItemModel, ItemView) {
+], function(Marionette, Templates, ItemModel, ItemView, EmptyView) {
 
   'use strict';
 
@@ -19,6 +20,8 @@ define([
     itemView: ItemView,
 
     itemViewContainer: '#content-list',
+
+    emptyView: EmptyView,
 
     ui: {
 

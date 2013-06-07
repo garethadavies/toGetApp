@@ -11,7 +11,8 @@ define(function(require) {
     itemEditView: require('tpl!templates/itemEditView.tmpl'),
     listHeader: require('tpl!templates/listHeader.tmpl'),
     listItemView: require('tpl!templates/listItemView.tmpl'),
-    listView: require('tpl!templates/listView.tmpl')
+    listView: require('tpl!templates/listView.tmpl'),
+    emptyView: require('tpl!templates/emptyView.tmpl')
 
 
   };
