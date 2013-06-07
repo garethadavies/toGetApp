@@ -19,7 +19,7 @@ require.config({
       exports: '_'
     },
     backbone: {
-      deps: ['underscore', 'jquery'],
+      deps: ['jquery', 'underscore'],
       exports: 'Backbone'
     },
     'backbone.wreqr': {
@@ -29,7 +29,7 @@ require.config({
       deps: ['backbone']
     },
     marionette: {
-      deps: ['jquery', 'underscore', 'backbone', 'backbone.wreqr', 'backbone.babysitter'],
+      deps: ['jquery', 'underscore', 'backbone'],
       exports: 'Marionette'
     },
     'backbone.localStorage': {
