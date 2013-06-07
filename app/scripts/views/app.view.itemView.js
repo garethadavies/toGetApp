@@ -35,8 +35,6 @@ define([
 
     initialize: function() {
 
-      // console.log(this);
-
       // this.listenTo(this.$el, 'click', this.editItem, this);
       this.listenTo(this.model, 'change', this.render, this);
 

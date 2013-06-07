@@ -1,8 +1,8 @@
 /*global $*/
 define([
 
+  'backbone',
   'marionette',
-  // 'vent',
   'collections/app.collection.items',
   'collections/app.collection.lists',
   'views/app.view.itemHeader',
@@ -12,9 +12,11 @@ define([
   'views/app.view.itemEditHeader',
   'views/app.view.itemEditView',
   'models/app.model.item',
+  'app.controller',
+  'app.router',
   'snap'
 
-], function(Marionette, ItemCollection, ListCollection, ItemHeader, ItemListView, ListHeader, ListView, EditHeader, EditView, ItemModel, Snap) {
+], function(Backbone, Marionette, ItemCollection, ListCollection, ItemHeader, ItemListView, ListHeader, ListView, EditHeader, EditView, ItemModel, Controller, Router, Snap) {
 
   'use strict';
 
@@ -30,24 +32,8 @@ define([
   });
 
   /*
-  Disable snapper after slide
+  Application Regions
   */
-  snapper.on('end', function(){
-    
-    snapper.disable();
-  
-  });
-
-  App.listenTo(itemCollection, 'all', function() {
-    // if (itemCollection.length === 0) {
-    //   App.main.$el.hide();
-    //   // App.footer.$el.hide();
-    // } else {
-    //   App.main.$el.show();
-    //   // App.footer.$el.show();
-    // }
-  });
-
   App.addRegions({
 
     itemsHeader: '#content-header',
@@ -59,6 +45,9 @@ define([
 
   });
 
+  /*
+  Application Initialisers
+  */
   App.addInitializer(function(){
 
     snapper.disable();
@@ -142,17 +131,24 @@ define([
 
   });
 
-  // vent.on('itemCollection:filter',function(filter) {
-  //   filter = filter || 'all';
-  //   $('#todoapp').attr('class', 'filter-' + filter);
-  // });
+  /*
+  Post-Initialisation
+  */
+  App.on('initialize:after', function() {
 
-  // vent.on('itemCollection:clear:completed',function(){
-  //   function destroy(todo)     { todo.destroy(); }
+    new Router({
 
-  //   itemCollection.getCompleted().forEach(destroy);
-  // });
+      controller: Controller
 
+    });
+
+    Backbone.history.start();
+
+  });
+
+  /*
+  Event Management
+  */
   App.vent.on('add:item', function(options, callback) {
 
     // console.log(options);
@@ -411,6 +407,15 @@ define([
 
     options.target.delay(2000).fadeOut(1000);
 
+  });
+
+  /*
+  Disable snapper after slide
+  */
+  snapper.on('end', function(){
+    
+    snapper.disable();
+  
   });
 
   return App;

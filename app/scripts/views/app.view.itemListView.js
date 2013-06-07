@@ -4,7 +4,6 @@ define([
 
   'marionette',
   'templates',
-  // 'vent',
   'models/app.model.item',
   'views/app.view.itemView',
   'views/app.view.emptyView'
@@ -82,7 +81,7 @@ define([
 
         // console.log(e);
 
-        var model = new ItemModel;
+        var model = new ItemModel();
 
         model.set({
 
@@ -91,13 +90,7 @@ define([
 
         }).save();
 
-        // console.log(model);
-
         this.collection.add(model);
-
-        // this.collection.sort();
-
-        // console.log(this.collection);
 
         // TODO: Reset the input
         this.ui.itemInput.val('');

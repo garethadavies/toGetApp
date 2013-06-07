@@ -4,7 +4,6 @@ define([
 
   'marionette',
   'templates',
-  // 'vent',
   'models/app.model.list',
   'views/app.view.listItemView'
 
@@ -43,16 +42,6 @@ define([
 
     },
 
-    initialize: function() {
-      
-      // this.listenTo(this.collection, 'all', this.updateToggleCheckbox, this);
-    
-    },
-
-    onRender: function() {
-
-    },
-
     addInputKeypress: function(e) {
 
       var ENTER_KEY = 13;
@@ -71,19 +60,12 @@ define([
 
       if (listText) {
 
-        // console.log(e);
-
-        var model = new ListModel;
+        var model = new ListModel();
 
         model.set('title', listText).save();
 
-        // console.log(model);
-
         this.collection.add(model);
 
-        // console.log(this.collection);
-
-        // TODO: Reset the input
         this.ui.listInput.val('');
 
       }
