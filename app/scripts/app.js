@@ -304,23 +304,15 @@ define([
 
   });
 
-  App.vent.on('filter:items', function(list) {
+  App.vent.on('filter:items', function(options) {
 
-    var
-    listId = list.get('listId'),
-    filteredCollection = itemCollection.clone();
-
-    // itemCollection.fetch();
-
-    // console.log(listId);
+    var filteredCollection = itemCollection.clone();
 
     var filtered = filteredCollection.filter(function(item) {
 
-      return item.get('listId') === listId;
+      return item.get('listId') === options.listId;
 
     });
-
-    // console.log(filtered);
 
     filteredCollection.reset(filtered);
 
@@ -328,7 +320,7 @@ define([
     App.itemsHeader.on('show', function(view) {
 
       // Change the item list title
-      view.ui.itemsTitle.text(list.get('title'));
+      view.ui.itemsTitle.text(options.title);
 
     });
 
@@ -337,7 +329,7 @@ define([
 
       view.ui.filterControl.removeClass('hide');
 
-      view.ui.filterText.text(list.get('title'));
+      view.ui.filterText.text(options.title);
 
       // Show the filtered item list
       App.vent.trigger('close:panels');
@@ -355,6 +347,41 @@ define([
       collection: filteredCollection
 
     }));
+
+  });
+
+  App.vent.on('change:item:list', function(options) {
+
+    // Is this a remove or add?
+    // Is the collection empty?
+
+    // console.log(options.collection);
+    // console.log(options.model);
+
+    // Is there any items in the collection
+    if (options.collection.length > 0) {
+
+      // Compare the model's listId against the collection's listId
+      if (options.collection.models[0].get('listId') === options.model.get('listId')) {
+
+        // Same listId's, so must be an add
+        options.collection.add(options.model);
+
+      }
+      else {
+
+        // ListId's not the same so remove from collection
+        options.collection.remove(options.model);
+
+      }
+
+    }
+    else {
+
+      // No items in collection, so must be an add
+      options.collection.add(options.model);
+
+    }
 
   });
 
@@ -395,9 +422,9 @@ define([
 
     options.textTarget.text(options.message);
 
-    options.target.removeClass('hide');
-
     options.target.addClass(options.mode);
+
+    options.target.fadeIn(800);
 
     if (options.mode === 'success') {
 

@@ -25,10 +25,6 @@ define([
 
     events: {
 
-      'click .destroy' : 'destroy',
-      'dblclick label' : 'onEditClick',
-      'keypress .edit' : 'onEditKeypress',
-      'click .toggle'  : 'toggle',
       'submit #form-edit-item': 'saveItem'
     
     },
@@ -53,37 +49,6 @@ define([
         this.ui.button.text('Add');
 
       }
-
-    },
-
-    destroy: function() {
-      
-      this.model.destroy();
-    
-    },
-
-    toggle: function() {
-      
-      this.model.toggle().save();
-    
-    },
-
-    onEditClick: function() {
-      
-      // this.$el.addClass('editing');
-      // this.ui.edit.focus();
-    
-    },
-
-    onEditKeypress : function(evt) {
-      
-      // var ENTER_KEY = 13;
-      // var todoText = this.ui.edit.val().trim();
-
-      // if ( evt.which === ENTER_KEY && todoText ) {
-      //   this.model.set('title', todoText).save();
-      //   this.$el.removeClass('editing');
-      // }
 
     },
 
@@ -149,8 +114,6 @@ define([
 
       }
       else {
-
-        // Show error message?
 
         return;
 

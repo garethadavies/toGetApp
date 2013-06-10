@@ -49,15 +49,7 @@ define([
 
     initialize: function() {
 
-      // this.listenTo(this.collection, 'all', this.updateToggleCheckbox, this);
-
-      // this.listenTo(this.collection, 'add', this.render, this);
-
-    },
-
-    onRender: function() {
-      
-      // console.log(this.collection);
+      this.listenTo(this.collection, 'change:listId', this.filterItems, this.model);
 
     },
 
@@ -79,8 +71,6 @@ define([
 
       if (itemText) {
 
-        // console.log(e);
-
         var model = new ItemModel();
 
         model.set({
@@ -92,11 +82,25 @@ define([
 
         this.collection.add(model);
 
-        // TODO: Reset the input
         this.ui.itemInput.val('');
 
       }
       
+    },
+
+    filterItems: function(model) {
+
+      var App = require('app');
+
+      App.vent.trigger('change:item:list', {
+
+        collection: this.collection,
+        model: model
+
+      });
+
+      // this.collection.remove(model);
+
     },
 
     removeFilter: function(e) {

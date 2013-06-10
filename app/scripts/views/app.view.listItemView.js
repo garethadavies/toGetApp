@@ -28,10 +28,6 @@ define([
 
     events: {
 
-      'click .destroy' : 'destroy',
-      'dblclick label' : 'onEditClick',
-      'keypress .edit' : 'onEditKeypress',
-      'click .toggle'  : 'toggle',
       'click .list-remove': 'destroy',
       'click': 'filterItems',
       'click .list-update': 'updateList',
@@ -53,7 +49,9 @@ define([
 
     },
 
-    updateList: function() {
+    updateList: function(e) {
+
+      e.preventDefault();
 
       this.model.set({
 
@@ -74,7 +72,9 @@ define([
 
     },
 
-    openEdit: function() {
+    openEdit: function(e) {
+
+      e.preventDefault();
 
       this.ui.listRemoveButton.removeClass('hide');
 
@@ -102,7 +102,9 @@ define([
 
     },
 
-    destroy: function() {
+    destroy: function(e) {
+
+      e.preventDefault();
 
       var that = this;
 
@@ -116,12 +118,19 @@ define([
 
     filterItems: function(e) {
 
+      e.preventDefault();
+
       var App = require('app');
 
       // Makes sure we have clicked on the list item
-      if (e.target.tagName !== 'LI' || e.target.tagName !== 'SPAN') {
+      if (e.target.tagName === 'LI' || e.target.tagName === 'SPAN') {
 
-        App.vent.trigger('filter:items', this.model);
+        App.vent.trigger('filter:items', {
+
+          listId: this.model.get('listId'),
+          title: this.model.get('title')
+
+        });
 
       }
 

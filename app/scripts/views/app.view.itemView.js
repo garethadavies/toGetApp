@@ -96,15 +96,11 @@ define([
 
       var completed = (this.model.get('completed') === false) ? true : false;
 
-      console.log(this.model);
-
       this.model.set({
 
         completed: completed
 
       }).save();
-
-      console.log(this.model);
 
     },
 
