@@ -34,8 +34,7 @@ define([
 
     initialize: function() {
 
-      this.listenTo(this.collection, 'add', this.showCount, this);
-      this.listenTo(this.collection, 'remove', this.showCount, this);
+      this.listenTo(this.collection, 'all', this.listChanged, this);
 
     },
 
@@ -48,6 +47,16 @@ define([
     showCount: function() {
 
       this.ui.itemCount.text(this.collection.length);
+
+    },
+
+    listChanged: function() {
+
+      if (this.collection.length === 0) {
+
+        this.render();
+
+      }
 
     },
 
