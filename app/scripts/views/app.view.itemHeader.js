@@ -51,7 +51,9 @@ define([
 
     },
 
-    openEdit: function() {
+    openEdit: function(e) {
+
+      e.preventDefault();
 
       $('#content-list li').find('.item-remove').removeClass('hide');
 
@@ -63,7 +65,9 @@ define([
 
     },
 
-    closeEdit: function() {
+    closeEdit: function(e) {
+
+      e.preventDefault();
 
       $('#content-list li').find('.item-remove').addClass('hide');
 
@@ -94,7 +98,9 @@ define([
 
     },
 
-    openRightPanel: function() {
+    openRightPanel: function(e) {
+
+      e.preventDefault();
 
       var App = require('app');
 
@@ -112,7 +118,9 @@ define([
 
     },
 
-    openLeftPanel: function() {
+    openLeftPanel: function(e) {
+
+      e.preventDefault();
 
       var App = require('app');
 

@@ -6,9 +6,16 @@ define(function() {
 
   return {
 
-    setFilter: function(param) {
+    filterItems: function(id, title) {
 
-      // vent.trigger('todoList:filter', param.trim() || '');
+      var App = require('app');
+
+      App.vent.trigger('filter:items', {
+
+				listId: id,
+				title: title
+
+      });
 
     }
 

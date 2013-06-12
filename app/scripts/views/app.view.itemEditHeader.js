@@ -43,7 +43,9 @@ define([
 
     },
 
-    closePanel: function() {
+    closePanel: function(e) {
+
+      e.preventDefault();
 
       var App = require('app');
 

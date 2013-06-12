@@ -348,6 +348,9 @@ define([
 
     }));
 
+    // Navigate to the right url
+    Backbone.history.navigate('list/' + options.listId + '/' + options.title, false);
+
   });
 
   App.vent.on('change:item:list', function(options) {
@@ -415,6 +418,9 @@ define([
       collection: itemCollection
 
     }));
+
+    // Navigate to the right url
+    Backbone.history.navigate('', false);
 
   });
 

@@ -10,7 +10,7 @@ define([
 
     appRoutes: {
 
-      '*filter': 'setFilter'
+      'list/:id/:title': 'filterItems'
 
     }
 
