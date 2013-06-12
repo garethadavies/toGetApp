@@ -112,6 +112,13 @@ define([
 
         }
 
+        App.vent.trigger('combo:lists', {
+
+        view: this,
+        model: undefined
+
+      });
+
       }
       else {
 

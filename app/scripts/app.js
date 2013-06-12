@@ -217,12 +217,12 @@ define([
 
     App.editMain.on('show', function(view) {
 
-      App.vent.trigger('combo:lists', {
+      // App.vent.trigger('combo:lists', {
 
-        view: view,
-        model: model
+      //   view: view,
+      //   model: model
 
-      });
+      // });
 
     });
 
