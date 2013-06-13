@@ -108,16 +108,16 @@ define([
 
             });
 
+            App.vent.trigger('combo:lists', {
+
+              view: that,
+              model: undefined
+
+            });
+
           });
 
         }
-
-        App.vent.trigger('combo:lists', {
-
-          view: this,
-          model: undefined
-
-        });
 
       }
       else {

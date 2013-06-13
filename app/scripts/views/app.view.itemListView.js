@@ -32,8 +32,6 @@ define([
 
     events: {
 
-      'keypress .add-item': 'addInputKeypress',
-      'click .button-add-item': 'addItem',
       'click li': 'editItem',
       'click #filter-remove': 'removeFilter'
 
@@ -53,53 +51,21 @@ define([
 
     },
 
-    addInputKeypress: function(e) {
-
-      var ENTER_KEY = 13;
-
-      if (e.which === ENTER_KEY) {
-
-        this.addItem();
-
-      }
-
-    },
-
-    addItem: function() {
-
-      var itemText = this.ui.itemInput.val().trim();
-
-      if (itemText) {
-
-        var model = new ItemModel();
-
-        model.set({
-
-          title: itemText,
-          created: Date.now()
-
-        }).save();
-
-        this.collection.add(model);
-
-        this.ui.itemInput.val('');
-
-      }
-      
-    },
-
     filterItems: function(model) {
 
       var App = require('app');
 
-      App.vent.trigger('change:item:list', {
+      // Are we in a filtered state?
+      if (Backbone.history.fragment) {
 
-        collection: this.collection,
-        model: model
+        App.vent.trigger('change:item:list', {
 
-      });
+          collection: this.collection,
+          model: model
 
-      // this.collection.remove(model);
+        });
+
+      }
 
     },
 

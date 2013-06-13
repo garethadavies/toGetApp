@@ -289,9 +289,6 @@ define([
           option = $(item),
           optionValue = option.val();
 
-          console.log(options.model.get('listId'));
-          console.log(optionValue);
-
           // Does the item already have a listId set?
           if (options.model.get('listId') === optionValue && optionValue) {
 
@@ -358,13 +355,7 @@ define([
 
   App.vent.on('change:item:list', function(options) {
 
-    // Is this a remove or add?
-    // Is the collection empty?
-
-    // console.log(options.collection);
-    // console.log(options.model);
-
-    // Is there any items in the collection
+    // Are there any items in the collection
     if (options.collection.length > 0) {
 
       // Compare the model's listId against the collection's listId
