@@ -23,10 +23,6 @@ define([
 
     events: {
 
-      'click .destroy': 'destroy',
-      'dblclick label': 'onEditClick',
-      'keypress .edit': 'onEditKeypress',
-      'click .toggle': 'toggle',
       'click .item-tick': 'completed',
       'click .item-remove': 'destroy',
       'click': 'editItem'
@@ -35,7 +31,6 @@ define([
 
     initialize: function() {
 
-      // this.listenTo(this.$el, 'click', this.editItem, this);
       this.listenTo(this.model, 'change', this.render, this);
 
     },
@@ -57,7 +52,9 @@ define([
 
     },
 
-    destroy: function() {
+    destroy: function(e) {
+
+      e.preventDefault();
 
       if (confirm('Are you sure?')) {
 
@@ -67,32 +64,9 @@ define([
 
     },
 
-    toggle: function() {
+    completed: function(e) {
 
-      this.model.toggle().save();
-
-    },
-
-    onEditClick: function() {
-
-      this.$el.addClass('editing');
-      this.ui.edit.focus();
-
-    },
-
-    onEditKeypress: function(evt) {
-
-      var ENTER_KEY = 13;
-      var todoText = this.ui.edit.val().trim();
-
-      if ( evt.which === ENTER_KEY && todoText ) {
-        this.model.set('title', todoText).save();
-        this.$el.removeClass('editing');
-      }
-
-    },
-
-    completed: function() {
+      e.preventDefault();
 
       var completed = (this.model.get('completed') === false) ? true : false;
 
@@ -105,6 +79,8 @@ define([
     },
 
     editItem: function(e) {
+
+      e.preventDefault();
 
       var App = require('app');
 

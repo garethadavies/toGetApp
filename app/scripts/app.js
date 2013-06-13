@@ -209,30 +209,30 @@ define([
 
       snapper.open('right');
 
+      /*
+      Post-show
+      */
+
+      App.editMain.on('show', function(view) {
+
+        App.vent.trigger('combo:lists', {
+
+          view: view,
+          model: model
+
+        });
+
+      });
+
+      /*
+      Show the items
+      */
+
+      App.editHeader.show(new EditHeader(itemOptions));
+
+      App.editMain.show(new EditView(itemOptions));
+
     }
-
-    /*
-    Post-show
-    */
-
-    App.editMain.on('show', function(view) {
-
-      // App.vent.trigger('combo:lists', {
-
-      //   view: view,
-      //   model: model
-
-      // });
-
-    });
-
-    /*
-    Show the items
-    */
-
-    App.editHeader.show(new EditHeader(itemOptions));
-
-    App.editMain.show(new EditView(itemOptions));
 
   });
 
@@ -289,8 +289,11 @@ define([
           option = $(item),
           optionValue = option.val();
 
+          console.log(options.model.get('listId'));
+          console.log(optionValue);
+
           // Does the item already have a listId set?
-          if (options.model.get('listId') === optionValue) {
+          if (options.model.get('listId') === optionValue && optionValue) {
 
             option.prop('selected', true);
 
