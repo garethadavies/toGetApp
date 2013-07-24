@@ -61,14 +61,15 @@ input[type="text"].inline-input {
 .select-wrapper {
   padding: 0;
   z-index: 0;
+  margin-bottom: 1.2rem;
 }
-/* line 49, ../sass/forms.scss */
+/* line 50, ../sass/forms.scss */
 .select-wrapper select {
   background: none;
   border: none;
   margin: 0;
 }
-/* line 55, ../sass/forms.scss */
+/* line 56, ../sass/forms.scss */
 .select-wrapper .combo-icon {
   position: absolute;
   right: 0;
@@ -80,11 +81,11 @@ input[type="text"].inline-input {
   line-height: 2.2rem;
 }
 
-/* line 67, ../sass/forms.scss */
+/* line 68, ../sass/forms.scss */
 .add-item-wrapper {
   position: relative;
 }
-/* line 70, ../sass/forms.scss */
+/* line 71, ../sass/forms.scss */
 .add-item-wrapper button {
   position: absolute;
   top: 0;
@@ -97,18 +98,18 @@ input[type="text"].inline-input {
 }
 
 /* Notification */
-/* line 84, ../sass/forms.scss */
+/* line 85, ../sass/forms.scss */
 .notification {
   padding: 1.2rem;
   margin-bottom: 1.2rem;
   color: white;
 }
-/* line 89, ../sass/forms.scss */
+/* line 90, ../sass/forms.scss */
 .notification i {
   color: white;
 }
 
-/* line 94, ../sass/forms.scss */
+/* line 95, ../sass/forms.scss */
 .success {
   background: #3c914a;
   -webkit-border-radius: 5px;

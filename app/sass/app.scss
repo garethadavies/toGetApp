@@ -1,5 +1,12 @@
-@import "compass/css3/box-sizing";
+@import "_variables";
 
-* {
-	@include box-sizing(border-box);
+/* Fixes */
+
+// The grey tap effect in ios
+li,
+a,
+button,
+input,
+select {
+	-webkit-tap-highlight-color: rgba(0,0,0,0.1);
 }

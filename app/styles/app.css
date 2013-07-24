@@ -1,6 +1,18 @@
-/* line 3, ../sass/app.scss */
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+/*
+_variables.scss
+*/
+/* Fonts */
+/* Colours */
+/* Borders */
+/* Padding */
+/* Margins */
+/* Dimensions */
+/* Fixes */
+/* line 10, ../sass/app.scss */
+li,
+a,
+button,
+input,
+select {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
 }

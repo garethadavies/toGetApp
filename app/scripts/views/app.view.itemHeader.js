@@ -113,8 +113,8 @@ define([
 
       var App = require('app');
 
-      App.editHeader.show(new EditHeader());
-      App.editMain.show(new EditView());
+      // App.editHeader.show(new EditHeader());
+      // App.editMain.show(new EditView());
 
       App.vent.trigger('open:right');
 

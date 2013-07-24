@@ -45,6 +45,7 @@ input[type="text"].inline-input {
 .select-wrapper {
 	padding: 0;
 	z-index: 0;
+	margin-bottom: $defaultMargin;
 
 	select {
 		background: none;

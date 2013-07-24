@@ -20,11 +20,6 @@ button {
   border-color: #dddddd;
 }
 
-/* line 19, ../sass/buttons.scss */
-button[type="submit"] {
-  margin-top: 1.2rem;
-}
-
 /* line 23, ../sass/buttons.scss */
 .form-item-delete {
   background: red;

@@ -9,7 +9,7 @@ define([
   
   'use strict';
 
-  return Marionette.CompositeView.extend({
+  return Marionette.ItemView.extend({
 
     template: Templates.itemEditView,
 
@@ -31,7 +31,7 @@ define([
 
     initialize: function() {
 
-      // this.listenTo(this.model, 'change', this.render, this);
+      this.listenTo(this.collection, 'add', this.render, this);
 
     },
 
@@ -49,6 +49,9 @@ define([
         this.ui.button.text('Add');
 
       }
+
+      //
+      this.ui.titleField.focus();
 
     },
 
@@ -97,7 +100,7 @@ define([
           }, function(model) {
 
             // Re-render the form
-            that.render();
+            // that.render();
 
             App.vent.trigger('notify', {
 

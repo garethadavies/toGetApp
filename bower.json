@@ -7,6 +7,8 @@
     "requirejs-text": "~2.0.5",
     "backbone-amd": "~1.0.0",
     "underscore-amd": "~1.4.4",
+    "backbone": "~1.0.0",
+    "underscore": "~1.4.4",
     "marionette": "~1.0.2",
     "modernizr": "~2.6.2",
     "snap": "https://github.com/jakiestfu/Snap.js.git",

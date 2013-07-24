@@ -25,6 +25,16 @@ define([
   App = new Marionette.Application(),
   itemCollection = new ItemCollection(),
   listCollection = new ListCollection(),
+  itemsOptions = {
+
+    collection: itemCollection
+
+  },
+  listsOptions = {
+
+    collection: listCollection
+
+  },
   snapper = new Snap({
 
     element: document.getElementById('content')
@@ -51,19 +61,7 @@ define([
   App.addInitializer(function(){
 
     snapper.disable();
-
-    var
-    itemsOptions = {
-
-      collection: itemCollection
-
-    },
-    listsOptions = {
-
-      collection: listCollection
-
-    };
-
+    
     /*
     Fetch the collections
     */
@@ -75,8 +73,8 @@ define([
     Show the add/edit form
     */
 
-    App.editHeader.show(new EditHeader());
-    App.editMain.show(new EditView());
+    // App.editHeader.show(new EditHeader());
+    // App.editMain.show(new EditView(itemsOptions));
 
     /*
     Show the items
@@ -92,43 +90,6 @@ define([
     App.listsHeader.show(new ListHeader(listsOptions));
     App.listsMain.show(new ListView(listsOptions));
 
-    /*
-    */
-
-    // $('#open-left').on('click', function() {
-
-    //   if (snapper.state().state == 'left') {
-
-    //     snapper.close();
-
-    //   }
-    //   else {
-
-    //     snapper.open('left');
-
-    //   }
-
-    // });
-
-    // $('#content li').on('click', function(e) {
-
-    //   // console.log(e);
-
-    //   // Make sure the list item has been clicked
-    //   if (e.target.tagName === 'LI') {
-
-    //     snapper.open('right');
-
-    //   }
-
-    // });
-
-    // $('.close-panels').on('click', function() {
-
-    //   snapper.close();
-
-    // }); 
-
   });
 
   /*
@@ -143,6 +104,9 @@ define([
     });
 
     Backbone.history.start();
+
+    // Allow :active styles to work in your CSS on a page in Mobile Safari
+    document.addEventListener("touchstart", function(){}, true);
 
   });
 
@@ -173,14 +137,26 @@ define([
 
   });
 
+  /*
+  ??
+  */
   App.vent.on('open:right', function() {
 
+    //
     snapper.open('right');
 
+    //
     snapper.enable();
+
+    // Load in the add item views
+    App.editHeader.show(new EditHeader());
+    App.editMain.show(new EditView(itemsOptions));
 
   });
 
+  /*
+  ??
+  */
   App.vent.on('open:left', function() {
 
     snapper.open('left');
@@ -189,6 +165,9 @@ define([
 
   });
 
+  /*
+  ??
+  */
   App.vent.on('close:panels', function() {
 
     snapper.close();
@@ -197,11 +176,15 @@ define([
 
   });
 
+  /*
+  ??
+  */
   App.vent.on('edit:item', function(e, model) {
 
     var itemOptions = {
 
-      model: model
+      model: model,
+      collection: itemCollection
 
     };
 
@@ -236,15 +219,24 @@ define([
 
   });
 
+  /*
+  ??
+  */
   App.vent.on('combo:lists', function(options) {
-
-    // console.log(view);
-    // console.log(itemCollection);
 
     var target = options.view.$el.find('#form-item-list');
 
-    // console.log(target[0].options.length);
+    // If there are no lists
+    if (listCollection.length === 0) {
 
+      // Hide the combo
+      target.parent().hide();
+
+      return;
+
+    }
+
+    // Loop through each model in the list collection
     _.each(listCollection.models, function(value, index) {
 
       var
@@ -304,6 +296,9 @@ define([
 
   });
 
+  /*
+  ??
+  */
   App.vent.on('filter:items', function(options) {
 
     var filteredCollection = itemCollection.clone();
@@ -353,6 +348,9 @@ define([
 
   });
 
+  /*
+  ??
+  */
   App.vent.on('change:item:list', function(options) {
 
     // Are there any items in the collection
@@ -382,6 +380,9 @@ define([
 
   });
 
+  /*
+  ??
+  */
   App.vent.on('remove:filter', function() {
 
     // After we have shown the item header
@@ -418,6 +419,9 @@ define([
 
   });
 
+  /*
+  ??
+  */
   App.vent.on('notify', function(options) {
 
     options.textTarget.text(options.message);

@@ -2,8 +2,8 @@
 require.config({
   paths: {
     jquery: '../../components/jquery/jquery',
-    backbone: '../../components/backbone-amd/backbone',
-    underscore: '../../components/underscore-amd/underscore',
+    backbone: '../../components/backbone/backbone',
+    underscore: '../../components/underscore/underscore',
     marionette: '../../components/marionette/lib/core/amd/backbone.marionette',
     'backbone.wreqr' : '../../components/marionette/public/javascripts/backbone.wreqr',
     'backbone.babysitter' : '../../components/marionette/public/javascripts/backbone.babysitter',
@@ -29,7 +29,7 @@ require.config({
       deps: ['backbone']
     },
     marionette: {
-      deps: ['jquery', 'underscore', 'backbone'],
+      deps: ['jquery', 'underscore', 'backbone', 'backbone.wreqr', 'backbone.babysitter'],
       exports: 'Marionette'
     },
     'backbone.localStorage': {
