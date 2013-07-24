@@ -3,6 +3,6 @@
 .DS_Store
 .sass-cache
 
-app/components
+components
 node_modules/
 build/
