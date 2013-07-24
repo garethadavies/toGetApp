@@ -57,7 +57,7 @@ html {
 	-webkit-transition-timing-function: linear, linear;
 	transition-timing-function: linear, linear;
 	-webkit-overflow-scrolling: touch;
-	padding: 62px 0 $defaultPadding/2 0;
+	padding: 67px 0 $defaultPadding/2 0;
 	@include box-shadow($grayLight 0 0 8px);
 }
 
@@ -80,8 +80,10 @@ html {
 	left: 0;
 	width: 266px;
 	bottom: 0;
-	overflow: auto;
+	z-index: 3;
+	// overflow: auto;
 	background: $grayLightest;
+	-webkit-transform: translate3d(0, 0, 0);
 	-webkit-transition-property: top, bottom;
 	transition-property: top, bottom;
 	-webkit-transition-duration: .2s, .2s;
@@ -93,6 +95,7 @@ html {
 
 .left-drawer {
 	z-index: 3;
+	padding-top: 55px;
 }
 
 .right-drawer {

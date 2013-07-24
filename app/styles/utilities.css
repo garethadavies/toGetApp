@@ -24,20 +24,21 @@ utilities
 /* line 23, ../sass/utilities.scss */
 .left-drawer-adjust {
   padding-right: 3px;
+  width: 266px;
 }
 
-/* line 27, ../sass/utilities.scss */
+/* line 29, ../sass/utilities.scss */
 .right-drawer-adjust {
   padding-left: 3px;
 }
 
 /* Visibility */
-/* line 33, ../sass/utilities.scss */
+/* line 35, ../sass/utilities.scss */
 .hide {
   display: none;
 }
 
-/* line 37, ../sass/utilities.scss */
+/* line 39, ../sass/utilities.scss */
 .visuallyhidden {
   position: absolute;
   overflow: hidden;

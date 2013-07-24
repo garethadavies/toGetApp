@@ -22,6 +22,8 @@ utilities
 
 .left-drawer-adjust {
 	padding-right: 3px;
+  // We need to match the drawer width as the left drawer is static
+  width: 266px;
 }
 
 .right-drawer-adjust {
