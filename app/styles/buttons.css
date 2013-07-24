@@ -18,6 +18,7 @@ button {
   cursor: pointer;
   background: white;
   border-color: #dddddd;
+  border-bottom: 1px solid #cccccc;
 }
 
 /* line 23, ../sass/buttons.scss */

@@ -50,9 +50,6 @@ define([
 
       }
 
-      //
-      this.ui.titleField.focus();
-
     },
 
     saveItem: function(e) {
