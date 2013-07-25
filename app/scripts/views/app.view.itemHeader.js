@@ -35,7 +35,8 @@ define([
 
     initialize: function() {
 
-      this.listenTo(this.collection, 'all', this.listChanged, this);
+      this.listenTo(this.collection, 'add', this.showCount, this);
+      this.listenTo(this.collection, 'remove', this.showCount, this);
 
     },
 
@@ -51,15 +52,15 @@ define([
 
     },
 
-    listChanged: function() {
+    // listChanged: function() {
 
-      if (this.collection.length === 0) {
+    //   if (this.collection.length === 0) {
 
-        this.render();
+    //     this.render();
 
-      }
+    //   }
 
-    },
+    // },
 
     openEdit: function(e) {
 
