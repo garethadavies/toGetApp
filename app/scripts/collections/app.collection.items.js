@@ -32,8 +32,6 @@ define([
 
       var created = item.get('created');
 
-      // console.log(item.get('title'));
-
       return created;
 
     }

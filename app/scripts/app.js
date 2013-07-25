@@ -3,6 +3,7 @@ define([
 
   'backbone',
   'marionette',
+  'app.vent',
   'collections/app.collection.items',
   'collections/app.collection.lists',
   'views/app.view.itemHeader',
@@ -16,7 +17,7 @@ define([
   'app.router',
   'snap'
 
-], function(Backbone, Marionette, ItemCollection, ListCollection, ItemHeader, ItemListView, ListHeader, ListView, EditHeader, EditView, ItemModel, Controller, Router, Snap) {
+], function(Backbone, Marionette, Vent, ItemCollection, ListCollection, ItemHeaderView, ItemListView, ListsHeaderView, ListsView, EditHeaderView, EditItemView, ItemModel, Controller, Router, Snap) {
 
   'use strict';
 
@@ -30,16 +31,18 @@ define([
     collection: itemCollection
 
   },
-  listsOptions = {
-
-    collection: listCollection
-
-  },
   snapper = new Snap({
 
     element: document.getElementById('content')
 
   });
+
+  window.App = App;
+
+  /*
+  Application State Object
+  */
+  App.state = {};
 
   /*
   Application Regions
@@ -60,6 +63,10 @@ define([
   */
   App.addInitializer(function(){
 
+    /*
+    Disable the panel slide
+    */
+
     snapper.disable();
     
     /*
@@ -70,25 +77,11 @@ define([
     listCollection.fetch();
 
     /*
-    Show the add/edit form
-    */
-
-    // App.editHeader.show(new EditHeader());
-    // App.editMain.show(new EditView(itemsOptions));
-
-    /*
     Show the items
     */
 
-    App.itemsHeader.show(new ItemHeader(itemsOptions));
+    App.itemsHeader.show(new ItemHeaderView(itemsOptions));
     App.itemsMain.show(new ItemListView(itemsOptions));
-
-    /*
-    Show the lists
-    */
-
-    App.listsHeader.show(new ListHeader(listsOptions));
-    App.listsMain.show(new ListView(listsOptions));
 
   });
 
@@ -97,132 +90,240 @@ define([
   */
   App.on('initialize:after', function() {
 
+    /*
+    Instantiate a new router
+    */
+
     new Router({
 
       controller: Controller
 
     });
 
+    /*
+    Start Backbone history
+    */
+
     Backbone.history.start();
 
+    /*
+    Fixes
+    */
+
     // Allow :active styles to work in your CSS on a page in Mobile Safari
-    document.addEventListener("touchstart", function(){}, true);
+    document.addEventListener('touchstart', function() {}, true);
 
   });
 
   /*
-  Event Management
+  Open the right panel and load in the add/edit views
   */
-  App.vent.on('add:item', function(options, callback) {
+  Vent.on('open:right:panel', function(options) {
 
-    // console.log(options);
+    var itemOptions = {};
 
-    var model = new ItemModel();
+    /*
+    Set any defaults for the itemOptions object
+    */
 
-    model.set({
+    _.defaults(itemOptions, {
 
-      title: options.title,
-      created: Date.now(),
-      listId: options.listId
+      model: new ItemModel(),
+      collection: itemCollection,
+      listCollection: listCollection
 
-    }).save();
+    });
 
-    itemCollection.add(model);
+    // Have options and a model been supplied?
+    if (options && options.model) {
 
-    if (callback) {
-
-      callback(model);
+      // Set itemOptions model to supplied model
+      itemOptions.model = options.model;
 
     }
 
+    /*
+    Post-show
+    */
+
+    App.editMain.on('show', function(view) {
+
+      // Load the combo lists
+      Vent.trigger('combo:lists', {
+
+        view: view,
+        model: itemOptions.model
+
+      });
+
+      // Open the right-hand panel
+      snapper.open('right');
+
+      // Enable panel slide
+      snapper.enable();
+
+    });
+
+    /*
+    Show the views
+    */
+
+    App.editHeader.show(new EditHeaderView(itemOptions));
+    App.editMain.show(new EditItemView(itemOptions));
+
   });
 
   /*
-  ??
+  Open the left panel and load in the list views
   */
-  App.vent.on('open:right', function() {
+  Vent.on('open:left:panel', function() {
 
-    //
-    snapper.open('right');
+    var listsOptions = {
 
-    //
-    snapper.enable();
+      collection: listCollection
 
-    // Load in the add item views
-    App.editHeader.show(new EditHeader());
-    App.editMain.show(new EditView(itemsOptions));
+    };
+
+    /*
+    Post-show
+    */
+
+    App.listsMain.on('show', function(view) {
+
+      // Open the right-hand panel
+      snapper.open('left');
+
+      // Enable panel slide
+      snapper.enable();
+
+    });
+
+    /*
+    Set any defaults for the itemOptions object
+    */
+
+    App.listsHeader.show(new ListsHeaderView(listsOptions));
+    App.listsMain.show(new ListsView(listsOptions));
 
   });
 
   /*
-  ??
+  Close any open panels
   */
-  App.vent.on('open:left', function() {
+  Vent.on('close:panels', function() {
 
-    snapper.open('left');
-
-    snapper.enable();
-
-  });
-
-  /*
-  ??
-  */
-  App.vent.on('close:panels', function() {
-
+    // Close all panels
     snapper.close();
 
+    // Disable the panel slide
     snapper.disable();
 
   });
 
   /*
-  ??
+  Save Item
   */
-  App.vent.on('edit:item', function(e, model) {
+  Vent.on('save:item', function(options, callback) {
 
-    var itemOptions = {
+    var
+    view = options.view,
+    data = options.data,
+    model = options.view.model,
+    isNew = model.isNew();
 
-      model: model,
-      collection: itemCollection
+    // Set the model values
+    model.set({
 
-    };
+      title: data.title,
+      created: (isNew) ? Date.now() : model.get('created'),
+      listId: data.listId
 
-    if (e.target.tagName === 'LI') {
+    }).save();
 
-      snapper.open('right');
+    console.log('isNew: ' + isNew);
+    console.log('filtered: ' + App.state.filtered);
+    console.log(App.state.listId === model.get('listId'));
 
-      /*
-      Post-show
-      */
+    // Is this a new model?
+    if (isNew) {
 
-      App.editMain.on('show', function(view) {
+      // Are we in a filtered state?
+      if (App.state.filtered) {
 
-        App.vent.trigger('combo:lists', {
+        // Is the new model set to the filtered list?
+        if (App.state.listId === model.get('listId')) {
 
-          view: view,
-          model: model
+          // Add the item to the filtered collection
+          App.itemsMain.currentView.collection.add(model);
 
-        });
+        }
+
+      }
+
+      // Add the item to the collection
+      itemCollection.add(model);
+
+      // Clear the title text field
+      view.ui.titleField.val('');
+
+      //
+      view.model = new ItemModel();
+
+      // Reset the lists combo
+      Vent.trigger('combo:lists', {
+
+        view: view,
+        model: undefined
 
       });
 
-      /*
-      Show the items
-      */
+    }
+    else {
 
-      App.editHeader.show(new EditHeader(itemOptions));
+      // Are we in a filtered state?
+      if (App.state.filtered) {
 
-      App.editMain.show(new EditView(itemOptions));
+        // Is the updated model set to the filtered list?
+        if (App.state.listId !== model.get('listId')) {
+
+          // Add the item to the filtered collection
+          App.itemsMain.currentView.collection.remove(model);
+
+        }
+        else {
+
+          // Add the item to the filtered collection
+          App.itemsMain.currentView.collection.add(model);
+
+        }
+
+      }
 
     }
+
+    // Fire any callback supplied
+    if (callback) {
+
+      callback(true);
+
+    }
+
+    // Notify the user
+    Vent.trigger('notify', {
+
+      target: view.ui.notification,
+      textTarget: view.ui.notificationText,
+      mode: 'success',
+      message: 'Your item has been saved'
+
+    });
 
   });
 
   /*
-  ??
+  Load Lists Combo
   */
-  App.vent.on('combo:lists', function(options) {
+  Vent.on('combo:lists', function(options) {
 
     var target = options.view.$el.find('#form-item-list');
 
@@ -249,10 +350,6 @@ define([
         var
         option = $(item),
         optionValue = option.val();
-
-        // console.log($(item).val());
-        // console.log(index);
-        // console.log(model.get('listId'));
 
         option.prop('selected', false);
 
@@ -297,18 +394,23 @@ define([
   });
 
   /*
-  ??
+  Filter Items
   */
-  App.vent.on('filter:items', function(options) {
+  Vent.on('filter:items', function(options) {
 
-    var filteredCollection = itemCollection.clone();
-
-    var filtered = filteredCollection.filter(function(item) {
+    var
+    filteredCollection = itemCollection.clone(),
+    filtered = filteredCollection.filter(function(item) {
 
       return item.get('listId') === options.listId;
 
     });
 
+    // App items filtered state
+    App.state.filtered = true;
+    App.state.listId = options.listId;
+
+    //
     filteredCollection.reset(filtered);
 
     // After we have shown the item header
@@ -327,16 +429,18 @@ define([
       view.ui.filterText.text(options.title);
 
       // Show the filtered item list
-      App.vent.trigger('close:panels');
+      Vent.trigger('close:panels');
 
     });
 
-    App.itemsHeader.show(new ItemHeader({
+    //
+    App.itemsHeader.show(new ItemHeaderView({
 
       collection: filteredCollection
 
     }));
 
+    //
     App.itemsMain.show(new ItemListView({
 
       collection: filteredCollection
@@ -349,9 +453,9 @@ define([
   });
 
   /*
-  ??
+  Add new list to lists collection
   */
-  App.vent.on('change:item:list', function(options) {
+  Vent.on('change:item:list', function(options) {
 
     // Are there any items in the collection
     if (options.collection.length > 0) {
@@ -381,9 +485,12 @@ define([
   });
 
   /*
-  ??
+  Remove any item filter
   */
-  App.vent.on('remove:filter', function() {
+  Vent.on('remove:filter', function() {
+
+    // App items filtered state
+    App.state.filtered = false;
 
     // After we have shown the item header
     App.itemsHeader.on('show', function(view) {
@@ -402,7 +509,7 @@ define([
 
     });
 
-    App.itemsHeader.show(new ItemHeader({
+    App.itemsHeader.show(new ItemHeaderView({
 
       collection: itemCollection
 
@@ -420,9 +527,9 @@ define([
   });
 
   /*
-  ??
+  Notify the user or summat
   */
-  App.vent.on('notify', function(options) {
+  Vent.on('notify', function(options) {
 
     options.textTarget.text(options.message);
 

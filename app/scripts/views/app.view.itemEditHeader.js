@@ -3,15 +3,16 @@
 define([
 
   'marionette',
-  'templates'
+  'templates',
+  'app.vent'
 
-], function(Marionette, templates) {
+], function(Marionette, Templates, Vent) {
 
   'use strict';
 
   return Marionette.ItemView.extend({
 
-    template : templates.itemEditHeader,
+    template : Templates.itemEditHeader,
 
     ui: {
 
@@ -28,16 +29,15 @@ define([
 
     onRender: function() {
 
-      // console.log(this.model);
+      // Is this a new model?
+      if (this.model.isNew()) {
 
-      if (this.model) {
-
-        this.ui.panelTitle.text('Edit this item');
+        this.ui.panelTitle.text('Add an item');
 
       }
       else {
 
-        this.ui.panelTitle.text('Add an item');
+        this.ui.panelTitle.text('Edit this item');
 
       }
 
@@ -47,9 +47,7 @@ define([
 
       e.preventDefault();
 
-      var App = require('app');
-
-      App.vent.trigger('close:panels');
+      Vent.trigger('close:panels');
 
     }
 

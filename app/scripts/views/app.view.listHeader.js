@@ -3,15 +3,16 @@
 define([
 
   'marionette',
-  'templates'
+  'templates',
+  'app.vent'
 
-], function(Marionette, templates) {
+], function(Marionette, Templates, Vent) {
 
   'use strict';
 
   return Marionette.ItemView.extend({
 
-    template : templates.listHeader,
+    template : Templates.listHeader,
 
     ui: {
       
@@ -22,8 +23,6 @@ define([
 
     events: {
       
-      // 'click #lists-edit': 'openEdit',
-      // 'click #lists-done': 'closeEdit',
       'click .close-panels': 'closePanel'
     
     },
@@ -87,28 +86,7 @@ define([
 
       e.preventDefault();
 
-      var App = require('app');
-
-      App.vent.trigger('close:panels');
-
-    },
-
-    onInputKeypress: function(evt) {
-
-      var ENTER_KEY = 13;
-      var todoText = this.ui.input.val().trim();
-
-      if (evt.which === ENTER_KEY && todoText) {
-
-        this.collection.create({
-
-          title : todoText
-
-        });
-
-        this.ui.input.val('');
-
-      }
+      Vent.trigger('close:panels');
 
     }
 

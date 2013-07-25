@@ -28,7 +28,6 @@ define([
 
     events: {
 
-      'click #toggle-all': 'onToggleAllClick',
       'keypress .add-item': 'addInputKeypress',
       'click .button-add-list': 'addItem'
     

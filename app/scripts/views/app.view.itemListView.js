@@ -4,11 +4,12 @@ define([
 
   'marionette',
   'templates',
+  'app.vent',
   'models/app.model.item',
   'views/app.view.itemView',
   'views/app.view.emptyView'
 
-], function(Marionette, Templates, ItemModel, ItemView, EmptyView) {
+], function(Marionette, Templates, Vent, ItemModel, ItemView, EmptyView) {
 
   'use strict';
 
@@ -32,7 +33,6 @@ define([
 
     events: {
 
-      'click li': 'editItem',
       'click #filter-remove': 'removeFilter'
 
     },
@@ -53,12 +53,10 @@ define([
 
     filterItems: function(model) {
 
-      var App = require('app');
-
       // Are we in a filtered state?
       if (Backbone.history.fragment) {
 
-        App.vent.trigger('change:item:list', {
+        Vent.trigger('change:item:list', {
 
           collection: this.collection,
           model: model
@@ -73,9 +71,7 @@ define([
 
       e.preventDefault();
 
-      var App = require('app');
-
-      App.vent.trigger('remove:filter');
+      Vent.trigger('remove:filter');
 
     }
 

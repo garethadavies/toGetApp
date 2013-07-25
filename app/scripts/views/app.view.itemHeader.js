@@ -4,10 +4,11 @@ define([
 
   'marionette',
   'templates',
+  'app.vent',
   'views/app.view.itemEditHeader',
   'views/app.view.itemEditView'
 
-], function(Marionette, Templates, EditHeader, EditView) {
+], function(Marionette, Templates, Vent, EditHeader, EditView) {
 
   'use strict';
 
@@ -111,19 +112,7 @@ define([
 
       e.preventDefault();
 
-      var App = require('app');
-
-      // App.editHeader.show(new EditHeader());
-      // App.editMain.show(new EditView());
-
-      App.vent.trigger('open:right');
-
-      App.vent.trigger('combo:lists', {
-
-        view: App.editMain.currentView,
-        model: undefined
-
-      });
+      Vent.trigger('open:right:panel');
 
     },
 
@@ -131,9 +120,7 @@ define([
 
       e.preventDefault();
 
-      var App = require('app');
-
-      App.vent.trigger('open:left');
+      Vent.trigger('open:left:panel');
 
     }
 

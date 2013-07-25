@@ -3,9 +3,10 @@
 define([
 
   'marionette',
-  'templates'
+  'templates',
+  'app.vent'
 
-], function(Marionette, Templates) {
+], function(Marionette, Templates, Vent) {
   
   'use strict';
 
@@ -38,14 +39,6 @@ define([
     initialize: function() {
 
       this.listenTo(this.model, 'change', this.render, this);
-
-    },
-
-    onRender: function() {
-
-      // this.$el.removeClass('active completed');
-      // if (this.model.get('completed')) this.$el.addClass('completed');
-      // else this.$el.addClass('active');
 
     },
 
@@ -120,12 +113,10 @@ define([
 
       e.preventDefault();
 
-      var App = require('app');
-
       // Makes sure we have clicked on the list item
       if (e.target.tagName === 'LI' || e.target.tagName === 'SPAN') {
 
-        App.vent.trigger('filter:items', {
+        Vent.trigger('filter:items', {
 
           listId: this.model.get('listId'),
           title: this.model.get('title')

@@ -3,9 +3,10 @@
 define([
 
   'marionette',
-  'templates'
+  'templates',
+  'app.vent'
 
-], function(Marionette, Templates) {
+], function(Marionette, Templates, Vent) {
 
   'use strict';
 
@@ -82,9 +83,17 @@ define([
 
       e.preventDefault();
 
-      var App = require('app');
+      // Is this a click on the list item?
+      if (e.target.tagName === 'LI') {
 
-      App.vent.trigger('edit:item', e, this.model);
+        //
+        Vent.trigger('open:right:panel', {
+
+          model: this.model
+
+        });
+
+      }
 
     }
 

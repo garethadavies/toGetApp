@@ -9,7 +9,8 @@ require.config({
     'backbone.babysitter' : '../../components/marionette/public/javascripts/backbone.babysitter',
     snap: '../../components/snap/snap',
     tpl: '../../components/tpl/tpl',
-    'backbone.localStorage': '../../components/backbone.localStorage/backbone.localStorage'
+    'backbone.localStorage': '../../components/backbone.localStorage/backbone.localStorage',
+    'backbone.syphon': '../../components/backbone.syphon/lib/amd/backbone.syphon'
   },
   shim: {
     jquery: {
@@ -29,15 +30,18 @@ require.config({
       deps: ['backbone']
     },
     marionette: {
-      deps: ['jquery', 'underscore', 'backbone', 'backbone.wreqr', 'backbone.babysitter'],
+      deps: ['backbone'],
       exports: 'Marionette'
-    },
+    }, 
     'backbone.localStorage': {
       deps: ['backbone']
     },
     snap: {
       deps: ['jquery']
-    }
+    }, 
+    'backbone.syphon': {
+      deps: ['backbone']
+    },
   }
 });
 

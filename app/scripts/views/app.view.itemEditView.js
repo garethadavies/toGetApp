@@ -3,10 +3,12 @@
 define([
 
   'marionette',
-  'templates'
+  'templates',
+  'app.vent',
+  'backbone.syphon'
 
-], function(Marionette, Templates) {
-  
+], function(Marionette, Templates, Vent, Syphon) {
+
   'use strict';
 
   return Marionette.ItemView.extend({
@@ -36,17 +38,17 @@ define([
     },
 
     onRender: function() {
-      
-      if (this.model) {
 
-        this.ui.titleField.val(this.model.get('title'));
+      if (this.model.isNew()) {
 
-        this.ui.button.text('Update');
+        this.ui.button.text('Add');
 
       }
       else {
 
-        this.ui.button.text('Add');
+        this.ui.titleField.val(this.model.get('title'));
+
+        this.ui.button.text('Update');
 
       }
 
@@ -56,68 +58,18 @@ define([
 
       e.preventDefault();
 
-      var
-      that = this,
-      App = require('app'),
-      title = this.ui.titleField.val(),
-      listId = this.ui.listCombo.find('option:selected').val();
+      // Syphon the model data from the view
+      var data = Syphon.serialize(this);
 
       // Validate
-      if (title) {
+      if (data.title) {
 
-        // If we are updating a model
-        if (this.model) {
+        Vent.trigger('save:item', {
 
-          this.model.set({
+          view: this,
+          data: data
 
-            title: title,
-            listId: listId
-
-          });
-
-          this.model.save();
-
-          App.vent.trigger('notify', {
-
-            target: that.ui.notification,
-            textTarget: that.ui.notificationText,
-            mode: 'success',
-            message: 'Your item has been updated'
-
-          });
-
-        }
-        else {
-
-          App.vent.trigger('add:item', {
-
-            title: title,
-            listId: listId
-
-          }, function(model) {
-
-            // Re-render the form
-            // that.render();
-
-            App.vent.trigger('notify', {
-
-              target: that.ui.notification,
-              textTarget: that.ui.notificationText,
-              mode: 'success',
-              message: 'Your item has been added'
-
-            });
-
-            App.vent.trigger('combo:lists', {
-
-              view: that,
-              model: undefined
-
-            });
-
-          });
-
-        }
+        });
 
       }
       else {

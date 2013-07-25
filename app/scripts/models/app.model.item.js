@@ -15,18 +15,11 @@ define([
 
       title: '',
       completed: false,
-      // created: Date.now(),
       listId: null
 
     },
 
     idAttribute: 'itemId',
-
-    initialize: function() {
-
-      // if (this.isNew()) this.set('created', Date.now());
-
-    },
 
     toggle: function() {
 

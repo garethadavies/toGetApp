@@ -1,6 +1,10 @@
 /*global define*/
 
-define(function() {
+define([
+
+  'app.vent'
+
+], function(Vent) {
 
   'use strict';
 
@@ -8,9 +12,7 @@ define(function() {
 
     filterItems: function(id, title) {
 
-      var App = require('app');
-
-      App.vent.trigger('filter:items', {
+      Vent.trigger('filter:items', {
 
 				listId: id,
 				title: title
