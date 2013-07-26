@@ -23,8 +23,17 @@ _mixins.scss
   margin: 1.2rem 0.6rem;
 }
 
+/* This fixes a blur issue in android devices*/
+/* line 20, ../sass/forms.scss */
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
 /* Inputs */
-/* line 23, ../sass/forms.scss */
+/* line 31, ../sass/forms.scss */
 input[type="text"],
 input[type="email"],
 input[type="search"],
@@ -49,7 +58,7 @@ button,
 }
 
 /* Inline inputs */
-/* line 35, ../sass/forms.scss */
+/* line 43, ../sass/forms.scss */
 input[type="text"].inline-input {
   margin-left: -0.85714rem;
   height: 36px;
@@ -57,19 +66,19 @@ input[type="text"].inline-input {
 }
 
 /* Combos */
-/* line 45, ../sass/forms.scss */
+/* line 53, ../sass/forms.scss */
 .select-wrapper {
   padding: 0;
   z-index: 0;
   margin-bottom: 1.2rem;
 }
-/* line 50, ../sass/forms.scss */
+/* line 58, ../sass/forms.scss */
 .select-wrapper select {
   background: none;
   border: none;
   margin: 0;
 }
-/* line 56, ../sass/forms.scss */
+/* line 64, ../sass/forms.scss */
 .select-wrapper .combo-icon {
   position: absolute;
   right: 0;
@@ -81,11 +90,11 @@ input[type="text"].inline-input {
   line-height: 2.2rem;
 }
 
-/* line 68, ../sass/forms.scss */
+/* line 76, ../sass/forms.scss */
 .add-item-wrapper {
   position: relative;
 }
-/* line 71, ../sass/forms.scss */
+/* line 79, ../sass/forms.scss */
 .add-item-wrapper button {
   position: absolute;
   top: 0;
@@ -98,18 +107,18 @@ input[type="text"].inline-input {
 }
 
 /* Notification */
-/* line 85, ../sass/forms.scss */
+/* line 93, ../sass/forms.scss */
 .notification {
   padding: 1.2rem;
   margin-bottom: 1.2rem;
   color: white;
 }
-/* line 90, ../sass/forms.scss */
+/* line 98, ../sass/forms.scss */
 .notification i {
   color: white;
 }
 
-/* line 95, ../sass/forms.scss */
+/* line 103, ../sass/forms.scss */
 .success {
   background: #3c914a;
   -webkit-border-radius: 5px;

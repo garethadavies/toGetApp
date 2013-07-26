@@ -13,6 +13,14 @@ forms.scss
 	margin: $defaultMargin $defaultMargin/2;
 }
 
+/* This fixes a blur issue in android devices*/
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+	outline: none;
+}
+
 /* Inputs */
 input[type="text"],
 input[type="email"],
