@@ -17,7 +17,7 @@ _mixins.scss
 /* Imports */
 /* Unstyled links */
 /* Clearfix */
-/* line 11, ../sass/nav.scss */
+/* line 12, ../sass/nav.scss */
 .toolbar {
   z-index: 5;
   top: 0;
@@ -25,16 +25,20 @@ _mixins.scss
   right: 0;
   background: white;
   padding: 5px 0;
-  border-bottom: 1px solid #dddddd;
-  -webkit-box-shadow: #dddddd 1px 1px 3px;
-  -moz-box-shadow: #dddddd 1px 1px 3px;
-  box-shadow: #dddddd 1px 1px 3px;
+  -webkit-box-shadow: #999999 0 1px 3px;
+  -moz-box-shadow: #999999 0 1px 3px;
+  box-shadow: #999999 0 1px 3px;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #f9f9f9));
+  background-image: -webkit-linear-gradient(#ffffff, #f9f9f9);
+  background-image: -moz-linear-gradient(#ffffff, #f9f9f9);
+  background-image: -o-linear-gradient(#ffffff, #f9f9f9);
+  background-image: linear-gradient(#ffffff, #f9f9f9);
   text-align: center;
   overflow: hidden;
   *zoom: 1;
 }
 
-/* line 24, ../sass/nav.scss */
+/* line 26, ../sass/nav.scss */
 .toolbar a {
   color: #333333;
   text-decoration: none;
@@ -44,24 +48,24 @@ _mixins.scss
   margin: 0;
 }
 
-/* line 34, ../sass/nav.scss */
+/* line 36, ../sass/nav.scss */
 .toolbar i {
   line-height: 4.4rem;
 }
 
-/* line 38, ../sass/nav.scss */
+/* line 40, ../sass/nav.scss */
 .toolbar h1 {
   font-size: 1.6rem;
   line-height: 4.4rem;
   font-weight: bold;
 }
 
-/* line 44, ../sass/nav.scss */
+/* line 46, ../sass/nav.scss */
 .toolbar a.left {
-  border-right: 1px solid #dddddd;
+  border-right: 1px solid #cccccc;
 }
 
-/* line 48, ../sass/nav.scss */
+/* line 50, ../sass/nav.scss */
 .toolbar a.right {
-  border-left: 1px solid #dddddd;
+  border-left: 1px solid #cccccc;
 }

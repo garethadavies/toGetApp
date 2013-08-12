@@ -3,6 +3,7 @@ utilities
 */
 
 /* Imports */
+@import "_variables";
 @import "compass/utilities/general/float";
 @import "compass/utilities/general/clearfix";
 
@@ -45,4 +46,10 @@ utilities
   margin: -1px; 
   padding: 0; 
   border: 0; 
+}
+
+/* Padding */
+
+.padding-top {
+  padding-top: $defaultPadding/1.6;
 }

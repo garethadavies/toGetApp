@@ -12,16 +12,26 @@ _variables.scss
 /* Margins */
 /* Dimensions */
 /* Buttons */
-/* line 9, ../sass/buttons.scss */
+/* line 11, ../sass/buttons.scss */
 button {
   font-weight: 600;
   cursor: pointer;
-  background: white;
-  border-color: #dddddd;
-  border-bottom: 1px solid #cccccc;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #f9f9f9));
+  background-image: -webkit-linear-gradient(#ffffff, #f9f9f9);
+  background-image: -moz-linear-gradient(#ffffff, #f9f9f9);
+  background-image: -o-linear-gradient(#ffffff, #f9f9f9);
+  background-image: linear-gradient(#ffffff, #f9f9f9);
 }
 
-/* line 23, ../sass/buttons.scss */
+/* line 21, ../sass/buttons.scss */
+button[type="submit"] {
+  -webkit-box-shadow: #999999 0 1px 3px;
+  -moz-box-shadow: #999999 0 1px 3px;
+  box-shadow: #999999 0 1px 3px;
+  border-bottom: none;
+}
+
+/* line 27, ../sass/buttons.scss */
 .form-item-delete {
   background: red;
   color: white;

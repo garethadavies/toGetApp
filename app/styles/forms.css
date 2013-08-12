@@ -20,7 +20,7 @@ _mixins.scss
 /* Wrapper */
 /* line 12, ../sass/forms.scss */
 .input-wrapper {
-  margin: 1.2rem 0.6rem;
+  margin: 0 0.6rem 0.6rem 0.6rem;
 }
 
 /* This fixes a blur issue in android devices*/
@@ -44,7 +44,7 @@ button,
   width: 100%;
   font-size: 100%;
   height: 50px;
-  border: 1px solid #dddddd;
+  border: 1px solid #cccccc;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
@@ -84,7 +84,7 @@ input[type="text"].inline-input {
   right: 0;
   top: 0;
   padding: 1.2rem 1rem;
-  border-left: 1px solid #dddddd;
+  border-left: 1px solid #cccccc;
   z-index: -1;
   height: 48px;
   line-height: 2.2rem;
@@ -110,20 +110,16 @@ input[type="text"].inline-input {
 /* line 93, ../sass/forms.scss */
 .notification {
   padding: 1.2rem;
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.6rem;
   color: white;
-}
-/* line 98, ../sass/forms.scss */
-.notification i {
-  color: white;
-}
-
-/* line 103, ../sass/forms.scss */
-.success {
-  background: #3c914a;
+  background: #333333;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
   border-radius: 5px;
+}
+/* line 98, ../sass/forms.scss */
+.notification i {
+  color: white;
 }

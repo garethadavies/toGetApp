@@ -6,6 +6,8 @@ lists.scss
 @import "_variables";
 @import "_mixins";
 @import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
+@import "compass/css3/images";
 
 /* Lists */
 .unstyled-list ul {
@@ -17,15 +19,18 @@ lists.scss
 .get-list {
 
 	li {
-		background: $white;
+		// background: $white;
 		margin: 0 $defaultPadding/2 $defaultPadding/2 $defaultPadding/2;
 		padding: 0 0 0 $defaultPadding;
 		height: $defaultButtonHeight;
 		display: block;
 		line-height: 4.2rem;
 		border: $defaultBorder;
+		border-bottom: none;
 		cursor: pointer;
 		@include border-radius($default-border-radius);
+		@include box-shadow($gray 0 1px 3px);
+		@include background-image(linear-gradient($white, $grayLightest));
 		@include clearfix();
 	}
 
@@ -34,7 +39,7 @@ lists.scss
 		z-index: 2;
 		width: 100%;
 		color: $grayDarker;
-		background: $white;
+		// background: $white;
 		width: $defaultButtonWidth;
 		height: $defaultButtonHeight;
 		// display: inline-block;
@@ -52,9 +57,9 @@ lists.scss
 		color: $grayLight;
 	}
 
-	.completed .item-tick i {
-		color: $green;
-	}
+	// .completed .item-tick i {
+	// 	color: $green;
+	// }
 
 	.item-tick {
 		// border-left: none;

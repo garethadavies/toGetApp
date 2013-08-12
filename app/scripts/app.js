@@ -240,10 +240,6 @@ define([
 
     }).save();
 
-    console.log('isNew: ' + isNew);
-    console.log('filtered: ' + App.state.filtered);
-    console.log(App.state.listId === model.get('listId'));
-
     // Is this a new model?
     if (isNew) {
 
@@ -276,6 +272,9 @@ define([
         model: undefined
 
       });
+
+      // Reset the 'add' button
+      view.ui.button.text('Add');
 
     }
     else {

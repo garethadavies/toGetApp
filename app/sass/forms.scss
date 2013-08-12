@@ -10,7 +10,7 @@ forms.scss
 
 /* Wrapper */
 .input-wrapper {
-	margin: $defaultMargin $defaultMargin/2;
+	margin: 0 $defaultMargin/2 $defaultMargin/2 $defaultMargin/2;
 }
 
 /* This fixes a blur issue in android devices*/
@@ -92,15 +92,15 @@ input[type="text"].inline-input {
 
 .notification {
 	padding: $defaultPadding;
-	margin-bottom: $defaultMargin;
+	margin-bottom: $defaultMargin/2;
 	color: $white;
-
+	background: $grayDarker;
 	i {
 		color: $white;
 	}
-}
-
-.success {
-	background: $green;
 	@include border-radius($default-border-radius);
 }
+
+// .success {
+// 	background: $green;
+// }

@@ -29,7 +29,7 @@ body {
 
 /* line 23, ../sass/layout.scss */
 html {
-  background: #f9f9f9;
+  background: #dddddd;
 }
 
 /* Positioning */
@@ -56,7 +56,7 @@ html {
 /* Content area */
 /* line 45, ../sass/layout.scss */
 .content-wrapper {
-  background: #f9f9f9;
+  background: #dddddd;
   top: 0;
   left: 0;
   right: 0;
@@ -70,28 +70,28 @@ html {
   -webkit-transition-timing-function: linear, linear;
   transition-timing-function: linear, linear;
   -webkit-overflow-scrolling: touch;
-  padding: 67px 0 0.6rem 0;
-  -webkit-box-shadow: #cccccc 0 0 8px;
-  -moz-box-shadow: #cccccc 0 0 8px;
-  box-shadow: #cccccc 0 0 8px;
+  -webkit-box-shadow: #999999 0 0 8px;
+  -moz-box-shadow: #999999 0 0 8px;
+  box-shadow: #999999 0 0 8px;
 }
 
 /* line 64, ../sass/layout.scss */
 .scrollable {
   overflow: auto;
+  padding-top: 62px;
 }
 
 /* Drawers */
-/* line 69, ../sass/layout.scss */
+/* line 70, ../sass/layout.scss */
 .drawers {
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: #f9f9f9;
+  background: #dddddd;
 }
 
-/* line 78, ../sass/layout.scss */
+/* line 79, ../sass/layout.scss */
 .left-drawer,
 .right-drawer {
   top: 0;
@@ -99,7 +99,7 @@ html {
   width: 266px;
   bottom: 0;
   z-index: 3;
-  background: #f9f9f9;
+  background: #dddddd;
   -webkit-transform: translate3d(0, 0, 0);
   -webkit-transition-property: top, bottom;
   transition-property: top, bottom;
@@ -110,13 +110,12 @@ html {
   -webkit-overflow-scrolling: touch;
 }
 
-/* line 96, ../sass/layout.scss */
+/* line 97, ../sass/layout.scss */
 .left-drawer {
   z-index: 3;
-  padding-top: 55px;
 }
 
-/* line 101, ../sass/layout.scss */
+/* line 102, ../sass/layout.scss */
 .right-drawer {
   left: auto;
   right: 0;
@@ -124,12 +123,12 @@ html {
 }
 
 /* Drawers */
-/* line 108, ../sass/layout.scss */
+/* line 109, ../sass/layout.scss */
 .drawers h1 {
   padding: 0 0 0 1.8rem;
 }
 
-/* line 112, ../sass/layout.scss */
+/* line 113, ../sass/layout.scss */
 .snapjs-right .left-drawer {
   left: auto;
   right: 0;

@@ -4,6 +4,8 @@ buttons.scss
 
 /* Imports */
 @import "_variables";
+@import "compass/css3/box-shadow";
+@import "compass/css3/images";
 
 /* Buttons */
 button {
@@ -11,12 +13,14 @@ button {
 	cursor: pointer;
 	// margin-top: $defaultMargin;
 	// color: $white;
-	background: $white;
-	border-color: $grayLighter;
-	border-bottom: $borderWidth $borderStyle $grayLight;
+	
+	@include background-image(linear-gradient($white, $grayLightest));
+	// border-color: $grayLight;
 }
 
 button[type="submit"] {
+	@include box-shadow($gray 0 1px 3px);
+	border-bottom: none;
 	// margin-top: $defaultMargin; 
 }
 
