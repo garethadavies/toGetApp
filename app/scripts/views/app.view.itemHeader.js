@@ -28,7 +28,7 @@ define([
 
       'click #items-add': 'openRightPanel',
       'click #open-left': 'openLeftPanel',
-      'click #items-edit': 'openEdit',
+      // 'click #items-edit': 'openEdit',
       'click #items-done': 'closeEdit'
 
     },
@@ -62,19 +62,19 @@ define([
 
     // },
 
-    openEdit: function(e) {
+    // openEdit: function(e) {
 
-      e.preventDefault();
+    //   e.preventDefault();
 
-      $('#content-list li').find('.item-remove').removeClass('hide');
+    //   $('#content-list li').find('.item-remove').removeClass('hide');
 
-      $('#content-list li').find('.item-tick').addClass('hide');
+    //   $('#content-list li').find('.item-tick').addClass('hide');
 
-      this.$el.find('#items-done').removeClass('hide');
+    //   this.$el.find('#items-done').removeClass('hide');
 
-      this.$el.find('#items-edit').addClass('hide');
+    //   this.$el.find('#items-edit').addClass('hide');
 
-    },
+    // },
 
     closeEdit: function(e) {
 

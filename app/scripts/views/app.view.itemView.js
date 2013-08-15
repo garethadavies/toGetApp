@@ -18,7 +18,9 @@ define([
 
     ui: {
 
-      edit: '.edit'
+      edit: '.edit',
+      tick: '.item-tick',
+      removeButton: '.item-remove'
 
     },
 
@@ -38,15 +40,22 @@ define([
 
     onRender: function() {
 
+      //
       this.$el.removeClass('active completed');
 
+      //
       if (this.model.get('completed')) {
 
+        //
         this.$el.addClass('completed');
+
+        //
+        this.showRemove();
 
       }
       else {
 
+        //
         this.$el.addClass('active');
 
       }
@@ -57,7 +66,7 @@ define([
 
       e.preventDefault();
 
-      if (confirm('Are you sure?')) {
+      if (confirm('Are you sure you want to remove this item?')) {
 
         this.model.destroy();
 
@@ -69,8 +78,13 @@ define([
 
       e.preventDefault();
 
+      //
+      this.showRemove();
+
+      //
       var completed = (this.model.get('completed') === false) ? true : false;
 
+      //
       this.model.set({
 
         completed: completed
@@ -94,6 +108,13 @@ define([
         });
 
       }
+
+    },
+
+    showRemove: function() {
+
+      //
+      this.ui.removeButton.show();
 
     }
 

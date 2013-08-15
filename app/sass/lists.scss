@@ -8,6 +8,7 @@ lists.scss
 @import "compass/css3/border-radius";
 @import "compass/css3/box-shadow";
 @import "compass/css3/images";
+@import "compass/css3/opacity";
 
 /* Lists */
 .unstyled-list ul {
@@ -27,17 +28,25 @@ lists.scss
 		border: $defaultBorder;
 		border-bottom: none;
 		cursor: pointer;
+		@include clearfix();
 		@include border-radius($default-border-radius);
 		@include box-shadow($gray 0 1px 3px);
+	}
+
+	li:not(.completed) {
 		@include background-image(linear-gradient($white, $grayLightest));
-		@include clearfix();
+	}
+
+	li.completed {
+		background-color: $grayLightest;
+		@include opacity(0.6); 
 	}
 
 	a {
 		position: relative;
 		z-index: 2;
 		width: 100%;
-		color: $grayDarker;
+		color: $grayDarkest;
 		width: $defaultButtonWidth;
 		height: $defaultButtonHeight;
 		text-align: center;
