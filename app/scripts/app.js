@@ -530,18 +530,26 @@ define([
   */
   Vent.on('notify', function(options) {
 
+    console.log(options);
+
+    //
     options.textTarget.text(options.message);
 
+    //
     options.target.addClass(options.mode);
 
+    //
     options.target.fadeIn(800);
 
+    //
     if (options.mode === 'success') {
 
+      //
       options.target.find('i').addClass('icon-ok');
 
     } 
 
+    //
     options.target.delay(2000).fadeOut(1000);
 
   });

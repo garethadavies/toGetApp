@@ -11,21 +11,17 @@ buttons.scss
 button {
 	font-weight: 600;
 	cursor: pointer;
-	// margin-top: $defaultMargin;
-	// color: $white;
-	
 	@include background-image(linear-gradient($white, $grayLightest));
-	// border-color: $grayLight;
 }
 
-button[type="submit"] {
-	@include box-shadow($gray 0 1px 3px);
+button[type="submit"]:not(.button-add-list),
+.form-item-button-remove {
+	@include box-shadow($grayLight 0 2px 3px);
 	border-bottom: none;
-	// margin-top: $defaultMargin; 
 }
 
-.form-item-delete {
+.form-item-button-remove {
+	margin-top: $defaultMargin*2; 
 	background: red;
 	color: $white;
-	border: none;
 }

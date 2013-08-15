@@ -23,17 +23,18 @@ button {
   background-image: linear-gradient(#ffffff, #f9f9f9);
 }
 
-/* line 21, ../sass/buttons.scss */
-button[type="submit"] {
-  -webkit-box-shadow: #999999 0 1px 3px;
-  -moz-box-shadow: #999999 0 1px 3px;
-  box-shadow: #999999 0 1px 3px;
+/* line 18, ../sass/buttons.scss */
+button[type="submit"]:not(.button-add-list),
+.form-item-button-remove {
+  -webkit-box-shadow: #cccccc 0 2px 3px;
+  -moz-box-shadow: #cccccc 0 2px 3px;
+  box-shadow: #cccccc 0 2px 3px;
   border-bottom: none;
 }
 
-/* line 27, ../sass/buttons.scss */
-.form-item-delete {
+/* line 23, ../sass/buttons.scss */
+.form-item-button-remove {
+  margin-top: 2.4rem;
   background: red;
   color: white;
-  border: none;
 }
