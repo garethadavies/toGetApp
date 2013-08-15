@@ -51,7 +51,7 @@ _mixins.scss
   overflow: hidden;
   *zoom: 1;
 }
-/* line 37, ../sass/lists.scss */
+/* line 36, ../sass/lists.scss */
 .get-list a {
   position: relative;
   z-index: 2;
@@ -63,7 +63,7 @@ _mixins.scss
   margin: 0;
   border-left: 1px solid #cccccc;
 }
-/* line 56, ../sass/lists.scss */
+/* line 48, ../sass/lists.scss */
 .get-list .active .item-tick i {
   color: #cccccc;
 }

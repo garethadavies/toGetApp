@@ -18,13 +18,13 @@ _mixins.scss
 /* Unstyled links */
 /* Clearfix */
 /* Wrapper */
-/* line 12, ../sass/forms.scss */
+/* line 13, ../sass/forms.scss */
 .input-wrapper {
   margin: 0 0.6rem 0.6rem 0.6rem;
 }
 
 /* This fixes a blur issue in android devices*/
-/* line 20, ../sass/forms.scss */
+/* line 21, ../sass/forms.scss */
 input:focus,
 select:focus,
 textarea:focus,
@@ -33,7 +33,7 @@ button:focus {
 }
 
 /* Inputs */
-/* line 31, ../sass/forms.scss */
+/* line 32, ../sass/forms.scss */
 input[type="text"],
 input[type="email"],
 input[type="search"],
@@ -58,7 +58,7 @@ button,
 }
 
 /* Inline inputs */
-/* line 43, ../sass/forms.scss */
+/* line 44, ../sass/forms.scss */
 input[type="text"].inline-input {
   margin-left: -0.85714rem;
   height: 36px;
@@ -66,35 +66,46 @@ input[type="text"].inline-input {
 }
 
 /* Combos */
-/* line 53, ../sass/forms.scss */
+/* line 52, ../sass/forms.scss */
 .select-wrapper {
   padding: 0;
   z-index: 0;
   margin-bottom: 1.2rem;
 }
-/* line 58, ../sass/forms.scss */
+/* line 57, ../sass/forms.scss */
 .select-wrapper select {
   background: none;
   border: none;
   margin: 0;
 }
-/* line 64, ../sass/forms.scss */
+/* line 63, ../sass/forms.scss */
 .select-wrapper .combo-icon {
   position: absolute;
   right: 0;
   top: 0;
   padding: 1.2rem 1rem;
   border-left: 1px solid #cccccc;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #f9f9f9));
+  background-image: -webkit-linear-gradient(#ffffff, #f9f9f9);
+  background-image: -moz-linear-gradient(#ffffff, #f9f9f9);
+  background-image: -o-linear-gradient(#ffffff, #f9f9f9);
+  background-image: linear-gradient(#ffffff, #f9f9f9);
+  -moz-border-radius-topright: 5px;
+  -webkit-border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 5px;
   z-index: -1;
   height: 48px;
   line-height: 2.2rem;
 }
 
-/* line 76, ../sass/forms.scss */
+/* line 78, ../sass/forms.scss */
 .add-item-wrapper {
   position: relative;
 }
-/* line 79, ../sass/forms.scss */
+/* line 81, ../sass/forms.scss */
 .add-item-wrapper button {
   position: absolute;
   top: 0;
@@ -107,7 +118,7 @@ input[type="text"].inline-input {
 }
 
 /* Notification */
-/* line 93, ../sass/forms.scss */
+/* line 95, ../sass/forms.scss */
 .notification {
   padding: 1.2rem;
   margin-bottom: 0.6rem;
@@ -119,7 +130,7 @@ input[type="text"].inline-input {
   -o-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 98, ../sass/forms.scss */
+/* line 100, ../sass/forms.scss */
 .notification i {
   color: white;
 }

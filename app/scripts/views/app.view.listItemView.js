@@ -101,7 +101,7 @@ define([
 
       var that = this;
 
-      if (confirm('Are you sure?')) {
+      if (confirm('Are you sure you want to remove this list?')) {
 
         that.model.destroy();
 

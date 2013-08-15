@@ -39,16 +39,9 @@ define([
 
     onRender: function() {
 
-      if (this.model.isNew()) {
-
-        this.ui.button.text('Add');
-
-      }
-      else {
+      if (!this.model.isNew()) {
 
         this.ui.titleField.val(this.model.get('title'));
-
-        this.ui.button.text('Update');
 
       }
 

@@ -26,9 +26,9 @@ button {
 /* line 18, ../sass/buttons.scss */
 button[type="submit"]:not(.button-add-list),
 .form-item-button-remove {
-  -webkit-box-shadow: #cccccc 0 2px 3px;
-  -moz-box-shadow: #cccccc 0 2px 3px;
-  box-shadow: #cccccc 0 2px 3px;
+  -webkit-box-shadow: #999999 0 1px 3px;
+  -moz-box-shadow: #999999 0 1px 3px;
+  box-shadow: #999999 0 1px 3px;
   border-bottom: none;
 }
 

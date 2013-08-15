@@ -77,6 +77,18 @@ define([
     listCollection.fetch();
 
     /*
+    Main region event
+    */
+
+    // When the main list is shown
+    App.itemsMain.on('show', function() {
+
+      // Fade in the app content
+      $('body').fadeIn('slow');
+
+    });
+
+    /*
     Show the items
     */
 

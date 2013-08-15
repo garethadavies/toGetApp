@@ -19,7 +19,6 @@ lists.scss
 .get-list {
 
 	li {
-		// background: $white;
 		margin: 0 $defaultPadding/2 $defaultPadding/2 $defaultPadding/2;
 		padding: 0 0 0 $defaultPadding;
 		height: $defaultButtonHeight;
@@ -39,36 +38,15 @@ lists.scss
 		z-index: 2;
 		width: 100%;
 		color: $grayDarker;
-		// background: $white;
 		width: $defaultButtonWidth;
 		height: $defaultButtonHeight;
-		// display: inline-block;
 		text-align: center;
 		margin: 0;
 		border-left: $defaultBorder;
 	}
 
-	// a:first-child i {
-	// 	line-height: 4.4rem;
-	// 	// color: $grayLight; 
-	// }
-
 	.active .item-tick i {
 		color: $grayLight;
-	}
-
-	// .completed .item-tick i {
-	// 	color: $green;
-	// }
-
-	.item-tick {
-		// border-left: none;
-		// border-right: $defaultBorder;
-		// margin-right: $defaultMargin;
-	}
-
-	.item-remove {
-		// border-left: $defaultBorder;
 	}
 
 }
