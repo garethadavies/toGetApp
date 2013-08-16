@@ -140,7 +140,6 @@ define([
 
     _.defaults(itemOptions, {
 
-      model: new ItemModel(),
       collection: itemCollection,
       listCollection: listCollection
 
@@ -163,8 +162,7 @@ define([
       // Load the combo lists
       Vent.trigger('combo:lists', {
 
-        view: view,
-        model: itemOptions.model
+        view: view
 
       });
 
@@ -189,9 +187,6 @@ define([
   Open the left panel and load in the list views
   */
   Vent.on('open:left:panel', function() {
-
-    // console.log(listCollection);
-    // console.log(App.listsMain.currentView);
 
     // Have the lists already been displayed?
     if (!App.listsMain.currentView) {
@@ -256,21 +251,41 @@ define([
 
     var
     view = options.view,
-    data = options.data,
-    model = options.view.model,
-    isNew = model.isNew();
+    data = options.data;    
+
+    // Do we have a model?
+    if (!view.model) {
+
+      // Create a new model
+      view.model = new ItemModel();
+
+    }
+
+    var isNew = view.model.isNew();
 
     // Set the model values
-    model.set({
+    view.model.set({
 
       title: data.title,
-      created: (isNew) ? Date.now() : model.get('created'),
+      created: (isNew) ? Date.now() : view.model.get('created'),
       listId: data.listId
 
     }).save();
 
     // Is this a new model?
     if (isNew) {
+
+      //
+      view.model.set({
+
+        isNew: true
+
+      },
+      {
+
+        silent: true
+      
+      });
 
       // Are we in a filtered state?
       if (App.state.filtered) {
@@ -286,7 +301,7 @@ define([
       }
 
       // Add the item to the collection
-      itemCollection.add(model);
+      itemCollection.add(view.model);
 
       // Clear the title text field
       view.ui.titleField.val('');
@@ -559,7 +574,7 @@ define([
   */
   Vent.on('notify', function(options) {
 
-    console.log(options);
+    // console.log(options);
 
     //
     options.textTarget.text(options.message);

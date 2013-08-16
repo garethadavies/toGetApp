@@ -39,7 +39,7 @@ define([
 
     onRender: function() {
 
-      if (!this.model.isNew()) {
+      if (this.model) {
 
         this.ui.titleField.val(this.model.get('title'));
 

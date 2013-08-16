@@ -30,7 +30,7 @@ define([
     onRender: function() {
 
       // Is this a new model?
-      if (this.model.isNew()) {
+      if (!this.model) {
 
         this.ui.panelTitle.text('Add an item');
 

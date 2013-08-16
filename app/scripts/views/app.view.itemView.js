@@ -57,13 +57,38 @@ define([
       }
       else {
 
-        //
-        setTimeout(function() {
+        // console.log(this.model.isNew());
+        // console.log(this.model);
+
+        if (this.model.get('isNew')) {
+
+          //
+          setTimeout(function() {
+
+            //
+            that.$el.addClass('active');
+
+            //
+            that.model.set({
+
+              isNew: false
+
+            },
+            {
+
+              silent: true
+            
+            });
+
+          }, 0);
+
+        }
+        else {
 
           //
           that.$el.addClass('active');
 
-        }, 0);
+        }
 
 
       }
