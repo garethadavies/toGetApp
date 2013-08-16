@@ -52,11 +52,12 @@ define([
         this.$el.addClass('completed'); 
 
         //
-        this.showRemove();
+        this.showHideRemove(true);
 
       }
       else {
 
+        //
         setTimeout(function() {
 
           //
@@ -97,7 +98,7 @@ define([
       e.preventDefault();
 
       //
-      this.showRemove();
+      this.showHideRemove(true);
 
       //
       var completed = (this.model.get('completed') === false) ? true : false;
@@ -129,10 +130,20 @@ define([
 
     },
 
-    showRemove: function() {
+    showHideRemove: function(show) {
 
-      //
-      this.ui.removeButton.show();
+      if (show) {
+
+        //
+        this.ui.removeButton.fadeIn('slow');
+
+      }
+      else {
+
+        //
+        this.ui.removeButton.fadeOut('slow');
+
+      }
 
     }
 

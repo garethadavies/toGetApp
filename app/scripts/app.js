@@ -67,8 +67,7 @@ define([
     Disable the panel slide
     */
 
-    // snapper.disable();
-    Vent.trigger('open:left:panel');
+    snapper.disable();
     
     /*
     Fetch the collections
@@ -191,17 +190,41 @@ define([
   */
   Vent.on('open:left:panel', function() {
 
-    var listsOptions = {
+    // console.log(listCollection);
+    // console.log(App.listsMain.currentView);
 
-      collection: listCollection
+    // Have the lists already been displayed?
+    if (!App.listsMain.currentView) {
 
-    };
+      var listsOptions = {
 
-    /*
-    Post-show
-    */
+        collection: listCollection
 
-    App.listsMain.on('show', function(view) {
+      };
+
+      /*
+      Post-show
+      */
+
+      App.listsMain.on('show', function(view) {
+
+        // Open the right-hand panel
+        snapper.open('left');
+
+        // Enable panel slide
+        snapper.enable();
+
+      });
+
+      /*
+      Set any defaults for the itemOptions object
+      */
+
+      App.listsHeader.show(new ListsHeaderView(listsOptions));
+      App.listsMain.show(new ListsView(listsOptions));
+
+    }
+    else {
 
       // Open the right-hand panel
       snapper.open('left');
@@ -209,14 +232,7 @@ define([
       // Enable panel slide
       snapper.enable();
 
-    });
-
-    /*
-    Set any defaults for the itemOptions object
-    */
-
-    App.listsHeader.show(new ListsHeaderView(listsOptions));
-    App.listsMain.show(new ListsView(listsOptions));
+    }
 
   });
 
