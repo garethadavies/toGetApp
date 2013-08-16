@@ -24,33 +24,31 @@ lists.scss
 		margin: 0 $defaultPadding/2 $defaultPadding/2 $defaultPadding/2;
 		padding: 0 0 0 $defaultPadding;
 		height: $defaultButtonHeight;
-		display: block;
+		width: auto;
 		line-height: 4.2rem;
 		border: $defaultBorder;
 		border-bottom: none;
 		cursor: pointer;
+		background-color: $grayLightest;
 		@include clearfix();
 		@include border-radius($default-border-radius);
 		@include box-shadow($gray 0 1px 3px);
-		// transition: background-color 0.5s ease;
-		background-color: $white;
+		@include background-image(linear-gradient($white, $grayLightest));
+		@include opacity(0);
+		@include transition(opacity 1s ease);
+	}
+
+	li.active {
 		@include opacity(1);
-		// transition: background-color 2s ease;
-		@include transition(background-color 1s ease, opacity 1s ease);
-	}
-
-	li:not(.completed) {
-		// @include background-image(linear-gradient($white, $grayLightest));
-	}
-
-	li:hover {
-		// background-color: red;
+		@include transition(opacity 1s ease);
 	}
 
 	li.completed {
-		background-color: $grayLightest;
 		@include opacity(0.6);
-		// @include transition(background-color, 2s, ease);
+	}
+
+	li.removed {
+		@include opacity(0);
 	}
 
 	a {

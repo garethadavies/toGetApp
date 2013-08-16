@@ -67,7 +67,8 @@ define([
     Disable the panel slide
     */
 
-    snapper.disable();
+    // snapper.disable();
+    Vent.trigger('open:left:panel');
     
     /*
     Fetch the collections

@@ -30,11 +30,12 @@ _mixins.scss
   margin: 0 0.6rem 0.6rem 0.6rem;
   padding: 0 0 0 1.2rem;
   height: 44px;
-  display: block;
+  width: auto;
   line-height: 4.2rem;
   border: 1px solid #cccccc;
   border-bottom: none;
   cursor: pointer;
+  background-color: #f9f9f9;
   overflow: hidden;
   *zoom: 1;
   -webkit-border-radius: 5px;
@@ -45,21 +46,38 @@ _mixins.scss
   -webkit-box-shadow: #999999 0 1px 3px;
   -moz-box-shadow: #999999 0 1px 3px;
   box-shadow: #999999 0 1px 3px;
-  background-color: white;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #f9f9f9));
+  background-image: -webkit-linear-gradient(#ffffff, #f9f9f9);
+  background-image: -moz-linear-gradient(#ffffff, #f9f9f9);
+  background-image: -o-linear-gradient(#ffffff, #f9f9f9);
+  background-image: linear-gradient(#ffffff, #f9f9f9);
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -webkit-transition: opacity 1s ease;
+  -moz-transition: opacity 1s ease;
+  -o-transition: opacity 1s ease;
+  transition: opacity 1s ease;
+}
+/* line 41, ../sass/lists.scss */
+.get-list li.active {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
-  -webkit-transition: background-color 1s ease, opacity 1s ease;
-  -moz-transition: background-color 1s ease, opacity 1s ease;
-  -o-transition: background-color 1s ease, opacity 1s ease;
-  transition: background-color 1s ease, opacity 1s ease;
+  -webkit-transition: opacity 1s ease;
+  -moz-transition: opacity 1s ease;
+  -o-transition: opacity 1s ease;
+  transition: opacity 1s ease;
 }
-/* line 50, ../sass/lists.scss */
+/* line 46, ../sass/lists.scss */
 .get-list li.completed {
-  background-color: #f9f9f9;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
   opacity: 0.6;
 }
-/* line 56, ../sass/lists.scss */
+/* line 50, ../sass/lists.scss */
+.get-list li.removed {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+/* line 54, ../sass/lists.scss */
 .get-list a {
   position: relative;
   z-index: 2;
@@ -71,7 +89,7 @@ _mixins.scss
   margin: 0;
   border-left: 1px solid #cccccc;
 }
-/* line 68, ../sass/lists.scss */
+/* line 66, ../sass/lists.scss */
 .get-list .active .item-tick i {
   color: #cccccc;
 }

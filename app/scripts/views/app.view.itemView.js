@@ -40,6 +40,8 @@ define([
 
     onRender: function() {
 
+      var that = this;
+
       //
       this.$el.removeClass('active completed');
 
@@ -47,7 +49,7 @@ define([
       if (this.model.get('completed')) {
 
         //
-        this.$el.addClass('completed');
+        this.$el.addClass('completed'); 
 
         //
         this.showRemove();
@@ -55,8 +57,13 @@ define([
       }
       else {
 
-        //
-        this.$el.addClass('active');
+        setTimeout(function() {
+
+          //
+          that.$el.addClass('active');
+
+        }, 0);
+
 
       }
 
@@ -70,13 +77,16 @@ define([
 
       if (confirm('Are you sure you want to remove this item?')) {
 
-        // Fade out the item
-        this.$el.fadeOut('slow', function() {
+        // Add the removed class to this view
+        that.$el.attr('class', 'removed');
+
+        // Fade out the item takes 1 second
+        setTimeout(function() {
 
           // Remove the item
           that.model.destroy();
 
-        });
+        }, 1000);
 
       }
 

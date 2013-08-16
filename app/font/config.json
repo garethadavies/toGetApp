@@ -2,6 +2,7 @@
   "name": "togetapp-v10",
   "css_prefix_text": "icon-",
   "css_use_suffix": false,
+  "hinting": true,
   "glyphs": [
     {
       "uid": "559647a6f430b3aeadbecd67194451dd",
@@ -124,18 +125,6 @@
       "src": "iconic"
     },
     {
-      "uid": "1e77a2yvsq3owssduo2lcgsiven57iv5",
-      "css": "pencil",
-      "code": 59397,
-      "src": "typicons"
-    },
-    {
-      "uid": "jqzwo6i8oicjbn049sh2856d8anrqoli",
-      "css": "edit",
-      "code": 9997,
-      "src": "typicons"
-    },
-    {
       "uid": "3v2lgx3os8ub377alyqm8mn2o7r4zywg",
       "css": "th",
       "code": 9871,
@@ -146,6 +135,18 @@
       "css": "cw",
       "code": 10227,
       "src": "modernpics"
+    },
+    {
+      "uid": "0299bec28699eedda42f46c77239393e",
+      "css": "pencil",
+      "code": 59397,
+      "src": "mfglabs"
+    },
+    {
+      "uid": "3ab2abf6f936d3e53ee8c184cedaed82",
+      "css": "trash",
+      "code": 59398,
+      "src": "elusive"
     },
     {
       "uid": "6083c8aa5e3345476a24a28ac1afaa61",
