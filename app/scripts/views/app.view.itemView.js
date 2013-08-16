@@ -66,9 +66,17 @@ define([
 
       e.preventDefault();
 
+      var that = this;
+
       if (confirm('Are you sure you want to remove this item?')) {
 
-        this.model.destroy();
+        // Fade out the item
+        this.$el.fadeOut('slow', function() {
+
+          // Remove the item
+          that.model.destroy();
+
+        });
 
       }
 
