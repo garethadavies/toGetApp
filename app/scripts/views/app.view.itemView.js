@@ -57,9 +57,6 @@ define([
       }
       else {
 
-        // console.log(this.model.isNew());
-        // console.log(this.model);
-
         if (this.model.get('isNew')) {
 
           //

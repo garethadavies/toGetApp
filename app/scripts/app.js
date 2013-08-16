@@ -275,7 +275,7 @@ define([
     // Is this a new model?
     if (isNew) {
 
-      //
+      // Add a value to the model attributes to use on render
       view.model.set({
 
         isNew: true

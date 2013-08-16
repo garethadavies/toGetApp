@@ -22,6 +22,7 @@ lists.scss
 
 	li {
 		margin: 0 $defaultPadding/2 $defaultPadding/2 $defaultPadding/2;
+		color: $grayDarkest;
 		padding: 0 0 0 $defaultPadding;
 		height: $defaultButtonHeight;
 		width: auto;
@@ -35,16 +36,24 @@ lists.scss
 		@include box-shadow($gray 0 1px 3px);
 		@include background-image(linear-gradient($white, $grayLightest));
 		@include opacity(0);
-		@include transition(opacity 1s ease);
+		@include transition(opacity 1s ease, color 1s ease);
 	}
 
 	li.active {
 		@include opacity(1);
-		@include transition(opacity 1s ease);
+		color: $grayDarkest;
+		// @include transition(opacity 1s ease);
+		.item-tick i {
+			color: $grayLight;
+		}
 	}
 
 	li.completed {
-		@include opacity(0.6);
+		@include opacity(0.7);
+		color: $gray;
+		i {
+			color: $black;
+		}
 	}
 
 	li.removed {
@@ -61,10 +70,6 @@ lists.scss
 		text-align: center;
 		margin: 0;
 		border-left: $defaultBorder;
-	}
-
-	.active .item-tick i {
-		color: $grayLight;
 	}
 
 }
