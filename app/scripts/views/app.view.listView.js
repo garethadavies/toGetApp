@@ -54,11 +54,11 @@ define([
 
       }
 
+      if (e) { e.preventDefault(); }
+
     },
 
     addItem: function(e) {
-
-      e.preventDefault();
 
       var listText = this.ui.listInput.val().trim();
 
@@ -88,6 +88,8 @@ define([
         this.ui.listInput.val('');
 
       }
+
+      if (e) { e.preventDefault(); }
       
     }
 

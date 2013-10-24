@@ -388,13 +388,22 @@ define([
       listId = value.get('listId'),
       title = value.get('title');
 
+      // console.log(value);
+      // console.log(target[0].options);
+
       _.each(target[0].options, function(item) {
+
+        // console.log(item);
 
         var
         option = $(item),
         optionValue = option.val();
 
         option.prop('selected', false);
+
+        // console.log(listId);
+        // console.log(optionValue);
+        // console.log('----------------');
 
         // If the listId is already in the combo
         if (optionValue === listId) {
@@ -405,6 +414,8 @@ define([
 
       });
 
+      // console.log(exists);
+
       // If the list item does not exist
       if (!exists) {
 
@@ -412,8 +423,10 @@ define([
 
       }
 
+      console.log(options.view.model);
+
       // Has a model been supplied (edit state)
-      if (options.model) {
+      if (options.view.model) {
 
         _.each(target[0].options, function(item) {
 
@@ -421,8 +434,12 @@ define([
           option = $(item),
           optionValue = option.val();
 
+          console.log(options.view.model.get('listId'));
+          console.log(optionValue);
+          console.log('');
+
           // Does the item already have a listId set?
-          if (options.model.get('listId') === optionValue && optionValue) {
+          if (options.view.model.get('listId') === optionValue && optionValue) {
 
             option.prop('selected', true);
 
