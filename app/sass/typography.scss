@@ -9,13 +9,22 @@ typography.scss
 /* Font setup */
 html { 
 	font-size: 62.5%; 
-} 
+}
 
 body {
 	font-size: $baseFontSize; /* =14px */
   font-family: Helvetica, Arial, "Lucida Grande", sans-serif; 
   font-weight: 300;
   color: $grayDarker;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+
+	// Stop any text size changes 
+	body {
+		-webkit-text-size-adjust: none;
+	}
+
 }
 
 /* Headers */
@@ -25,7 +34,7 @@ h1 {
 
 /* Icons */
 i {
-	font-size: 1.8rem;
+	font-size: 1.8rem; /* =18px */
 	color: $grayDarker;
 }
 

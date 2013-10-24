@@ -26,22 +26,29 @@ body {
   color: #333333;
 }
 
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  /* line 24, ../sass/typography.scss */
+  body {
+    -webkit-text-size-adjust: none;
+  }
+}
 /* Headers */
-/* line 22, ../sass/typography.scss */
+/* line 31, ../sass/typography.scss */
 h1 {
   font-size: 2.4rem;
   /* =24px */
 }
 
 /* Icons */
-/* line 27, ../sass/typography.scss */
+/* line 36, ../sass/typography.scss */
 i {
   font-size: 1.8rem;
+  /* =18px */
   color: #333333;
 }
 
 /* Styling */
-/* line 34, ../sass/typography.scss */
+/* line 43, ../sass/typography.scss */
 .bold {
   font-weight: bold;
 }

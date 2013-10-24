@@ -1,7 +1,12 @@
 *.sublime-workspace
 *.sublime-project
 .DS_Store
+<<<<<<< HEAD
+.sass-cache
+
+=======
 .sass-cache/
+>>>>>>> develop
 components/
 node_modules/
 build/

@@ -1,9 +1,0 @@
-{
-  "name": "tpl",
-  "version": "0.0.0",
-  "commit": "7438735aa84b76af0fb266d8373b5fbaab2a1a03",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ZeeAgency/requirejs-tpl.git"
-  }
-}

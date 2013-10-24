@@ -77,6 +77,18 @@ define([
     listCollection.fetch();
 
     /*
+    Main region event
+    */
+
+    // When the main list is shown
+    App.itemsMain.on('show', function() {
+
+      // Fade in the app content
+      $('body').fadeIn('slow');
+
+    });
+
+    /*
     Show the items
     */
 
@@ -128,7 +140,6 @@ define([
 
     _.defaults(itemOptions, {
 
-      model: new ItemModel(),
       collection: itemCollection,
       listCollection: listCollection
 
@@ -151,8 +162,7 @@ define([
       // Load the combo lists
       Vent.trigger('combo:lists', {
 
-        view: view,
-        model: itemOptions.model
+        view: view
 
       });
 
@@ -178,17 +188,38 @@ define([
   */
   Vent.on('open:left:panel', function() {
 
-    var listsOptions = {
+    // Have the lists already been displayed?
+    if (!App.listsMain.currentView) {
 
-      collection: listCollection
+      var listsOptions = {
 
-    };
+        collection: listCollection
 
-    /*
-    Post-show
-    */
+      };
 
-    App.listsMain.on('show', function(view) {
+      /*
+      Post-show
+      */
+
+      App.listsMain.on('show', function(view) {
+
+        // Open the right-hand panel
+        snapper.open('left');
+
+        // Enable panel slide
+        snapper.enable();
+
+      });
+
+      /*
+      Set any defaults for the itemOptions object
+      */
+
+      App.listsHeader.show(new ListsHeaderView(listsOptions));
+      App.listsMain.show(new ListsView(listsOptions));
+
+    }
+    else {
 
       // Open the right-hand panel
       snapper.open('left');
@@ -196,14 +227,7 @@ define([
       // Enable panel slide
       snapper.enable();
 
-    });
-
-    /*
-    Set any defaults for the itemOptions object
-    */
-
-    App.listsHeader.show(new ListsHeaderView(listsOptions));
-    App.listsMain.show(new ListsView(listsOptions));
+    }
 
   });
 
@@ -227,21 +251,41 @@ define([
 
     var
     view = options.view,
-    data = options.data,
-    model = options.view.model,
-    isNew = model.isNew();
+    data = options.data;    
+
+    // Do we have a model?
+    if (!view.model) {
+
+      // Create a new model
+      view.model = new ItemModel();
+
+    }
+
+    var isNew = view.model.isNew();
 
     // Set the model values
-    model.set({
+    view.model.set({
 
       title: data.title,
-      created: (isNew) ? Date.now() : model.get('created'),
+      created: (isNew) ? Date.now() : view.model.get('created'),
       listId: data.listId
 
     }).save();
 
     // Is this a new model?
     if (isNew) {
+
+      // Add a value to the model attributes to use on render
+      view.model.set({
+
+        isNew: true
+
+      },
+      {
+
+        silent: true
+      
+      });
 
       // Are we in a filtered state?
       if (App.state.filtered) {
@@ -257,7 +301,7 @@ define([
       }
 
       // Add the item to the collection
-      itemCollection.add(model);
+      itemCollection.add(view.model);
 
       // Clear the title text field
       view.ui.titleField.val('');
@@ -344,13 +388,22 @@ define([
       listId = value.get('listId'),
       title = value.get('title');
 
+      // console.log(value);
+      // console.log(target[0].options);
+
       _.each(target[0].options, function(item) {
+
+        // console.log(item);
 
         var
         option = $(item),
         optionValue = option.val();
 
         option.prop('selected', false);
+
+        // console.log(listId);
+        // console.log(optionValue);
+        // console.log('----------------');
 
         // If the listId is already in the combo
         if (optionValue === listId) {
@@ -361,6 +414,8 @@ define([
 
       });
 
+      // console.log(exists);
+
       // If the list item does not exist
       if (!exists) {
 
@@ -368,8 +423,10 @@ define([
 
       }
 
+      console.log(options.view.model);
+
       // Has a model been supplied (edit state)
-      if (options.model) {
+      if (options.view.model) {
 
         _.each(target[0].options, function(item) {
 
@@ -377,8 +434,12 @@ define([
           option = $(item),
           optionValue = option.val();
 
+          console.log(options.view.model.get('listId'));
+          console.log(optionValue);
+          console.log('');
+
           // Does the item already have a listId set?
-          if (options.model.get('listId') === optionValue && optionValue) {
+          if (options.view.model.get('listId') === optionValue && optionValue) {
 
             option.prop('selected', true);
 
@@ -530,18 +591,26 @@ define([
   */
   Vent.on('notify', function(options) {
 
+    // console.log(options);
+
+    //
     options.textTarget.text(options.message);
 
+    //
     options.target.addClass(options.mode);
 
+    //
     options.target.fadeIn(800);
 
+    //
     if (options.mode === 'success') {
 
+      //
       options.target.find('i').addClass('icon-ok');
 
     } 
 
+    //
     options.target.delay(2000).fadeOut(1000);
 
   });

@@ -59,13 +59,3 @@ _mixins.scss
   line-height: 4.4rem;
   font-weight: bold;
 }
-
-/* line 46, ../sass/nav.scss */
-.toolbar a.left {
-  border-right: 1px solid #cccccc;
-}
-
-/* line 50, ../sass/nav.scss */
-.toolbar a.right {
-  border-left: 1px solid #cccccc;
-}

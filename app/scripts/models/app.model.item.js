@@ -15,7 +15,8 @@ define([
 
       title: '',
       completed: false,
-      listId: null
+      listId: null,
+      isNew: false
 
     },
 

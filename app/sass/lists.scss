@@ -8,6 +8,8 @@ lists.scss
 @import "compass/css3/border-radius";
 @import "compass/css3/box-shadow";
 @import "compass/css3/images";
+@import "compass/css3/opacity";
+@import "compass/css3/transition";
 
 /* Lists */
 .unstyled-list ul {
@@ -19,56 +21,55 @@ lists.scss
 .get-list {
 
 	li {
-		// background: $white;
 		margin: 0 $defaultPadding/2 $defaultPadding/2 $defaultPadding/2;
+		color: $grayDarkest;
 		padding: 0 0 0 $defaultPadding;
 		height: $defaultButtonHeight;
-		display: block;
+		width: auto;
 		line-height: 4.2rem;
 		border: $defaultBorder;
 		border-bottom: none;
 		cursor: pointer;
+		background-color: $grayLightest;
+		@include clearfix();
 		@include border-radius($default-border-radius);
 		@include box-shadow($gray 0 1px 3px);
 		@include background-image(linear-gradient($white, $grayLightest));
-		@include clearfix();
+		@include opacity(0);
+		@include transition(opacity 1s ease, color 1s ease);
+	}
+
+	li.active {
+		@include opacity(1);
+		color: $grayDarkest;
+		// @include transition(opacity 1s ease);
+		.item-tick i {
+			color: $grayLight;
+		}
+	}
+
+	li.completed {
+		@include opacity(0.7);
+		color: $gray;
+		i {
+			color: $black;
+		}
+	}
+
+	li.removed {
+		@include opacity(0);
 	}
 
 	a {
 		position: relative;
 		z-index: 2;
 		width: 100%;
-		color: $grayDarker;
-		// background: $white;
+		color: $grayDarkest;
 		width: $defaultButtonWidth;
 		height: $defaultButtonHeight;
-		// display: inline-block;
 		text-align: center;
 		margin: 0;
 		border-left: $defaultBorder;
-	}
-
-	// a:first-child i {
-	// 	line-height: 4.4rem;
-	// 	// color: $grayLight; 
-	// }
-
-	.active .item-tick i {
-		color: $grayLight;
-	}
-
-	// .completed .item-tick i {
-	// 	color: $green;
-	// }
-
-	.item-tick {
-		// border-left: none;
-		// border-right: $defaultBorder;
-		// margin-right: $defaultMargin;
-	}
-
-	.item-remove {
-		// border-left: $defaultBorder;
 	}
 
 }

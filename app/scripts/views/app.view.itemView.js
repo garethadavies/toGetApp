@@ -18,7 +18,9 @@ define([
 
     ui: {
 
-      edit: '.edit'
+      edit: '.edit',
+      tick: '.item-tick',
+      removeButton: '.item-remove'
 
     },
 
@@ -38,16 +40,53 @@ define([
 
     onRender: function() {
 
+      var that = this;
+
+      //
       this.$el.removeClass('active completed');
 
+      //
       if (this.model.get('completed')) {
 
-        this.$el.addClass('completed');
+        //
+        this.$el.addClass('completed'); 
+
+        //
+        this.showHideRemove(true);
 
       }
       else {
 
-        this.$el.addClass('active');
+        if (this.model.get('isNew')) {
+
+          //
+          setTimeout(function() {
+
+            //
+            that.$el.addClass('active');
+
+            //
+            that.model.set({
+
+              isNew: false
+
+            },
+            {
+
+              silent: true
+            
+            });
+
+          }, 0);
+
+        }
+        else {
+
+          //
+          that.$el.addClass('active');
+
+        }
+
 
       }
 
@@ -57,9 +96,20 @@ define([
 
       e.preventDefault();
 
-      if (confirm('Are you sure?')) {
+      var that = this;
 
-        this.model.destroy();
+      if (confirm('Are you sure you want to remove this item?')) {
+
+        // Add the removed class to this view
+        that.$el.attr('class', 'removed');
+
+        // Fade out the item takes 1 second
+        setTimeout(function() {
+
+          // Remove the item
+          that.model.destroy();
+
+        }, 1000);
 
       }
 
@@ -69,8 +119,13 @@ define([
 
       e.preventDefault();
 
+      //
+      this.showHideRemove(true);
+
+      //
       var completed = (this.model.get('completed') === false) ? true : false;
 
+      //
       this.model.set({
 
         completed: completed
@@ -92,6 +147,23 @@ define([
           model: this.model
 
         });
+
+      }
+
+    },
+
+    showHideRemove: function(show) {
+
+      if (show) {
+
+        //
+        this.ui.removeButton.fadeIn('slow');
+
+      }
+      else {
+
+        //
+        this.ui.removeButton.fadeOut('slow');
 
       }
 

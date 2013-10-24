@@ -10,7 +10,7 @@ define([
   
   'use strict';
 
-  return Marionette.CompositeView.extend({
+  return Marionette.ItemView.extend({
 
     tagName: 'li',
 
@@ -39,6 +39,19 @@ define([
     initialize: function() {
 
       this.listenTo(this.model, 'change', this.render, this);
+
+    },
+
+    onRender: function() {
+
+      var that = this;
+
+      setTimeout(function() {
+
+        //
+        that.$el.addClass('active');
+
+      }, 0);
 
     },
 
@@ -101,9 +114,18 @@ define([
 
       var that = this;
 
-      if (confirm('Are you sure?')) {
+      if (confirm('Are you sure you want to remove this list?')) {
 
-        that.model.destroy();
+        // Add the removed class to this view
+        that.$el.attr('class', 'removed');
+
+        // Fade out the item takes 1 second
+        setTimeout(function() {
+
+          // Remove the item
+          that.model.destroy();
+
+        }, 1000);
 
       }
 
