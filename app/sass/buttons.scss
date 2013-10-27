@@ -16,8 +16,8 @@ button {
 
 button[type="submit"]:not(.button-add-list),
 .form-item-button-remove {
-	@include box-shadow($gray 0 1px 3px);
-	border-bottom: none;
+	// @include box-shadow($gray 0 1px 3px);
+	border-bottom: $borderWidth $borderStyle $gray;
 }
 
 .form-item-button-remove {
