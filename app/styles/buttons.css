@@ -24,7 +24,7 @@ button {
 }
 
 /* line 18, ../sass/buttons.scss */
-button[type="submit"]:not(.button-add-list),
+button[type="submit"],
 .form-item-button-remove {
   border-bottom: 1px solid #999999;
 }

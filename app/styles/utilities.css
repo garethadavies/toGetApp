@@ -64,3 +64,9 @@ _variables.scss
 .padding-top {
   padding-top: 0.75rem;
 }
+
+/* Margin */
+/* line 59, ../sass/utilities.scss */
+.margin-top {
+  margin-top: 1.2rem;
+}

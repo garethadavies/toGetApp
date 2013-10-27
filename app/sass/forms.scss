@@ -52,7 +52,7 @@ input[type="text"].inline-input {
 .select-wrapper {
 	padding: 0;
 	z-index: 0;
-	margin-bottom: $defaultMargin;
+	margin-bottom: $defaultMargin/2;
 
 	select {
 		background: none;
@@ -75,20 +75,20 @@ input[type="text"].inline-input {
 	}
 }
 
-.add-item-wrapper {
-	position: relative;
+// .add-item-wrapper {
+// 	position: relative;
 
-	button {
-		position: absolute;
-		top: 0;
-		right: -2px;
-		z-index: 2;
-		width: auto;
-		text-align: center;
-		border-top-left-radius: 0;
-		border-bottom-left-radius: 0;
-	}
-}
+// 	button {
+// 		position: absolute;
+// 		top: 0;
+// 		right: -2px;
+// 		z-index: 2;
+// 		width: auto;
+// 		text-align: center;
+// 		border-top-left-radius: 0;
+// 		border-bottom-left-radius: 0;
+// 	}
+// } 
 
 /* Notification */
 

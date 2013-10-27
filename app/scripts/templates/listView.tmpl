@@ -1,24 +1,28 @@
 <div class="left-drawer-adjust">
 
-	<div class="input-wrapper notification hide">
+	<form id="form-add-list">
 
-		<i class=""></i> 
-		<span id="notification-text"></span>
-		
-	</div>
+		<div class="input-wrapper notification hide">
 
-  <div class="input-wrapper add-item-wrapper clearfix">
+			<i class=""></i> 
+			<span id="notification-text"></span>
+			
+		</div>
 
-  	<form id="form-add-list">
+  	<div class="input-wrapper">
 
 	    <input type="text" placeholder="Add a list" class="add-item" maxlength="20">
 
-	    <button type="submit" class="button-add-list"><i class="icon-plus"></i></button>
+	  </div>
 
-	  </form>
+	  <div class="input-wrapper">
 
-  </div>
+		  <button type="submit" class="button-add-list">Submit</button>
 
-  <ul id="list-list" class="unstyled-list get-list"></ul>
+		</div>
+
+  </form>
+
+  <ul id="list-list" class="unstyled-list get-list margin-top"></ul>
 
 </div>

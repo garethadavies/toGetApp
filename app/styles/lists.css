@@ -34,7 +34,7 @@ _mixins.scss
   width: auto;
   line-height: 4.2rem;
   border: 1px solid #cccccc;
-  border-bottom: none;
+  border-bottom: 1px solid #999999;
   cursor: pointer;
   background-color: #f9f9f9;
   overflow: hidden;
@@ -44,9 +44,6 @@ _mixins.scss
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
   border-radius: 5px;
-  -webkit-box-shadow: #999999 0 1px 3px;
-  -moz-box-shadow: #999999 0 1px 3px;
-  box-shadow: #999999 0 1px 3px;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #f9f9f9));
   background-image: -webkit-linear-gradient(#ffffff, #f9f9f9);
   background-image: -moz-linear-gradient(#ffffff, #f9f9f9);

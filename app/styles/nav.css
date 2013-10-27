@@ -25,9 +25,7 @@ _mixins.scss
   right: 0;
   background: white;
   padding: 5px 0;
-  -webkit-box-shadow: #999999 0 1px 3px;
-  -moz-box-shadow: #999999 0 1px 3px;
-  box-shadow: #999999 0 1px 3px;
+  border-bottom: 1px solid #999999;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #f9f9f9));
   background-image: -webkit-linear-gradient(#ffffff, #f9f9f9);
   background-image: -moz-linear-gradient(#ffffff, #f9f9f9);

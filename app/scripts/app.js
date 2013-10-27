@@ -317,9 +317,6 @@ define([
 
       });
 
-      // Reset the 'add' button
-      view.ui.button.text('Add');
-
     }
     else {
 

@@ -53,8 +53,11 @@ define([
         this.addItem();
 
       }
+      else {
 
-      if (e) { e.preventDefault(); }
+        return;
+
+      }
 
     },
 

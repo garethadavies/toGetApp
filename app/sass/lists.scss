@@ -28,12 +28,12 @@ lists.scss
 		width: auto;
 		line-height: 4.2rem;
 		border: $defaultBorder;
-		border-bottom: none;
+		border-bottom: $borderWidth $borderStyle $gray;
 		cursor: pointer;
 		background-color: $grayLightest;
 		@include clearfix();
 		@include border-radius($default-border-radius);
-		@include box-shadow($gray 0 1px 3px);
+		// @include box-shadow($gray 0 1px 3px);
 		@include background-image(linear-gradient($white, $grayLightest));
 		@include opacity(0);
 		@include transition(opacity 1s ease, color 1s ease);
